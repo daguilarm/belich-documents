@@ -12,7 +12,7 @@ folder: home
 - Barra de navegación superior o lateral.
 - Descarga directa de los recursos, en formato: EXCEL o CSV.
 - Gestión de autorización mediante `Policies`, totalmente integrada.
-- Iconos de [Fontawesome](https://origin.fontawesome.com) integrados.
+- Iconos de [Fontawesome](https://origin.fontawesome.com){#id} integrados.
 - Gestión de caché.
 - Minificación de HTML (con filtros y totalmente personalizada).
 - Personalización de:

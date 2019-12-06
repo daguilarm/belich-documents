@@ -12,3 +12,4 @@ folder: home
 El proyecto se encuentra en plena fase de desarrollo, y es un proyecto enorme y ambicioso, para una sola persona.
 
 <div class="alert info">Un poco de ayuda no estaría mal</div>
+

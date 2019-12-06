@@ -1,9 +1,9 @@
 <?php
 
 return [
-    'baseUrl' => 'https://www.belich-documents.test',
+    'baseUrl' => 'https://www.belich.dev',
     'production' => false,
-    'siteName' => 'Belich documents',
+    'siteName' => 'Belich dashboard',
     'siteDescription' => 'Belich is a Laravel dashboard admin. You can find all the documentation here...',
 
     // localization

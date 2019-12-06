@@ -33,29 +33,7 @@
 
         <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,300i,400,400i,700,700i,800,800i" rel="stylesheet">
         <link rel="stylesheet" href="{{ mix('css/main.css', 'assets/build') }}">
-        <style>
-            .nav-menu__item{margin-top:0.25rem !important;margin-bottom:0.25rem !important; font-weight: 900 !important;}
-            p.nav-menu__item{color:black;}
-            ul li{list-style: square;margin-top:0.50rem !important;margin-bottom:0.50rem !important;padding-left: 0.25rem !important; margin-left: 0.25rem;}
-            ul li ul li {list-style: none; margin-left: 1rem;}
-            .DocSearch-content > ul li{margin: 1rem;}
-            .DocSearch-content > ul{margin: 1.5rem;}
-            img#custom{border:1px dotted #CCCCCC; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);padding:12px;border-radius:.25rem;width:90%;display: block;margin-left:auto;margin-right:auto;margin-top:2rem;}
-            p,pre{margin-top:1.5rem !important;margin-bottom:1.5rem !important;}
-            :not(pre)>code{background-color:white !important;box-shadow:0 4px 6px -1px rgba(0, 0, 0, 0.1),0 2px 4px -1px rgba(0, 0, 0, 0.06);}
-            #legend{text-align:center;width:100%;margin-top:-0.5rem !important;font-style:italic;}
-            .tip{margin: 1.5rem 1rem; background-color: #fff;  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06); padding: 2rem;}
-            .alert{margin: 1.5rem 1rem; padding:1rem; box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);border-radius:.25rem;}
-            .alert:before{opacity: 0.9;display: block;content: ' ';float: left;background-size: 24px 24px;height: 24px;width: 24px;margin-right: 10px;}
-            .alert.info{background-color: #63b3ed; color: #fff;}
-            .alert.info:before{background-image: url('../../assets/img/icons/info.svg');}
-            .alert.warning{background-color: #f6e05e; color: #333;}
-            .alert.warning:before{background-image: url('../../assets/img/icons/warning.svg');}
-            .alert.danger{background-color: #f56565; color: #fff;}
-            .alert.danger:before{background-image: url('../../assets/img/icons/danger.svg');}
-            .alert.success{background-color: #68d391; color: #fff;}
-            .alert.success:before{background-image: url('../../assets/img/icons/success.svg');}
-        </style>
+        <link rel="stylesheet" href="{{ mix('css/custom.css', 'assets/build') }}">
         @if ($page->docsearchApiKey && $page->docsearchIndexName)
             <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" />
         @endif
@@ -63,11 +41,17 @@
 
     <body class="flex flex-col justify-between min-h-screen bg-gray-100 text-gray-800 leading-normal font-sans">
         <header class="flex items-center shadow bg-white border-b h-24 mb-8 py-4" role="banner">
-            <div class="container flex items-center max-w-8xl mx-auto px-4 lg:px-8">
-                <div class="flex items-center">
+            <div class="container max-w-8xl mx-auto px-4 lg:px-8">
+                <div class="flex items-center justify-between">
                     <a href="/" title="{{ $page->siteName }} home" class="inline-flex items-center">
-                        <h1 class="text-lg md:text-2xl text-blue-900 font-semibold hover:text-blue-600 my-0 pr-4">{{ $page->siteName }}</h1>
+                        <h1 class="text-lg md:text-2xl text-blue-900 font-semibold hover:text-blue-600 my-0 pr-4">{{ $page->locate === 'en' ? 'Belich: documents' : 'Belich: documentación' }}</h1>
                     </a>
+                    <div class="flex w-auto">
+                        <img src="../../../../assets/img/icons/github.svg" alt="Github logo" class="flex flex-1 mr-3">
+                        <a href="https://github.com/daguilarm/belich" class="flex-1 mr-2">Belich</a> <span class="mx-2">/</span>
+                        <a href="https://github.com/daguilarm/belich-documents" class="flex-1 mr-2">{{ $page->locate === 'en' ? 'Documents' : 'Documentos' }}</a> <span class="mx-2">/</span>
+                        <a href="https://github.com/daguilarm/belich-dashboard" class="flex-1 mr-2">{{ $page->locate === 'en' ? 'Examples' : 'Ejemplos' }}</a>
+                    </div>
                 </div>
 
                 <div class="flex flex-1 justify-end items-center text-right md:pl-10">
