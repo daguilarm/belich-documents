@@ -1,3 +1,11 @@
+---
+title: Rutas
+description: Gestionando rutas con Belich
+extends: _layouts.documentation
+section: content
+locate: es
+---
+
 # Rutas
 
 

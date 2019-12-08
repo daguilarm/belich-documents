@@ -15,7 +15,7 @@ En este archivo, vamos a poder configurar **Belich** de forma sencillar y rápid
 ### Configuración de la aplicación
 
 - **name**: El nombre de la aplicación. Por defecto:`Belich Dashboard`.
-- **path**: La ruta desde la que se accederá a Belich. Por defector: `dashboard/.
+- **path**: La ruta desde la que se accederá a Belich. Por defecto: `dashboard/`.
 - **url**: Url donde está ubicado **Belich**. Por defecto:`/`.
 - **profile**: Campo boleano, que nos permite activar o desactivar el recurso `\App\Belich\Resources\Profile.php`. 
 
@@ -31,7 +31,7 @@ public static $displayInNavigation = false;
 
 ### Navegación
 
-Belich, ofrece dos formas de navegación, mediante barra superior o lateral.
+**Belich**, ofrece dos formas de navegación, mediante barra superior o lateral.
 
 - **navbar**: admite dos opciones `top` o `sidebar`.
 
@@ -49,7 +49,7 @@ También podemos definir un icono por defecto en nuestra barra de navegación, u
 'defaultIcon' => 'caret-right',
 ```
 
->**Belich** utiliza [Font-awesome](https://origin.fontawesome.com/icons?d=gallery), por lo que solo tendrás que añadir el nombre del icono, tal y como se muestra en la página.
+>**Belich** utiliza [Font-awesome](https://origin.fontawesome.com/icons?d=gallery){.link-out}, por lo que solo tendrás que añadir el nombre del icono, tal y como se muestra en la página.
 
 ### Middleware
 
@@ -146,7 +146,7 @@ Se puede hacer de dos formas:
 
 ### Eliminar Componentes (Gráficas y Cards) según el tamaño de pantalla
 
-Podemos indicarle a Belich, que no queremos mostrar `cards` o `metrics` en dispositivos grandes, para ello, haremos lo siguiente:
+Podemos indicarle a **Belich**, que no queremos mostrar `cards` o `metrics` en dispositivos grandes, para ello, haremos lo siguiente:
 
 ```php
 'hideComponentsForScreens' => ['lg'],
@@ -202,10 +202,9 @@ Para ello, disponemos de la variable `pagination`:
 'pagination' => 'link',
 ```
 
+### Utilizar live search (búsqueda en tiempo real) en el `index` de **Belich**
 
-### Utilizar live search (búsqueda en tiempo real) en el `index` de Belich
-
-El campo `enable` nos permite activar la busqueda o eliminarla de las vistas de Belich.
+El campo `enable` nos permite activar la busqueda o eliminarla de las vistas de **Belich**.
 
 El campo `minChars`, determina el número mínimo de caracteres necesarios para que se realice la búsqueda.
 

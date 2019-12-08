@@ -3,7 +3,7 @@
 return [
     'baseUrl' => 'https://www.belich.dev',
     'production' => false,
-    'siteName' => 'Belich dashboard',
+    'siteName' => 'Dashboard admin for Laravel',
     'siteDescription' => 'Belich is a Laravel dashboard admin. You can find all the documentation here...',
 
     // localization

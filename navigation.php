@@ -21,7 +21,7 @@ return [
                     'Models||Modelos' => '_location_/facades/belich/model',
                     'Operations||Operaciones' => '_location_/facades/belich/operations',
                     'Resources||Recursos' => '_location_/facades/belich/resources',
-                    'Routes||Rutas' => '_location_/facades/belich/routes',
+                    'Routes||Rutas' => '_location_/facades/belich/route',
                     'System||Sistema' => '_location_/facades/belich/system',
                 ]
             ],

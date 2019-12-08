@@ -22,7 +22,7 @@ php artisan migrate
 
 ### Crear los seeders 
 
-Por defecto, **Belich** supone que cada usuario debe de tener un perfil con información adicional (como el avatar), aunque todo esto puede suprimirse si se desea (más información en el apartado *Configuración de la aplicación* que podrá encontrar aqui: [Configuración](/es/config.md)).
+Por defecto, **Belich** supone que cada usuario debe de tener un perfil con información adicional (como el avatar), aunque todo esto puede suprimirse si se desea (más información en el apartado *Configuración de la aplicación* que podrá encontrar aqui: [Configuración](config)).
 
 Si desea crear los seeders para las bases de datos: `users` y `profiles`, deberá ir a `.\database\seeds` y crear el archivo:
 
