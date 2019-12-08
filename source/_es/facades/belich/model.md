@@ -1,12 +1,13 @@
 ---
-title: Fachadas de belich - blade
-description: Gestionando fachadas de belich para renderizar html a traves de blade
+title: Fachadas de belich - Modelos
+description: Gestionando fachadas (facades) de belich para obtener información de Modelos
 extends: _layouts.documentation
 section: content
 locate: es
+folder: facades/belich
 ---
 
-# Belich Facade: Modelos
+# Fachadas (facades) de belich: Modelos
 
 #### getModel()
 
@@ -26,7 +27,6 @@ Belich::getModelPath()
 //Will return 
 \App\Users::class
 ```
-
 
 #### getModelKeyName()
 

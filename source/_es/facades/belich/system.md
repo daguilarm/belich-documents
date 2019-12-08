@@ -1,3 +1,12 @@
+---
+title: Fachadas de belich - Rutas
+description: Gestionando fachadas (facades) de belich para obtener información sobre las rutas
+extends: _layouts.documentation
+section: content
+locate: es
+folder: facades/belich
+---
+
 # Belich Facade: Sistema 
 
 #### allowedActions() 

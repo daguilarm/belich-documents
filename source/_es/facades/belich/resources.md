@@ -1,4 +1,13 @@
-# Belich Facade: Recursos
+---
+title: Fachadas de belich - Recursos
+description: Gestionando fachadas (facades) de belich para obtener información sobre los recursos
+extends: _layouts.documentation
+section: content
+locate: es
+folder: facades/belich
+---
+
+# Fachadas (facades) de belich: Recursos
 
 #### accessToResource()
 
@@ -9,9 +18,9 @@ Nos devolverá `true` o `false`, para saber si el recurso actual puede ser acced
 Nos devuelve la información del recurso actual, mediante una colección. Los datos que ofrece son:
 
 - **name**: El nombre de la clase pluralizado y minúscula, mediante `routeResource()`.
-- **controllerAction**: Nos muestra la acción que se está producciendo en el Contr*olador, mediante el método `routeAction()`.
+- **controllerAction**: Nos muestra la acción que se está producciendo en el *Controlador*, mediante el método `routeAction()`.
 - **fields**: Colección con todos los valores del formulario actualizados.
-- **results**: Colección con todos los resultados de la base de datos para el recurso. Si nos encontramos en el `index`, nos devolverá un listado de recurso, si nos encontramos en `show` o `edit` nos devolverá el valor para ese recurso en base a su ID, y si nos encontramos en `create`, será una instancia vacia del modelo.
+- **results**: Colección con todos los resultados de la base de datos para el recurso. Si nos encontramos en la vista `index`, nos devolverá un listado de recurso, mientras que si nos encontramos en las vistas: `show` o `edit`, nos devolverá el valor para ese recurso en base a su ID, y si nos encontramos en `create`, será una instancia vacia del modelo.
 - **values**: Nos devuelve un una colección con los siguientes valores:
 
     + **class**: nombre de la clase.                 

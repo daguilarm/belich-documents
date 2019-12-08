@@ -1,8 +1,17 @@
+---
+title: Fachadas de belich - Rutas
+description: Gestionando fachadas (facades) de belich para obtener información sobre las rutas
+extends: _layouts.documentation
+section: content
+locate: es
+folder: facades/belich
+---
+
 # Belich Facade: Rutas 
 
 #### action()
 
-Nos devolverá el último valor de la función `route`, es decir, la acción que se está producciendo en el Controlador del package. Devolverá cuatro estados por defecto:
+Nos devolverá el último valor de la función `route`, es decir, la acción que se está producciendo en el *Controlador* del package. Devolverá cuatro estados por defecto:
 
 `index`, `edit`, `create` y `show`.
 
@@ -34,7 +43,7 @@ Belich::actionRoute('edit', 201)
 
 #### route()
 
-Las rutas del package se generan automáticamente con el siguiente formato: `dashboard.resource.action`. Ahora imaginemos que nuestra ruta actual es `dashboard.users.index`. El método `route()` nos devolverá un array con los tres valores de la ruta:
+Las rutas de **Belich** se generan automáticamente con el siguiente formato: `dashboard.resource.action`. Ahora imaginemos que nuestra ruta actual es `dashboard.users.index`. El método `route()` nos devolverá un array con los tres valores de la ruta:
 
 ```php
 [
