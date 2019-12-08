@@ -1,3 +1,11 @@
+---
+title: Fachadas de belich - blade
+description: Gestionando fachadas de belich para renderizar html a traves de blade
+extends: _layouts.documentation
+section: content
+locate: es
+---
+
 # Belich Facade: Modelos
 
 #### getModel()

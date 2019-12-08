@@ -1,28 +1,28 @@
 ---
-title: Autorización de acceso
-description: Gestionando la autorización de acceso con Belich
+title: Access Authorization
+description: Managing access authorization with Belich
 extends: _layouts.documentation
 section: content
-locate: es
+locate: en
 ---
 
-# Autorización de acceso 
+# Access Authorization
 
-**Belich** utiliza el sistema de autorización de Laravel, mediante `Policies`. 
+**Belich** use the Laravel authorization system, through `Policies`. 
 
-Genere la `Police` y regístrela en `\App\Providers\AuthServiceProvider`, para ello, la forma más rápida es mediante `artisan`:
+Generate the `Police` and register it in `\App\Providers\AuthServiceProvider`, the easiest way is with `artisan`:
 
 ```php
 php artisan belich:policy PolicyName
 ```
 
-Puede encontrar más información en: [Comandos de consola](commands).
+You can find more information at: [Comandos de consola](commands).
 
-Por defecto, el sistema buscará la `Police` para autorizar los recursos que añada. Por tanto, si la `Police` no ha sido generada, no podrá acceder al recurso, y se disparará un error 403.
+By default, the system will search for the `Police` to authorize the resources you add. Therefore, if the `Police` has not been generated, you will not be able to access the resource, and an error 403 will be triggered.
 
->Recuerde crear y registar su `Police` o no podrá acceder a su recurso.
+>Remember to create and register your `Police` or you will not be able to access your resource.
 
-Los métodos soportados de forma nativa por **Belich** son:
+The methods natively supported by **Belich** are:
 
 - create
 - delete
@@ -34,16 +34,16 @@ Los métodos soportados de forma nativa por **Belich** son:
 - viewAny
 - withTrashed
 
-Algunos de estos métodos, no soportan añadirles modelos secundarios, por tanto, solo hay que indicarles el modelo actual sobre el que está registrada la `Police`. Estos métodos son:
+Some of these methods do not support adding secondary models, therefore, you just have to indicate the current model on which the `Police` is registered. These methods are:
 
 - create
 - view
 - viewAny
 - withTrashed
 
-A continuación, se muestra un ejemplo de una `Police`, indicando los métodos que soportan modelos secundarios y los que no. 
+Below is an example of a `Police`, indicating the methods that support secondary models and those that do not. 
 
-El ejemplo, sería para los perfiles de usuario de nuestro proyecto:
+The example would be for the user profiles of our project:
 
 ```php
 <?php
