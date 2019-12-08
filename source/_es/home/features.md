@@ -12,7 +12,7 @@ folder: home
 - Barra de navegación superior o lateral.
 - Descarga directa de los recursos, en formato: EXCEL o CSV.
 - Gestión de autorización mediante `Policies`, totalmente integrada.
-- Iconos de [Fontawesome](https://origin.fontawesome.com){#id} integrados.
+- Iconos de [Fontawesome](https://origin.fontawesome.com){.link-out} integrados.
 - Gestión de caché.
 - Minificación de HTML (con filtros y totalmente personalizada).
 - Personalización de:
@@ -24,10 +24,10 @@ folder: home
     + Página inicial o dashboard.
     + etc...
 - Gráficas:
-    + Usando [Chartist](https://gionkunz.github.io/chartist-js/index.html), libreria ultra ligera.
+    + Usando [Chartist](https://gionkunz.github.io/chartist-js/index.html){.link-out}, libreria ultra ligera.
     + Herramientas preconfiguradas para un desarrollo rápido.
 
-A modo de ejemplo, para mostrar los usuarios registrados en la última semana, sólo tendríamos que añadir lo siguiente:
+A modo de ejemplo, para mostrar los usuarios registrados en la última semana, sólo tendríamos que añadir el siguiente código:
 
 ```php
 use App\User;

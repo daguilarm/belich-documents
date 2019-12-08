@@ -1,3 +1,11 @@
+---
+title: Archivo de configuración 
+description: Configurar el archivo de configuración de Belich
+extends: _layouts.documentation
+section: content
+locate: es
+---
+
 # Archivo de configuración
 
 El archivo de configuración, se genera en la carpeta de configuración de Laravel: `\config\belich.php`.
@@ -41,7 +49,7 @@ También podemos definir un icono por defecto en nuestra barra de navegación, u
 'defaultIcon' => 'caret-right',
 ```
 
-?>**Belich** utiliza [Font-awesome](https://origin.fontawesome.com/icons?d=gallery), por lo que solo tendrás que añadir el nombre del icono, tal y como se muestra en la página.
+>**Belich** utiliza [Font-awesome](https://origin.fontawesome.com/icons?d=gallery), por lo que solo tendrás que añadir el nombre del icono, tal y como se muestra en la página.
 
 ### Middleware
 

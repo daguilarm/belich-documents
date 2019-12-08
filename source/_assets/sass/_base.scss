@@ -50,13 +50,22 @@ h4,
 h5,
 h6 {
     @apply .leading-tight;
-    @apply .mb-4;
-    @apply .mt-8;
-    @apply .text-gray-900;
+    @apply .my-12;
+    @apply .text-gray-700;
 
     &:first-child {
         @apply .mt-0;
     }
+}
+
+h1:before,
+h2:before,
+h3:before,
+h4:before,
+h5:before,
+h6:before {
+    content: '#';
+    @apply text-gray-400 mr-1;
 }
 
 h1 {

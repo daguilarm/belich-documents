@@ -68,9 +68,15 @@
         </main>
 
         <script src="{{ mix('js/main.js', 'assets/build') }}"></script>
-
         @stack('scripts')
-
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                var linksTargetBlank = document.querySelectorAll('.link-out');
+                for (var i = 0; i < linksTargetBlank.length; i++) {
+                    linksTargetBlank[i].target = "_blank";
+                }
+            }, false);
+        </script>
         <footer class="bg-white text-center text-sm mt-12 py-4" role="contentinfo">
             <ul class="flex flex-col md:flex-row justify-center">
                 <li class="md:mr-2">

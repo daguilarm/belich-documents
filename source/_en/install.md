@@ -1,34 +1,34 @@
 ---
-title: Instalar Belich 
-description: Instalación del panel de administración Belich
+title: Install Belich 
+description: Belich administration panel installation
 extends: _layouts.documentation
 section: content
-locate: es
+locate: en
 ---
 
-# Instalar Belich 
+# Install Belich 
 
-### Instalar mediante composer
+### Install using composer
 
 ```php
 composer require daguilarm/belich
 ```
 
-### Crear migraciones 
+### Create migrations
 
 ```php
 php artisan migrate
 ```
 
-### Crear los seeders 
+### Create seeders
 
-Por defecto, **Belich** supone que cada usuario debe de tener un perfil con información adicional (como el avatar), aunque todo esto puede suprimirse si se desea (más información en el apartado *Configuración de la aplicación* que podrá encontrar aqui: [Configuración](/es/config.md)).
+By default, **Belich** assumes that each user must have a profile with additional information (such as the avatar), in any case, all this can be suppressed if desired (more information in the section *Application settings* that can be found here: [Configuration](/en/config.md)).
 
-Si desea crear los seeders para las bases de datos: `users` y `profiles`, deberá ir a `.\database\seeds` y crear el archivo:
+If you want to create the seeders for the databases: `users` and` profiles`, you must go to `.\Database\seeds` and create the file:
 
 - `UsersTableSeeder.php`
 
-Una vez creado, añádalo al archivo `DatabaseSeeder.php`. A modo de ejemplo, este podría ser su archivo:
+Once created, add it to the `DatabaseSeeder.php` file. As an example, this could be your file:
 
 ```php
 \database\seeds\UsersTableSeeder.php
@@ -51,7 +51,7 @@ class UsersTableSeeder extends Seeder
 }
 ```
 
-Ahora, hay que crear el archivo `factory`, para ello, vamos a `\database\factories` y creamos los archivos `ProfileFactory.php` y `UserFactory.php`. A modo de ejemplo, sus archivos podría ser así:
+Now, you have to create the file `factory`, to do this, we go to`\database\ factories` and create the files `ProfileFactory.php` and ` UserFactory.php`. As an example, your files could be like this:
 
 ```php
 \database\seeds\UserFactory.php
@@ -92,18 +92,18 @@ $factory->define(\App\Profile::class, function (Faker $faker) {
 });
 ```
 
-### Actualizar las rutas.
+### Update the routes.
 
-Por defecto, el acceso a la autentificación de usuario se encuentra en `domain.com/dashboard/login`
+By default, access to user authentication can be found in `domain.com/dashboard/login`
 
-Podemos cambiarlo según nuestras necesidades, definiendo la ruta del directorio, en nuestro archivo `config\belich.php`, modificando la variable:
+We can change it according to our needs, defining the directory path, in our `config\belich.php` file, modifying the variable:
 
 ```php
 //This is the URI path where application will be accessible from
 'path' => '/dashboard',
 ```
 
-Y posteriormente, podemos definir nuestra ruta personalizada, desde el archivo `routes\web.php`, utilizando el siguiente código (para que por defecto nos redirija a la página de autentificación):
+And later, we can define our custom routes, from the `routes\web.php` file, using the following code (so that by default it redirects us to the authentication page):
 
 ```php
 Route::get('/', function () {
@@ -111,27 +111,27 @@ Route::get('/', function () {
 });
 ```
 
->Por defecto, **Belich** asigna la ruta `login` para su acceso identificado, esto puede llegar a generar un conflicto, por lo que puede modificarlo (reescribiéndo el campo name de la ruta) desde el archivo `\app\Belich\Routes.php`
+>By default, **Belich** assigns the `login` path for its identified access, this can lead to a conflict, so you can modify it (by rewriting the path name field) from the file: `\app\Belich\Routes.php`
 
-A modo de ejemplo:
+As an example:
 
 ```php
 Route::get(Belich::path() . '/login', 'Daguilarm\Belich\App\Http\Controllers\Auth\LoginController@showLoginForm')->name('myproject.login');
 ```
 
-### Publicar componentes 
+### Publish components
 
 ```php
 php artisan vendor:publish --provider="Daguilarm\Belich\ServiceProvider"
 ```
 
-### Limpiar vistas y cache 
+### Clear views and cache
 
 ```php
 php artisan view:clear && php artisan cache:clear
 ```
 
-### Actualizar composer
+### Update composer
 
 ```php
 composer dump-autoload

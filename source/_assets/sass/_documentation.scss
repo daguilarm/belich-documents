@@ -1,12 +1,27 @@
-.DocSearch-content > ul li {
-    @apply m-4;
+.DocSearch-content > ul,
+.DocSearch-content > ol {
+    @apply m-6;
 }
 
-.DocSearch-content > ul {
-    @apply m-6;
+.DocSearch-content > ul li{
+    @apply m-4;
     list-style: square;
 }
 
+.DocSearch-content > ol li {
+    @apply m-4;
+    list-style: upper-roman;
+}
+
+.DocSearch-content > ul li ul li {
+    @apply mx-8;
+    list-style: circle;
+}
+
+.DocSearch-content > ol li ol li {
+    @apply mx-8;
+    list-style: lower-alpha;
+}
 // Code
 p, pre {
     @apply my-6;

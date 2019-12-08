@@ -3,7 +3,7 @@ title: Estado del proyecto
 description: Situación actual del proyecto Belich
 extends: _layouts.documentation
 section: content
-locate: es
+locate: en
 folder: home
 ---
 
