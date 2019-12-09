@@ -1,6 +1,15 @@
-# Gestión de campos de archivo/imagen
+---
+title: Gestión de campos de archivo o imagen
+description: Gestión de campos de formulario para archivos o imagenes
+extends: _layouts.documentation
+section: content
+locate: es
+folder: fields
+---
 
-Los campos soportados por Belich, son:
+# Gestión de campos de archivo o imagen
+
+Los campos soportados por **Belich**, son:
 
 - `File`
 - `Image`
@@ -36,11 +45,11 @@ Podemos utilizar los siguientes métodos:
 - `storeMime($tableName)`, guarda en la base de datos el tipo MIME del archivo, en el campo que asignamos a través de la variable: `$tableName`.
 - `multiple()`, permite añadir multiples archivos desde un solo campo.
 
-?>Importante: debemos crear en nuestra base de datos, los campos necesarios para guardar los valores de los métodos anteriormente comentados.
+>Importante: debemos crear en nuestra base de datos, los campos necesarios para guardar los valores de los métodos anteriormente comentados.
 
 ### Campo Image 
 
-Idéntico que el campo file, pero con la particularidad, de que en las vistas `index` y `show`, renderizará la imagen en html si así lo queremos.
+Idéntico que el campo file, pero con la particularidad, de que en las vistas `index` y `show`, renderizará la imagen en `html` si así lo queremos.
 
 ```php
 use Daguilarm\Belich\Fields\Types\Image;
@@ -88,8 +97,6 @@ Debería mostrar:
 <img class="block h-10 rounded-full shadow-md" src="https://belich-dashboard.test/storage/1572122314php9SkNQY.png" alt="My image alt">
 ```
 
-- `addCss()`: Este método nos permitirá añadir las clases `css` que necesitemos a nuestra imagen. 
-
 El aspecto de las imágenes (thumbnails), puede modificarse desde el archivo: `resources/views/vendor/belich/components/thumbnails.blade.php`
 
 El archivo tiene el siguiente aspecto:
@@ -102,11 +109,12 @@ El archivo tiene el siguiente aspecto:
 >
 ```
 
-?>**Importante**: No olvide configurar en su archivo `Policy` el método `file()`, en caso contrario, le será imposible ver las imáges y gestionar los archivos, ya que no tendrá los permisos adecuados.
+>**Importante**: No olvide configurar en su archivo `Policy` el método `file()`, en caso contrario, le será imposible ver las imáges y gestionar los archivos, ya que no tendrá los permisos adecuados.
 
 <div class="tip">
     <b>Métodos no recomendados</b> (O no funcionan o no tiene sentido utilizarlos)
     <u>
+        <li>addClass()</li>
         <li>addHtml()</li>
         <li>autofocus()</li>
         <li>defaultValue()</li>
