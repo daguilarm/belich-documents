@@ -1,6 +1,6 @@
 ---
-title: Campos de formularios 
-description: Gestión de campos de formulario
+title: Tipos de campo generales 
+description: Gestión de campos de formulario generales
 extends: _layouts.documentation
 section: content
 locate: es
@@ -13,12 +13,12 @@ folder: fields
 
 Los campos específicos soportados por **Belich**, son:
 
-- [Autocomplete](/es/fields/autocomplete.md)
-- [File](/es/fields/files.md)
-- [Image](/es/fields/files.md#Image)
-- [Panels](/es/fields/panels.md)
-- [Pattern](/es/fields/patterns.md)
-- [Tabs](/es/fields/tabs.md)
+- [Autocomplete](fields/autocomplete)
+- [File](fields/files)
+- [Image](fields/files.md#image)
+- [Panels](fields/panels)
+- [Pattern](fields/patterns)
+- [Tabs](fields/tabs)
 
 Los campos genéricos soportados por **Belich**, son:
 
@@ -45,19 +45,18 @@ Los campos genéricos soportados por **Belich**, son:
 
 Cada campo, puede disponer de métodos exclusivos para cada uno de ellos. A continuación, explicamos estós métodos a la vez que explicamos, de forma individual, cada uno de los tipos de campo.
 
-?>Todos los campos que admiten decimales: `Decimal()`, `Number()` o `Coordenates()`, utilizan la etiqueta `<html lang="en">` de la cabecera de la web, para utilizar el separador adecuado: coma o punto. 
-
+>Todos los campos que admiten decimales: `Decimal()`, `Number()` o `Coordenates()`, utilizan la etiqueta `<html lang="en">` de la cabecera de la web, para utilizar el separador adecuado: coma o punto. 
 
 ### Campo Boolean 
 
 Nos permite generar un `checkbox` que admite los valores: verdadero o falso.
 
-![Boolean example - 1](../../images/fields/boolean-1.png)
+![Boolean example - 1](../../../assets/images/fields/boolean-1.png)
 <div id="legend"><b>fig 1</b>: Ejemplo de campo boleano</div>
 
 Este campo se visualiza en las vistas `index` y `show` de la siguiente forma:
 
-![Boolean example - 2](../../images/fields/boolean-2.png)
+![Boolean example - 2](../../../assets/images/fields/boolean-2.png)
 <div id="legend"><b>fig 2</b>: Ejemplo de campo boleano</div>
 
 Pero a veces nos interesa que en estas vistas (`index` y `show`), en vez de mostrarle un valor activo o no, se muestre un texto para cuando está activo y otro para cuando esta desactivado. Veamos un ejemplo:
@@ -80,9 +79,9 @@ public function fields(Request $request) {
 }
 ```
 
-?>Si ambos métodos no tienen un valor asignado, no se mostrará ninguno de los dos.
+>Si ambos métodos no tienen un valor asignado, no se mostrará ninguno de los dos.
 
-?>Este campo se guarda automáticamente como `bool`. Puede consultar la sección [Tipos](/es/fields/cats.md) para modificar el valor.
+>Este campo se guarda automáticamente como `bool`. Puede consultar la sección [Tipos](/es/fields/cats.md) para modificar el valor.
 
 Se puede seleccionar el color del campo, el sistema solo permite los colores: `green`, `blue` y `red`, el valor por defecto es `green`. La variable color, puede asignarse de la siguiente forma:
 
@@ -204,7 +203,7 @@ Esto es necesario para determinar la componente cardinal de la coordenada: N, S,
 - lng 
 - longitude
 
-![Coordenadas](../../images/fields/coordenate.png)
+![Coordenadas](../../../assets/images/fields/coordenate.png)
 <div id="legend"><b>fig 3</b>: Ejemplo de campo para coordenadas</div>
 
 <div class="tip">
@@ -229,7 +228,7 @@ A partir del archivo de idioma ubicado en `./resources/lang/vendor/belich/metric
     ...
 ```
 
-?>Por supuesto, se puede modificar este archivo de idioma, y por tanto, ampliar o cambiar cualquier nombre o código.
+>Por supuesto, se puede modificar este archivo de idioma, y por tanto, ampliar o cambiar cualquier nombre o código.
 
 El sistema convertirá el `array` anterior con los paises, en un `array` listo para ser usuado por el campo `<datalist></datalist>`:
 
@@ -259,10 +258,10 @@ public function fields(Request $request) {
 
 Mostrando:
 
-![Countries example](../../images/fields/countries.png)
+![Countries example](../../../assets/images/fields/countries.png)
 <div id="legend"><b>fig 4</b>: Ejemplo de campo para paises</div>
 
-?>El campo `Country` no soporta los métodos: `prefix()`, `sufix()` y `displayUsing()`.
+>El campo `Country` no soporta los métodos: `prefix()`, `sufix()` y `displayUsing()`.
 
 <div class="tip">
     <b>Métodos no recomendados</b> (O no funcionan o no tiene sentido utilizarlos)
@@ -295,9 +294,9 @@ public function fields(Request $request) {
 }
 ```
 
-?>Si no indicamos el formato, utilizará el predefinido en el archivo `./config/belich.php`
+>Si no indicamos el formato, utilizará el predefinido en el archivo `./config/belich.php`
 
-?>Este campo se guarda automáticamente como objeto `Carbon\Carbon`. Puede consultar la sección [Tipos](/es/fields/cats.md) para modificar el valor.
+>Este campo se guarda automáticamente como objeto `Carbon\Carbon`. Puede consultar la sección [Tipos](/es/fields/cats.md) para modificar el valor.
 
 <div class="tip">
     <b>Métodos no recomendados</b> (O no funcionan o no tiene sentido utilizarlos)
@@ -330,9 +329,9 @@ public function fields(Request $request) {
 }
 ```
 
-?>Si no indicamos un número de decimales, el valor por defecto es: 2.
+>Si no indicamos un número de decimales, el valor por defecto es: 2.
 
-?>Este campo se guarda automáticamente como `float`. Puede consultar la sección [Tipos](/es/fields/cats.md) para modificar el valor.
+>Este campo se guarda automáticamente como `float`. Puede consultar la sección [Tipos](/es/fields/cats.md) para modificar el valor.
 
 <div class="tip">
     <b>Métodos no recomendados</b> (O no funcionan o no tiene sentido utilizarlos)
@@ -438,7 +437,7 @@ public function fields(Request $request) {
 }
 ```
 
-?>Los colores soportados son: black, white, red, yellow, blue, green, orange y teal, con sus respectivos grados de color. Ej: red-400, white, blue-800,...
+>Los colores soportados son: black, white, red, yellow, blue, green, orange y teal, con sus respectivos grados de color. Ej: red-400, white, blue-800,...
 
 También podemos añadir nuestro propio código `html`:
 
@@ -464,7 +463,7 @@ Hay que utilizar el método `asHtml()` para no escapar el código, y que se rend
 
 Un ejemplo de como quedarían los campos **Header**:
 
-![Header example](../../images/fields/header.png)
+![Header example](../../../assets/images/fields/header.png)
 <div id="legend"><b>fig 5</b>: Ejemplo de campo header personalizado</div>
 
 Este campo solo es accesible desde las vistas `edit` y `create`. Pero podemos añadir la vista show `show`, usando: 
@@ -537,7 +536,7 @@ public function fields(Request $request) {
 }
 ```
 
-?>Es solo un campo de visualización. No puede ser modificado y por tanto, no permite métodos adicionales, como el resto de campos de formulario.
+>Es solo un campo de visualización. No puede ser modificado y por tanto, no permite métodos adicionales, como el resto de campos de formulario.
 
 
 ### Campo Markdown
@@ -607,7 +606,7 @@ public function fields(Request $request) {
 
 Mostrando lo siguiente:
 
-![Markdown example](../../images/fields/markdown.png)
+![Markdown example](../../../assets/images/fields/markdown.png)
 <div id="legend"><b>fig 7</b>: Ejemplo de campo Markdown con preview</div>
 
 ### Campo Number 
@@ -677,10 +676,10 @@ public function fields(Request $request) {
 ```
 En este caso, no hay que enviar el valor mínimo ni el máximo, simplemente el intervalo de valores y el rando, aunque realmente, el valor: `step()`, ni siquiera sería necesario. A continuación, veamos como quedarían los dos ejemplos anteriores:
 
-![Range example](../../images/fields/range.png)
+![Range example](../../../assets/images/fields/range.png)
 <div id="legend"><b>fig 6</b>: Ejemplo de campos range</div>
 
-?>De momento, el uso del método: `options()`, no está soportando por todos los navegadores, por lo que su visualización, dependerá de esto. Mas información en: [Campo range](https://developer.mozilla.org/es/docs/Web/HTML/Elemento/input/range)
+>De momento, el uso del método: `options()`, no está soportando por todos los navegadores, por lo que su visualización, dependerá de esto. Mas información en: [Campo range](https://developer.mozilla.org/es/docs/Web/HTML/Elemento/input/range)
 
 ### Campo Select
 
@@ -822,7 +821,7 @@ public static $model = '\App\Models\Car';
 public static $relationships = ['location'];
 ```
 
-?>Este campo se guarda automáticamente como `string`. Puede consultar la sección [Tipos](/es/fields/cats.md) para modificar el valor.
+>Este campo se guarda automáticamente como `string`. Puede consultar la sección [Tipos](/es/fields/cats.md) para modificar el valor.
 
 ### Campo TextArea 
 
@@ -858,10 +857,10 @@ El campo `textarea`, soporta los siguientes métodos:
 - `count()`: Igual que `maxlength()`, pero además, muestra bajo el campo, el número de caracteres restantes hasta llegar al número máximo (figura 6).
 - `rows()`: nos permite definir el número de filas o líneas que tendrá nuestra área de texto.
 
-![TextArea example](../../images/fields/textarea.png)
+![TextArea example](../../../assets/images/fields/textarea.png)
 <div id="legend"><b>fig 7</b>: Ejemplo de textarea con caracteres restantes</div>
 
-?>Este campo se guarda automáticamente como `string`. Puede consultar la sección [Tipos](/es/fields/cats.md) para modificar el valor.
+>Este campo se guarda automáticamente como `string`. Puede consultar la sección [Tipos](fields/casts) para modificar el valor.
 
 <div class="tip">
     <b>Métodos no recomendados</b> (O no funcionan o no tiene sentido utilizarlos)
@@ -924,4 +923,4 @@ public function fields(Request $request) {
 }
 ```
 
-?>Este campo se guarda automáticamente como objeto `Carbon\Carbon`. Puede consultar la sección [Tipos](/es/fields/cats.md) para modificar el valor.
+>Este campo se guarda automáticamente como objeto `Carbon\Carbon`. Puede consultar la sección [Tipos](fields/casts) para modificar el valor.

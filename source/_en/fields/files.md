@@ -14,7 +14,7 @@ The fields supported by **Belich**, are:
 - `File`
 - `Image`
 
-### File 
+### File{#file}  
 
 It allows us to manage files, and be stored on our disk.
 
@@ -47,7 +47,7 @@ We can use the following methods:
 
 >Important: we must create in our database, the necessary fields to save the values of the previously mentioned methods.
 
-### Image 
+### Image{#image}  
 
 Identical that the file field, but with the particularity that in the views: `index` and `show`, will render the image in `html`, if we want...
 

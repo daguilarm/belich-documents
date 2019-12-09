@@ -14,7 +14,7 @@ Los campos soportados por **Belich**, son:
 - `File`
 - `Image`
 
-### Campo File 
+### Campo File{#file} 
 
 Nos permite gestionar archivos, y ser almacenados en nuestro disco.
 
@@ -47,7 +47,7 @@ Podemos utilizar los siguientes métodos:
 
 >Importante: debemos crear en nuestra base de datos, los campos necesarios para guardar los valores de los métodos anteriormente comentados.
 
-### Campo Image 
+### Campo Image{#image}  
 
 Idéntico que el campo file, pero con la particularidad, de que en las vistas `index` y `show`, renderizará la imagen en `html` si así lo queremos.
 
