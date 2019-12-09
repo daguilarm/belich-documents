@@ -111,8 +111,10 @@ El archivo tiene el siguiente aspecto:
 
 >**Importante**: No olvide configurar en su archivo `Policy` el método `file()`, en caso contrario, le será imposible ver las imáges y gestionar los archivos, ya que no tendrá los permisos adecuados.
 
-<div class="tip">
-    <b>Métodos no recomendados</b> (O no funcionan o no tiene sentido utilizarlos)
+<div class="blockquote-alert">
+    <div class="title">
+        <strong>Métodos no recomendados</strong> (O no funcionan o no tiene sentido utilizarlos)
+    </div>
     <u>
         <li>addClass()</li>
         <li>addHtml()</li>

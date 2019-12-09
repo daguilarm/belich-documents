@@ -168,8 +168,10 @@ Autocomplete::make('Status', 'status')
     ->storeId(),
 ```
 
-<div class="tip">
-    <b>Métodos no recomendados</b> (O no funcionan o no tiene sentido utilizarlos)
+<div class="blockquote-alert">
+    <div class="title">
+        <strong>Métodos no recomendados</strong> (O no funcionan o no tiene sentido utilizarlos)
+    </div>
     <u>
         <li>displayUsing()</li>
         <li>prefix()</li>

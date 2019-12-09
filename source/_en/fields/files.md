@@ -111,8 +111,10 @@ The file looks like this:
 
 >**Important**: Do not forget to configure the `file()` method in your `Policy` file, otherwise you will not be able to see the images and manage the files, since you will not have the appropriate permissions.
 
-<div class="tip">
-    <b>Not recommended methods</b> (Either they don't work or it makes no sense to use them)
+<div class="blockquote-alert">
+    <div class="title">
+        <strong>Not recommended methods</strong> (Either they don't work or it makes no sense to use them)
+    </div>
     <u>
         <li>addClass()</li>
         <li>addHtml()</li>

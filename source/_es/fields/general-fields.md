@@ -13,12 +13,12 @@ folder: fields
 
 Los campos específicos soportados por **Belich**, son:
 
-- [Autocomplete](fields/autocomplete)
-- [File](fields/files)
-- [Image](fields/files.md#image)
-- [Panels](fields/panels)
-- [Pattern](fields/patterns)
-- [Tabs](fields/tabs)
+- [Autocomplete](autocomplete)
+- [File](files)
+- [Image](files.md#image)
+- [Panels](panels)
+- [Pattern](patterns)
+- [Tabs](tabs)
 
 Los campos genéricos soportados por **Belich**, son:
 
@@ -92,8 +92,10 @@ Boolean::make('Status', 'status')
 
 Este campo es editable, en las vistas: `edit` y `create`.
 
-<div class="tip">
-    <b>Métodos no recomendados</b> (O no funcionan o no tiene sentido utilizarlos)
+<div class="blockquote-alert">
+    <div class="title">
+        <strong>Métodos no recomendados</strong> (O no funcionan o no tiene sentido utilizarlos)
+    </div>
     <u>
         <li>addClass()</li>
         <li>autofocus()</li>
@@ -206,8 +208,10 @@ Esto es necesario para determinar la componente cardinal de la coordenada: N, S,
 ![Coordenadas](../../../assets/images/fields/coordenate.png)
 <div id="legend"><b>fig 3</b>: Ejemplo de campo para coordenadas</div>
 
-<div class="tip">
-    <b>Métodos no recomendados</b> (O no funcionan o no tiene sentido utilizarlos)
+<div class="blockquote-alert">
+    <div class="title">
+        <strong>Métodos no recomendados</strong> (O no funcionan o no tiene sentido utilizarlos)
+    </div>
     <u>
         <li>displayUsing()</li>
         <li>prefix()</li>
@@ -263,8 +267,10 @@ Mostrando:
 
 >El campo `Country` no soporta los métodos: `prefix()`, `sufix()` y `displayUsing()`.
 
-<div class="tip">
-    <b>Métodos no recomendados</b> (O no funcionan o no tiene sentido utilizarlos)
+<div class="blockquote-alert">
+    <div class="title">
+        <strong>Métodos no recomendados</strong> (O no funcionan o no tiene sentido utilizarlos)
+    </div>
     <u>
         <li>autofocus()</li>
         <li>displayUsing()</li>
@@ -298,8 +304,10 @@ public function fields(Request $request) {
 
 >Este campo se guarda automáticamente como objeto `Carbon\Carbon`. Puede consultar la sección [Tipos](/es/fields/cats.md) para modificar el valor.
 
-<div class="tip">
-    <b>Métodos no recomendados</b> (O no funcionan o no tiene sentido utilizarlos)
+<div class="blockquote-alert">
+    <div class="title">
+        <strong>Métodos no recomendados</strong> (O no funcionan o no tiene sentido utilizarlos)
+    </div>
     <u>
         <li>asHtml()</li>
         <li>displayUsing()</li>
@@ -333,8 +341,10 @@ public function fields(Request $request) {
 
 >Este campo se guarda automáticamente como `float`. Puede consultar la sección [Tipos](/es/fields/cats.md) para modificar el valor.
 
-<div class="tip">
-    <b>Métodos no recomendados</b> (O no funcionan o no tiene sentido utilizarlos)
+<div class="blockquote-alert">
+    <div class="title">
+        <strong>Métodos no recomendados</strong> (O no funcionan o no tiene sentido utilizarlos)
+    </div>
     <u>
         <li>displayUsing()</li>
         <li>prefix()</li>
@@ -862,8 +872,10 @@ El campo `textarea`, soporta los siguientes métodos:
 
 >Este campo se guarda automáticamente como `string`. Puede consultar la sección [Tipos](fields/casts) para modificar el valor.
 
-<div class="tip">
-    <b>Métodos no recomendados</b> (O no funcionan o no tiene sentido utilizarlos)
+<div class="blockquote-alert">
+    <div class="title">
+        <strong>Métodos no recomendados</strong> (O no funcionan o no tiene sentido utilizarlos)
+    </div>
     <u>
         <li>defaultValue()</li>
         <li>displayUsing()</li>
