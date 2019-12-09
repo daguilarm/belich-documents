@@ -1,25 +1,25 @@
 ---
-title: Validación de campos 
-description: Gestión de campos de formulario para su validación
+title: Field validation
+description: Managing form fields for validation
 extends: _layouts.documentation
 section: content
-locate: es
+locate: en
 folder: fields
 ---
 
-# Validación de campos 
+# Field validation
 
-**Belich** dispone de una serie de métodos que nos permitirán añadir reglas de validación a los campos de nuestros recursos. Estos métodos son genéricos, y se aplican a todos los tipos de campo.
+**Belich** has a number of methods that will allow us to add validation rules to the fields of our resources. These methods are generic, and apply to all field types.
 
-El método principal, para asignar reglas, es el método: `rules()`, con el que podemos indicar las reglas de validación de cada campo. Utilizando para ello, las mismas reglas que utiliza **Laravel**.
+The main method, to assign rules, is the method: `rules()`, with which we can indicate the validation rules of each field. Using for it, the same rules using by **Laravel**.
 
-Los métodos soportados son:
+The methods supported are:
 
 - `rules()`
 - `creationRules()`
 - `updateRules()`
 
-A modo de ejemplo:
+As an example:
 
 ```php
 /**
@@ -39,11 +39,11 @@ public function fields(Request $request) {
 }
 ```
 
-En el primer caso, al utilizar el método `rules()` indicamos que esas reglas son tanto para cuando *creamos* como para cuando *editamos*.
+In the first case, when using the `rules()` method, we indicate that those rules are both for when we *create* and for when we *edit* a form.
 
-Mientras que en el segundo caso, estamos definiendo reglas diferentes para cuando *creamos* y para cuando *editamos*.
+While in the second case, we are defining different rules for when we *create* and for when we *edit*.
 
-Podemos añadir reglas personalizadas, por ejemplo:
+We can add custom rules, for example:
 
 ```php
 use Illuminate\Validation\Rule;
