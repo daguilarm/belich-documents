@@ -1,3 +1,12 @@
+---
+title: Campos de formularios 
+description: Gestión de campos de formulario
+extends: _layouts.documentation
+section: content
+locate: es
+folder: fields
+---
+
 # Tipos de campo generales
 
 **Belich**, dispone de una amplia lista de campos predefinidos. Los hemos divido en dos tipos, los genéricos (que son de los que hablaremos en este punto), y los específicos, los cuales, por su complejidad o peculiaridades, los hemos confinado su propia sección. 

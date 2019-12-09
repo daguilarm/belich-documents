@@ -1,17 +1,17 @@
 ---
-title: Autorización de campos de formulario
-description: Gestión de campos de formulario para autorización
+title: Authorization of form fields
+description: Management of form fields for authorization
 extends: _layouts.documentation
 section: content
-locate: es
+locate: en
 folder: fields
 ---
 
-# Autorización de campos de formulario
+# Authorization of form fields
 
-Belich permite añadir autorización a los diferentes campos, a través del método `canSee()`.
+Belich allows to add authorization to the different fields, through the method `canSee()`.
 
-La sintaxis será: 
+The syntax will be: 
 
 ```php
 /**
@@ -30,7 +30,7 @@ public function fields(Request $request) {
 }
 ```
 
-A través de la variable `$request`, podremos acceder al usuario: 
+Through the variable `$request`, we can access to the user: 
 
 ```php
 /**
@@ -49,4 +49,4 @@ public function fields(Request $request) {
 }
 ```
 
-Lo cual nos permitirá, mostrar u ocultar el campo en función de roles, permisos, etc...
+Which will allow us to show or hide the field based on roles, permissions, etc ...

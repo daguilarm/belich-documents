@@ -7,7 +7,7 @@ locate: es
 folder: facades/belich
 ---
 
-# Facades de belich - blade
+# Belich facade - blade
 
 En esta sección, encontraremos métodos para renderizar código HTML.
 

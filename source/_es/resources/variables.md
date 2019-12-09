@@ -1,21 +1,30 @@
+---
+title: Recursos - Variables disponibles
+description: Gestión de recursos con Belich. Variables disponibles
+extends: _layouts.documentation
+section: content
+locate: es
+folder: resources
+---
+
 # Variables disponibles
 
 A continuación se detallan todos las variables de configuración disponibles para un recurso.
 
 ### accessToResource
 
-Esta variable, nos va a permitir deshabilitar el acceso a un recurso, y evitar por tanto, que esté disponible para navegación, aunque podremos utilizarlo para generar relaciones con otros recursos.
+Esta variable, nos va a permitir deshabilitar el acceso a un recurso, y evitar por tanto, que esté disponible para navegación.
 
 ```php
 /** @var bool */
 public static $accessToResource = false;
 ```
 
-Esta variable está activada por defecto, por lo que no es necesario añadirla.
+Esta variable está activada (con el valor *true*) por defecto, por lo que no es necesario añadirla.
 
 ### actions
 
-**Belich** dispone de una serie de archivos `blade`, que están ubicados en la carpeta: `\resources\views\actions\`. En estos archivos se encuentran los botones de accion, que aparecerán en le `index` de los recursos:
+**Belich** dispone de una serie de archivos `blade`, que están ubicados en la carpeta: `\resources\views\actions\`. En estos archivos se encuentran los botones de acción, que aparecerán en la vista `index` de los recursos:
 
 ```php
 @can('view', $model)
@@ -33,18 +42,18 @@ Esta variable está activada por defecto, por lo que no es necesario añadirla.
 
 Por defecto, **Belich** accede al archivo `default.blade.php`, pero podemos crear (en dicha carpeta), nuestro propio archivo personalizado para ser utilizado en nuestro recurso, de forma, que podemos crear diferentes archivos para cada recurso.
 
-Ahora, solo tenemos que indicarle a **Belich** que archivo utilizar en cada recurso:
+Ahora, solo tenemos que indicarle a **Belich** que archivo utilizar en cada recurso, por ejemplo, si creamos un nuevo archivo (en la carpeta), llamado `newAction.blade.php`:
 
 ```php
 /** @var string */
 public static $actions = 'newAction';
 ```
 
-?>Solo utilizar esta variable, si deseamos cambiar el archivo por defecto.
+>Solo utilizar , si deseamos cambiar el archivo por defecto.
 
 ### Controller actions 
 
-A veces, necesitamos que un formulario envie la información a un controlador personalizado, en vez de usar el congrolador **CRUD** por defecto de **Belich**. Para ello, tendremos que indicar la ubicación del controlador, de la siguiente forma:
+A veces, necesitamos que un formulario envie la información a un controlador personalizado, en vez de usar el controlador **CRUD** por defecto de **Belich**. Para ello, tendremos que indicar la ubicación del controlador, de la siguiente forma:
 
 ```php
 /**
@@ -76,7 +85,7 @@ Sirve para indicar si queremos que el recurso aparezca en los menus: tanto el su
 public static $displayInNavigation = true;
 ```
 
-Esta variable está activada por defecto, por lo que no es necesario añadirla.
+Esta variable está activada (con el valor *true*) por defecto, por lo que no es necesario añadirla.
 
 ### downloable
 
@@ -87,7 +96,7 @@ Sirve para indicar si el recurso puede ser exportado a los diferentes formatos d
 public static $downloable = true;
 ```
 
-Esta variable está activada por defecto, por lo que no es necesario añadirla.
+Esta variable está activada (con el valor *true*) por defecto, por lo que no es necesario añadirla.
 
 ### group
 
@@ -107,8 +116,7 @@ Si lo dejamos en blanco, se considerará el recurso como raiz, y no se le asigna
 \Resource 3
 ```
 
-
-### $icon
+### icon
 
 Podemos asociar nuestro recurso con un icono de [Font-Awesome](https://origin.fontawesome.com). Para ello, debemos hacer lo siguiente:
 
@@ -119,9 +127,7 @@ public static $icon = 'user-friends';
 
 Simplemente debemos indicar el nombre que usa `fontawesome` para el icono.
 
-?>Este valor esta desactivado por defecto, por lo que debemos indicarle el nombre del icono si queremos que se muestre.
-
-$redirectTo = 'index, create, detail, edit';
+>Este valor esta desactivado por defecto, por lo que debemos indicarle el nombre del icono si queremos que se muestre.
 
 ### Nombre del recurso 
 
@@ -137,7 +143,7 @@ public static $label = 'User';
 public static $pluralLabel = 'Users';
 ```
 
-?>Si las dejamos en blanco, el sistema identificará el recurso con el nombre del archivo, y su versión en plural.
+>Si las dejamos en blanco, el sistema identificará el recurso con el nombre del archivo, y su versión en plural.
 
 ### model
 
@@ -148,7 +154,7 @@ Debemos indicarle a **Belich** qué modelo utilizar y donde está ubicado:
 public static $model = '\App\User';
 ```
 
-!>Este campo es obligatorio
+>Este campo es obligatorio
 
 ### redirectTo 
 
@@ -166,11 +172,13 @@ Hay que indicarle la acción que queremos que resuelva. Las acciones disponibles
 - **create** 
 - **update**
 
-?>Por defecto, Belich direccionará al index.
+>Por defecto, **Belich** direccionará al index.
 
 ### relationships 
 
 Para evitar problemas de N+1 en las consultas a la base de datos, y utilizar `eager loading`, debemos indicarle a **Belich** que relaciones debe añadir a la consulta a la base de datos que realizará el modelo.
+
+>Solo cuando usemos campos tipo `Text` y queramos obtener los datos de un campo relacional (por ejemplo, si estamos mostrando los datos del usuario, y queremos mostrar un dato que está en su perfil). En caso contrario, diponemos de campos relacionales directos, como son: `HasOne`, `HasMany`, `BelongsTo`,...
 
 ```php
 /** @var array */
@@ -195,4 +203,4 @@ Debemos indicarle a **Belich**, si nuestro modelo incluye `softdeletes`. Si es a
 public static $softDeletes = true;
 ```
 
-?>Por defecto está desactivado.
+>Por defecto está desactivado.

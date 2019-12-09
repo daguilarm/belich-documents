@@ -7,7 +7,7 @@ locate: es
 folder: facades/belich
 ---
 
-# Fachadas (facades) de belich: Modelos
+# Belich facade: Modelos
 
 #### getModel()
 

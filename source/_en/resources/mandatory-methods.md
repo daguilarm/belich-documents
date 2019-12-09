@@ -1,10 +1,19 @@
-# Métodos obligatorios
+---
+title: Resources - Mandatory methods
+description: Resource management with Belich. Mandatory Methods
+extends: _layouts.documentation
+section: content
+locate: en
+folder: resources
+---
 
-Disponemos de una serie de métodos que deben incluirse de forma obligatoria en cada recurso:
+# Mandatory methods
+
+We have a series of methods that must be included in each resource:
 
 ### fields()
 
-Este método, nos permitirá generar los diferentes campos de cada recurso:
+This method will allow us to generate the different form fields of each resource:
 
 ```php
 /**
@@ -44,11 +53,11 @@ public function fields(Request $request) {
 }
 ```
 
-Puede encontrar más información en: [Campos de formulario](Fields.md), donde se especifican todas las opciones disponibles.
+You can find more information at: [Form fields](../fields/intro), where all available options are specified.
 
 ### cards() 
 
-Sirve par indicarle al recurso que componentes (card) debe de incluir:
+It serves to indicate to the resource which components (cards) should include:
 
 ```php
 /**
@@ -62,11 +71,11 @@ public static function cards(Request $request) {
 }
 ```
 
-Puede encontrar más información en: [Cards](Cards.md), donde se especifican todas las opciones disponibles.
+You can find more information at: [Cards](../cards/card), where all available options are specified.
 
 ### metrics()
 
-Sirve par indicarle al recurso que métricas debe de incluir:
+It serves to indicate to the resource what metrics should include:
 
 ```php
 /**
@@ -84,11 +93,11 @@ public static function metrics(Request $request) {
 }
 ```
 
-Puede encontrar más información en: [Gráficas y estadísticas](Metrics.md), donde se especifican todas las opciones disponibles.
+You can find more information at: [Graphs and Metrics](../metrics/metrics), where all available options are specified.
 
-### Asignar ancho a Gráficas y Cards desde el recurso
+### Assign width to Graphics and Cards from the resource
 
-También se puede asignar el ancho de la métrica (o card) directamente desde aquí, sin necesidad de configurar el archivo de la métrica. A modo de ejemplo (válido para ambos):
+You can also assign the width of the metric (or card) directly from here, without the need to configure the metric (or card) file. As an example (valid for both):
 
 ```php
 /**

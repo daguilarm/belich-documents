@@ -11,7 +11,7 @@ folder: facades/belich
 
 #### allowedActions() 
 
-Devuelve un array con las acciones soportadas por Belich, como son (de momento):
+Devuelve un array con las acciones soportadas por **Belich**, como son (de momento):
 
 - index
 - create 
@@ -32,7 +32,7 @@ Es el path de la aplicación. Se obtiene del archivo de configuración: `.\confi
 
 #### pathName()
 
-Si al ejecutar el método anterior `path()`, obtenemos la carpeta (por ejemplo) `dashboard/`, al llamar al método `pathName`, obtendremos `dashboard` sin la barra.
+Si al ejecutar el método anterior: `path()` obtenemos la carpeta (por ejemplo) `dashboard/`, al llamar al método `pathName`, obtendremos `dashboard` sin la barra.
 
 #### url() 
 
@@ -40,4 +40,4 @@ Es la url base de la aplicación. Se obtiene del archivo de configuración: `.\c
 
 #### version() 
 
-Nos devuelve la versión action del package.
+Nos devuelve la versión actual del package.

@@ -31,20 +31,21 @@ return [
                     'Render||Visualización' => '_location_/facades/chart/render',
                 ]
             ],
-            'Helper||Helper' => '_location_/facades/helper/default',
+            'Helper||Helper' => '_location_/facades/helper/helpers',
         ],
     ],
     'Resources||Recursos' => [
+        'url' => '_location_/artisan',
         'children' => [
             'Variables||Variables' => '_location_/resources/variables',
-            'Methods||Métodos' => '_location_/resources/methods',
+            'Methods||Métodos' => '_location_/resources/mandatory-methods',
         ]
     ],
     'Fields||Campos' => [
-        'url' => '_location_/fields/intro',
+        'url' => '_location_/fields/field-default',
         'children' => [
-            'Methods||Métodos' => '_location_/fields/methods',
-            'Variables||Autentificación' => '_location_/fields/auth',
+            'General methods||Métodos generales' => '_location_/fields/methods',
+            'Authorization||Autorización' => '_location_/fields/auth',
             'Autocomplete||Autocompletar' => '_location_/fields/autocomplete',
             'Files/Img||Archivos/Img' => '_location_/fields/files',
             'Conditional||Condicionales' => '_location_/fields/conditional',

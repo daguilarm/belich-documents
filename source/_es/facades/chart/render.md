@@ -1,18 +1,27 @@
+---
+title: Fachadas (facades) de belich - Renderizar gráficas
+description: Gestionando fachadas de belich para remderizar las gráficas
+extends: _layouts.documentation
+section: content
+locate: es
+folder: facades/chart
+---
+
 # Chart Facade: mostrar gráfica
 
-Mostremos primero un ejemplo:
+La forma de mostrar una gráfica en nuestro *template* **Blade**, es de la siguiente manera:
 
 ```php
 {!! Chart::render($request) !!}
 ```
 
-Belich ya realiza esta operación por defecto, en el template ubicado en `resources\views\vendor\belich\dashboard\index.blade.php`.
+**Belich** ya realiza esta operación por defecto, de hecho, hace esta llamada en el template ubicado en `resources\views\vendor\belich\dashboard\index.blade.php`.
 
-En caso de necesitar generar otras gráficas, sólo tenemos que llamar al método `render()` y pasarle la variable `$request`. 
+En caso de necesitar generar nuestras propias gráficas, sólo tendremos que llamar al método `render()` y pasarle la variable `$request`, tal y como se ha mostrado en el ejemplo anterior. 
 
-Si disponemos de nuestra propia lógica, debemos tener en cuenta, que el sistema buscará en la variable `$request`, el objecto `$request->metrics`, por lo tanto debemos incluirlo.
+Si disponemos de nuestra propia lógica, debemos tener en cuenta que el sistema buscará en la variable `$request`, el objecto `$request->metrics`, por lo tanto debemos incluirlo.
 
-A modo de ejemplo y para entender mejor el funcionamiento del método `render()`, se muestra el código a continuación:
+A modo de ejemplo y para entender mejor el funcionamiento del método `render()`, se muestra el código que se ejecuta en el método:
 
 ```php
 /**

@@ -1,17 +1,17 @@
 ---
-title: Métodos genéricos soportados 
-description: Gestión de métodos genéricos para campos de formulario
+title: Generic methods supported 
+description: Management of generic methods for form fields
 extends: _layouts.documentation
 section: content
-locate: es
+locate: en
 folder: fields
 ---
 
-# Métodos genéricos soportados
+# Generic methods supported
 
-En este apartado, veremos los métodos genéricos soportados por **Belich**. Estos métodos, pueden ser utilizados en la mayoría de campos de formulario  (aunque siempre hay excepciones).
+In this section, we will see the generic methods supported by **Belich**. These methods can be used in most of the form fields (although there are always exceptions).
 
-Los métodos genéricos soportados actualmente, son:
+The generic methods currently supported are:
 
 - `asHtml()`
 - `addClass()`
@@ -36,7 +36,7 @@ Los métodos genéricos soportados actualmente, son:
 - `suffix()`
 - `textAlign()`
 
-Veamos un ejemplo completo:
+Let's see a complete example:
 
 ```php
 /**
@@ -65,7 +65,7 @@ public function fields(Request $request) {
 }
 ```
 
-Debería mostrar:
+Should show:
 
 ```html
 <label>Email</label>
@@ -73,22 +73,22 @@ Debería mostrar:
 <div class="help">Enter a valid email</div>
 ```
 
->**Importante**: Los campos `help()` e `info()`, permiten la utilización directa de `html`, por lo que podríamos hacer algo así:
+>**Important**: The `help()` and `info()` fields allow the direct use of `html`, so we could do something like this:
 
 ```php
 Text::make('Email', 'email')
     ->help('<h1>Use a valid email!</h1>, more info: <a href="http://info.net">more info</a>'),
 ```
 
-Faltarían los métodos: `asHtml()` y `sortable()`. 
+Finally, we would lack the methods: `asHtml()` and `sortable()`. 
 
-El primero, nos permite devolver a las vistas `index` y `show` el resultado como si fuera `HTML`, es decir: sin escapar, y por tanto, ejecutado como código `HTML`.
+The first one, allows us to return the results to the views: `index` and `show`as a `HTML`: without escaping, and therefore, executed as `HTML` code.
 
-El segundo método (`sortable()`), nos indica que en la vista `index`, la columna de la tabla correspondiente a este campo, puede ser ordenada de mayor a menor o a la inversa.
+The second method (`sortable()`), tells us that in the view `index`, the column of the table corresponding to this field can be ordered from highest to lowest or vice versa.
 
-Los métodos `sortable()`, `readonly()` y `disabled()`, soportan valores boleanos, es decir, podemos añadir condiciones para que se muestren. Eso si, si el valor no es boleano, dará error. 
+The methods: `sortable()`, `readonly()` and `disabled()`, support Boolean values, that is, we can add conditions to be displayed. Of course, if the value is not Boolean, it will give error.
 
-A modo de ejemplo:
+As an example:
 
 ```php
 /**
@@ -105,9 +105,9 @@ public function fields(Request $request) {
 }
 ```
 
-Disponemos también de un método llamado: `displayUsing()`, el cual nos permitirá formatear el valor de nuestro campo (en las vistas `index` y `show`), realizando un *callback* y permitiéndonos manipular el valor del campo. 
+We also have a method called: `displayUsing()`, which will allow us to format the value of our field (in the views: `index` and `show`), making a callback and allowing us to manipulate the value of the field. 
 
-Este método se usaría de la siguiente forma:
+This method would be used as follows:
 
 ```php
 /**
@@ -126,9 +126,9 @@ public function fields(Request $request) {
 }
 ```
 
-Devolviendo el resultado en minúsculas, permitiéndonos formatear el resultado del campo. **Es decir, podemos acceder al valor del campo y manipularlo**. Si lo que queremos es acceder al modelo, debemos usar el método: `resolveUsing()`. 
+Returning the result in lowercase, allowing us to format the result of the field. **In other words, we can access the value of the field and manipulate it**. If what we want is to access to the model, we must use the method: `resolveUsing()`. 
 
-La sintaxis es idéntica a `displayUsing()`:
+The syntax is identical to `displayUsing()`:
 
 ```php
 /**
@@ -147,7 +147,7 @@ public function fields(Request $request) {
 }
 ```
 
-Los métodos `suffix()` y `prefix()`, nos permitirán añadir un prefijo o sufijo al valor del campo. Por ejemplo, el campo nos muestra un importe, y queremos añadir el símbolo del dolar:
+The methods `suffix()` and `prefix()`, will allow us to add a prefix or suffix to the value of the field. For example, if the field shows us an amount money, and we want to add the dollar symbol:
 
 ```php
 /**
@@ -164,13 +164,13 @@ public function fields(Request $request) {
 }
 ```
 
-Nos devolverá:
+Will returns:
 
 ```
 1298.55$
 ```
 
-Los métodos `suffix()` y `prefix()`, admiten un segundo valor en el método. Este campo es un boleano que nos permite indicarle si queremos que exista un espacio, antes del sufijo o después del prefijo.
+the methods `suffix()` and `prefix()`, support a second value. This field is a Boolean that allows us to indicate if we want a blank space before the suffix or after the prefix.
 
 ```php
 /**
@@ -187,29 +187,29 @@ public function fields(Request $request) {
 }
 ```
 
-Nos devolverá:
+Will returns:
 
 ```
 1298.55 $
 ```
 
->Recuerda que los métodos: `displayUsing()`, `suffix()` y `prefix()` solo afectan a las vistas: `index` y `show`. El resto de vistas no se ven afectadas por estos métodos, aunque los nuestran sin modificaciones.
+>Remember that the methods: `displayUsing()`, `suffix()` and `prefix()` only affect the views: `index` and `show`. The rest of the views are not affected by these methods, and will show them without modifications.
 
->El método `resolveUsing()`, no se ve en las vistas de formularios, solo se ve en las vistas: `index` y `show`.
+>The method `resolveUsing()`, not seen in form views, only seen in views: `index` and `show`.
 
-También se dispone de un método para alinear el contenido interno de un campo de formulario. Para ello, utilizaremos el método `textAlign()`. Los valores soportados son: `left`, `center`,`right` y `justify`. Este método, lo que hace es añadir una clase de alineación al campo:
+There is also a method to align the internal content of a form field. To do this, we will use the method `textAlign()`. The supported values are: `left`, `center`,`right` and `justify`. This method, what it does is add an alignment class to the field:
 
 ```php
 $field->textAlign('left');
 ```
 
-Mostraría:
+Will be shown:
 
 ```html
 <input class="text-left">
 ```
 
-Realmente, es un alias del método `addClass()`, por lo que obtendríamos lo mismo así:
+Actually, it is an alias of the `addClass()` method, so we would get the same like this:
 
 ```php
 $field->addClass('text-left');
