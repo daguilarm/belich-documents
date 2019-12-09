@@ -302,7 +302,7 @@ public function fields(Request $request) {
 
 >Si no indicamos el formato, utilizará el predefinido en el archivo `./config/belich.php`
 
->Este campo se guarda automáticamente como objeto `Carbon\Carbon`. Puede consultar la sección [Tipos](casts) para modificar el valor.
+>Este campo se guarda automáticamente como objeto `Carbon\Carbon`. Puede consultar la sección [Tipos](casts) para modificarlo.
 
 <div class="blockquote-alert">
     <div class="title">
@@ -339,7 +339,7 @@ public function fields(Request $request) {
 
 >Si no indicamos un número de decimales, el valor por defecto es: 2.
 
->Este campo se guarda automáticamente como `float`. Puede consultar la sección [Tipos](/es/fields/cats.md) para modificar el valor.
+>Este campo se guarda automáticamente como `float`. Puede consultar la sección [Tipos](casts) para modificarlo.
 
 <div class="blockquote-alert">
     <div class="title">
@@ -422,9 +422,9 @@ Por defecto, el código `hmtl` que mostrará, será:
 <div class="w-full items-center py-5 px-6 font-bold text-gray-600 bg-gray-200">Hellow world</div>
 ```
 
-En la figura 5, podemos ver un ejemplo, donde se muestra el texto: *Personal data*.
+En la figura 5 (a continuación), podremos ver un ejemplo, donde se mostrará el texto: *Personal data*.
 
-Podemos personalizar los colores de forma sencilla, usando los métodos:
+Este campo, nos permite personalizar los colores de forma sencilla, usando los métodos:
 
 - `color()`: para el color del texto.
 - `background()`: para el color de fondo.
@@ -469,14 +469,14 @@ public function fields(Request $request) {
 }
 ```
 
-Hay que utilizar el método `asHtml()` para no escapar el código, y que se renderice correctamente.
+>Hay que utilizar el método `asHtml()` para no escapar el código, y que se renderice correctamente.
 
 Un ejemplo de como quedarían los campos **Header**:
 
 ![Header example](../../../assets/images/fields/header.png)
 <div id="legend"><b>fig 5</b>: Ejemplo de campo header personalizado</div>
 
-Este campo solo es accesible desde las vistas `edit` y `create`. Pero podemos añadir la vista show `show`, usando: 
+Este campo solo es accesible desde las vistas `edit` y `create`. Pero podemos añadir la vista `show`, usando: 
 
 ```php
 Header::make('My header title')->visibleOn('show');
@@ -506,7 +506,7 @@ Hidden::make('Hidden item', 'test_email')
     ->disabled(),
 ```
 
-El resto de métodos, como: `addClass()`, `readonly()`,etc... no tienen sentido y han sido deshabilitados.
+El resto de métodos, como: `addClass()`, `readonly()`, etc... no tienen sentido y han sido deshabilitados.
 
 ### Campo ID 
 
@@ -644,7 +644,7 @@ public function fields(Request $request) {
 
 ### Campo Range 
 
-Es un alias para la general un campo `HTML5` range. Funciona igual que un campo: `Number`, que se explicará en el siguiente punto. A modo de ejemplo:
+Es un alias para la generar un campo `HTML5` range. Funciona igual que un campo: `Number`, que se explicará en el siguiente punto. A modo de ejemplo:
 
 ```php
 use Daguilarm\Belich\Fields\Types\Range;
@@ -684,16 +684,16 @@ public function fields(Request $request) {
     ];
 }
 ```
-En este caso, no hay que enviar el valor mínimo ni el máximo, simplemente el intervalo de valores y el rando, aunque realmente, el valor: `step()`, ni siquiera sería necesario. A continuación, veamos como quedarían los dos ejemplos anteriores:
+En este caso, no hay que enviar el valor mínimo ni el máximo, simplemente el intervalo de valores. A continuación, veamos como quedarían los dos ejemplos anteriores:
 
 ![Range example](../../../assets/images/fields/range.png)
 <div id="legend"><b>fig 6</b>: Ejemplo de campos range</div>
 
->De momento, el uso del método: `options()`, no está soportando por todos los navegadores, por lo que su visualización, dependerá de esto. Mas información en: [Campo range](https://developer.mozilla.org/es/docs/Web/HTML/Elemento/input/range)
+>De momento, el uso del método: `options()`, no está soportando por todos los navegadores, por lo que su visualización, dependerá de ellos. Mas información en: [Campo range](https://developer.mozilla.org/es/docs/Web/HTML/Elemento/input/range)
 
 ### Campo Select
 
-El campo select incluye el método `options()`, el cual nos permite añadir valores a la etiqueta `option` del attributo `select`, tal y como se muestra a continuación:
+El campo select incluye el método `options()`, el cual nos permite añadir valores a la etiqueta `option` del campo `select`, tal y como se muestra a continuación:
 
 ```php
 use Daguilarm\Belich\Fields\Types\Select;
@@ -794,11 +794,11 @@ Este campo adminite los siguientes métodos especiales:
 
 - `withRelationship()`
 
-El campo `withRelationship()`, se utiliza para mostrar en las vistas: `index`, `show`, `edit`, información de una tabla relacional.
+El método: `withRelationship()`, se utiliza para mostrar en las vistas: `index`, `show` y `edit`, información adicional de una tabla relacional.
 
-?>Debe utilizarse sólo para mostrar información, nunca para crear o actualizar, para ello, disponemos de campos relacionales
+>Debe utilizarse sólo para mostrar información, nunca para crear o actualizar, para ello, disponemos de campos relacionales.
 
-Por ejemplo, si nuestra tabla tiene información sobre vehículos, y disponemos de otra con información de la ubicación GPS del vehículo, en este caso, no queremos que el usuario pueda modificar la información GPS, ya que se actualiza de forma automática, pero si queremos mostrarla. Es en estos casos, cuando puede utilizarse un campo `Text` con relaciones.
+Por ejemplo, imaginemos que nuestra tabla tiene información sobre vehículos, y que también disponemos de otra tabla con información de la ubicación GPS del vehículo. Lo que no queremos, es que el usuario pueda modificar la información del GPS, pero si queremos mostrarla junto con la información del vehículo. Es en estos casos, cuando puede utilizarse un campo `Text` con relaciones.
 
 ```php
 use Daguilarm\Belich\Fields\Types\Text;
@@ -831,7 +831,7 @@ public static $model = '\App\Models\Car';
 public static $relationships = ['location'];
 ```
 
->Este campo se guarda automáticamente como `string`. Puede consultar la sección [Tipos](/es/fields/cats.md) para modificar el valor.
+>Este campo se guarda automáticamente como `string`. Puede consultar la sección [Tipos](casts) para modificar el valor.
 
 ### Campo TextArea 
 
@@ -870,7 +870,7 @@ El campo `textarea`, soporta los siguientes métodos:
 ![TextArea example](../../../assets/images/fields/textarea.png)
 <div id="legend"><b>fig 7</b>: Ejemplo de textarea con caracteres restantes</div>
 
->Este campo se guarda automáticamente como `string`. Puede consultar la sección [Tipos](fields/casts) para modificar el valor.
+>Este campo se guarda automáticamente como `string`. Puede consultar la sección [Tipos](casts) para modificar el valor.
 
 <div class="blockquote-alert">
     <div class="title">
@@ -908,16 +908,17 @@ public function fields(Request $request) {
 }
 ```
 
-Permite los campos:
+Permite los métodos:
 
 - `min()`, para determinar el valor mínimo.
 - `max()`, para determinar el valor máximo.
 - `step()`, el intervalo de incremento del valor.
 
-
 ### Campo Year 
 
-Nos creará un campo para para gestionar fechas, usando el formato de `sql` para años, es decir, un campo `integer` de cuatro caracteres. Belich autináticamente validará el formato al añadir el campo, usando `Carbon\Carbon`.
+Nos creará un campo para para gestionar las fechas. Para ello, se usurá el formato de `sql` para los años, es decir, un campo `integer` de cuatro dígitos. 
+
+**Belich** automáticamente validará el formato al añadir el campo, usando `Carbon\Carbon`.
 
 ```php
 use Daguilarm\Belich\Fields\Types\Year;
@@ -935,4 +936,4 @@ public function fields(Request $request) {
 }
 ```
 
->Este campo se guarda automáticamente como objeto `Carbon\Carbon`. Puede consultar la sección [Tipos](fields/casts) para modificar el valor.
+>Este campo se guarda automáticamente como objeto `Carbon\Carbon`. Puede consultar la sección [Tipos](casts) para modificar el valor.

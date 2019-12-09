@@ -318,7 +318,7 @@ public function fields(Request $request) {
 
 ### Decimal field 
 
-Nos genera un campo decimal (float), pero en el que podemos limitar el número de decimales:
+It generates a decimal field (float), but in which we can limit the number of decimals:
 
 ```php
 use Daguilarm\Belich\Fields\Types\Decimal;
@@ -337,13 +337,13 @@ public function fields(Request $request) {
 }
 ```
 
->Si no indicamos un número de decimales, el valor por defecto es: 2.
+>If we do not indicate a number of decimals, the default value is: 2.
 
->Este campo se guarda automáticamente como `float`. Puede consultar la sección [Tipos](/es/fields/cats.md) para modificar el valor.
+>This field is automatically saved as `float`. You can check the section [Casts](casts) to modify it.
 
 <div class="blockquote-alert">
     <div class="title">
-        <strong>Métodos no recomendados</strong> (O no funcionan o no tiene sentido utilizarlos)
+        <strong>Not recommended methods</strong> (Either they don't work or it makes no sense to use them)
     </div>
     <u>
         <li>displayUsing()</li>
@@ -352,9 +352,9 @@ public function fields(Request $request) {
     </u>
 </div>
 
-### Campo Email 
+### Email field
 
-El campo email nos permite generar un campo `HTML5` de email. El funcionamiento, sería el siguiente:
+The email field allows us to generate an `HTML5` email field. The operation would be as follows:
 
 ```php
 use Daguilarm\Belich\Fields\Types\Email;
@@ -371,13 +371,13 @@ public function fields(Request $request) {
     ];
 }
 ```
-Mostrando:
+It will show:
 
 ```html
 <input type="email" name="myEmail" id="myEmail" dusk="dusk-myEmail">
 ```
 
-Al igual que los campos: `File` y `Image`, dispone del método `multiple()`, que le permite añadir multiples direcciones de email, separadas por coma.
+Like the fields: `File` and `Image`, it has the `multiple ()` method, which allows you to add multiple email addresses, separated by a comma.
 
 ```php
 use Daguilarm\Belich\Fields\Types\Email;
@@ -396,9 +396,9 @@ public function fields(Request $request) {
 }
 ```
 
-### Campo Header 
+### Header field
 
-Nos permite añadir un título en el formulario para separar conceptos o añadir información adicional.
+It allows us to add a title on the form to separate concepts or add additional information.
 
 ```php
 use Daguilarm\Belich\Fields\Types\Header;
@@ -416,18 +416,18 @@ public function fields(Request $request) {
 }
 ```
 
-Por defecto, el código `hmtl` que mostrará, será:
+By default, the `hmtl` code that will display will be:
 
 ```html
 <div class="w-full items-center py-5 px-6 font-bold text-gray-600 bg-gray-200">Hellow world</div>
 ```
 
-En la figura 5, podemos ver un ejemplo, donde se muestra el texto: *Personal data*.
+In Figure 5 (below), we can see an example.
 
-Podemos personalizar los colores de forma sencilla, usando los métodos:
+This field allows us to customize colors easily, using the methods:
 
-- `color()`: para el color del texto.
-- `background()`: para el color de fondo.
+- `color()`: for the text color.
+- `background()`: for the background color.
 
 ```php
 use Daguilarm\Belich\Fields\Types\Header;
@@ -447,9 +447,9 @@ public function fields(Request $request) {
 }
 ```
 
->Los colores soportados son: black, white, red, yellow, blue, green, orange y teal, con sus respectivos grados de color. Ej: red-400, white, blue-800,...
+>The colors supported are: black, white, red, yellow, blue, green, orange and teal, with their respective degrees of color. Ej: red-400, white, blue-800,...
 
-También podemos añadir nuestro propio código `html`:
+We can also add our own `html` code:
 
 ```php
 use Daguilarm\Belich\Facades\Helper;
@@ -469,32 +469,32 @@ public function fields(Request $request) {
 }
 ```
 
-Hay que utilizar el método `asHtml()` para no escapar el código, y que se renderice correctamente.
+>You have to use the `asHtml ()` method to avoid escaping the code, and to render it correctly.
 
-Un ejemplo de como quedarían los campos **Header**:
+An example of how the **Header** fields would look:
 
 ![Header example](../../../assets/images/fields/header.png)
-<div id="legend"><b>fig 5</b>: Ejemplo de campo header personalizado</div>
+<div id="legend"><b>fig 5</b>: Example of custom header field</div>
 
-Este campo solo es accesible desde las vistas `edit` y `create`. Pero podemos añadir la vista show `show`, usando: 
+This field is only accessible from the `edit` and `create` views. But we can add the `show` view, using:
 
 ```php
 Header::make('My header title')->visibleOn('show');
 ```
 
-### Campo Hidden 
+### Hidden field
 
-El campo `hidden`, nos permite añadir campos ocultos, para enviar información extra a la base de datos.
+The `hidden` field allows us to add hidden fields, and send extra information to the database.
 
-Este campo, sólo se muestra en las vistas de formularios: `create` y `edit`. Un ejemplo de uso, sería:
+This field is only displayed in the form views: `create` and `edit`. An example of use would be:
 
 ```php
 Hidden::make('Hidden item', 'test_email'),
 ```
 
-Como el resto de campos de formulario, soporta una serie de métodos que le permiten modificar sus valores. 
+Like the rest of the form fields, it supports a series of methods that allow you to modify its values.
 
-Los métodos soportados son:
+The supported methods are:
 
 ```php
 Hidden::make('Hidden item', 'test_email')
@@ -506,11 +506,11 @@ Hidden::make('Hidden item', 'test_email')
     ->disabled(),
 ```
 
-El resto de métodos, como: `addClass()`, `readonly()`,etc... no tienen sentido y han sido deshabilitados.
+The rest of the methods, such as: `addClass()`, `readonly()`, etc ... are meaningless and have been disabled.
 
-### Campo ID 
+### ID field
 
-Nos permite visualizar en las vistas: `index` y `show` el valor del campo Id de la tabla.
+It allows us to visualize in the views: `index` and `show` the value of the Id field from the table.
 
 ```php
 use Daguilarm\Belich\Fields\Types\ID;
@@ -528,7 +528,7 @@ public function fields(Request $request) {
 }
 ```
 
-Por supuesto, si el nombre del campo en la tabla, es diferente al valor por defecto: `id`, podemos especificarlo:
+Of course, if the name of the field in the table is different from the default value: `id`, we can specify it:
 
 ```php
 use Daguilarm\Belich\Fields\Types\ID;
@@ -546,12 +546,11 @@ public function fields(Request $request) {
 }
 ```
 
->Es solo un campo de visualización. No puede ser modificado y por tanto, no permite métodos adicionales, como el resto de campos de formulario.
+>This is just a display field. It cannot be modified and therefore does not allow additional methods, such as other form fields.
 
+### Markdown field
 
-### Campo Markdown
-
-El campo markdown, nos permite almacenar en la base de datos, textos formateados mediante este sistema. Su funcionamiento es el siguiente:
+The markdown field allows us to store texts formatted using this system in the database. Its operation is as follows:
 
 ```php
 use Daguilarm\Belich\Fields\Types\Markdown;
@@ -569,7 +568,7 @@ public function fields(Request $request) {
 }
 ```
 
-Por defecto, este campo no muestra la vista `index`, pero si consideramos que es necesario, podemos añadir el método:
+By default, this field does not show the `index` view, but if we consider it necessary, we can add the method:
 
 ```php
 use Daguilarm\Belich\Fields\Types\Markdown;
@@ -588,14 +587,14 @@ public function fields(Request $request) {
 }
 ```
 
-Por defecto, en las vistas `index` y `show`, se muestra una versión acortada del texto, por lo que si queremos que se muestre el texto completo, tendremos que utilizar los métodos:
+By default, in the `index` and `show` views, a shortened version of the text is displayed, so if we want the full text to be displayed, we will have to use the methods:
 
-- `fullText()`: muestra el texto completo en las dos vistas.
-- `fullTextOnIndex()`: muestra el texto completo solo en la vista `index`.
-- `fullTextOnShow()`: muestra el texto completo solo en la vista `show`.
-- `fullTextOnDetail()`: es un alias del anterior.
+- `fullText()`: show the full text in both views.
+- `fullTextOnIndex()`: show full text only in the `index` view.
+- `fullTextOnShow()`: show full text only in the `show` view.
+- `fullTextOnDetail()`: It is an alias of the previous one.
 
-También podemos mostrar una preview de nuestro código en las vistas: `create` y `edit`:
+We can also show a preview of our code in the views: `create` and `edit`:
 
 ```php
 use Daguilarm\Belich\Fields\Types\Markdown;
@@ -614,14 +613,14 @@ public function fields(Request $request) {
 }
 ```
 
-Mostrando lo siguiente:
+Showing the following:
 
 ![Markdown example](../../../assets/images/fields/markdown.png)
-<div id="legend"><b>fig 7</b>: Ejemplo de campo Markdown con preview</div>
+<div id="legend"><b>fig 7</b>: Markdown field example with preview</div>
 
-### Campo Number 
+### Number field
 
-Genera un campo number con las opciones: `min()`, `max()` y `step()`:
+Generate a number field with the options: `min()`, `max()` and `step()`:
 
 ```php
 use Daguilarm\Belich\Fields\Types\Number;
@@ -642,9 +641,9 @@ public function fields(Request $request) {
 }
 ```
 
-### Campo Range 
+### Range field
 
-Es un alias para la general un campo `HTML5` range. Funciona igual que un campo: `Number`, que se explicará en el siguiente punto. A modo de ejemplo:
+The `HTML5` range field is an alias for the general. It works just like a field: `Number`, which will be explained in the next point. As an example:
 
 ```php
 use Daguilarm\Belich\Fields\Types\Range;
@@ -665,7 +664,7 @@ public function fields(Request $request) {
 }
 ```
 
-También disponemos del método `options()`, que nos permite enviar un array de valores:
+We also have the `options()` method, which allows us to send an array of values:
 
 ```php
 use Daguilarm\Belich\Fields\Types\Range;
@@ -684,16 +683,16 @@ public function fields(Request $request) {
     ];
 }
 ```
-En este caso, no hay que enviar el valor mínimo ni el máximo, simplemente el intervalo de valores y el rando, aunque realmente, el valor: `step()`, ni siquiera sería necesario. A continuación, veamos como quedarían los dos ejemplos anteriores:
+In this case, you should not send the minimum or maximum value, simply the range of values and the range. Next, let's see how the two previous examples would look like:
 
 ![Range example](../../../assets/images/fields/range.png)
-<div id="legend"><b>fig 6</b>: Ejemplo de campos range</div>
+<div id="legend"><b>fig 6</b>: Example of a range field</div>
 
->De momento, el uso del método: `options()`, no está soportando por todos los navegadores, por lo que su visualización, dependerá de esto. Mas información en: [Campo range](https://developer.mozilla.org/es/docs/Web/HTML/Elemento/input/range)
+>At the moment, the use of the method: `options ()`, is not supported by all browsers, so its display will depend on them. More information in: [Range field](https://developer.mozilla.org/es/docs/Web/HTML/Elemento/input/range)
 
-### Campo Select
+### Select field
 
-El campo select incluye el método `options()`, el cual nos permite añadir valores a la etiqueta `option` del attributo `select`, tal y como se muestra a continuación:
+The select field includes the `options ()` method, which allows us to add values to the `option` tag inside the `select` field, as shown below:
 
 ```php
 use Daguilarm\Belich\Fields\Types\Select;
@@ -717,7 +716,7 @@ public function fields(Request $request) {
 }
 ```
 
-Si necesitamos añadir valores desde la base de datos, podemos user el método `__contructor`:
+If we need to add values from the database, we can use the method `__contructor`:
 
 ```php
 /**
@@ -752,7 +751,7 @@ public function fields(Request $request) {
 }
 ```
 
-También podemos mostrar en las vistas `index` y `show`, el resultado como valor, en vez de como clave. Por ejemplo:
+We can also show in the `index` and `show` views, the result as a value, rather than as a key. For example:
 
 ```php
 [
@@ -762,7 +761,7 @@ También podemos mostrar en las vistas `index` y `show`, el resultado como valor
 ]
 ```
 
-En la base de datos, guardaríamos el valor de la clave: `1`, y por tanto, en las vistas `index` y `show`, cuando mostremos el valor de este campo, nos mostrará `1` en lugar de `Admin`. Para solucionarlo, disponemos del método `displayUsingLabels()`:
+In the database, we would save the value of the key: `1`, and therefore, in the `index` and `show` views, when we show the value of this field, it will show us `1` instead of `Admin`. To solve it, we have the method `displayUsingLabels()`:
 
 ```php
 use Daguilarm\Belich\Fields\Types\Select;
@@ -786,19 +785,21 @@ public function fields(Request $request) {
 }
 ```
 
-Este método mostrará en las vistas: `index` y `show`, el resultado `Admin`, mientras que la vista `edit`, asignará el valor `1`, haciendo que nuestro campo `select`, funcione correctamente.
+This method will show in the views: `index` and `show`, the result: `Admin`, while in the view `edit`, will assign the value `1`, making our field `select`, to work correctly.
 
-### Campo Text
+### Text field
 
-Este campo adminite los siguientes métodos especiales:
+This field manages the following special methods:
 
 - `withRelationship()`
 
-El campo `withRelationship()`, se utiliza para mostrar en las vistas: `index`, `show`, `edit`, información de una tabla relacional.
+The method: `withRelationship()`, is used to show in the views: `index`, `show` and `edit`, information from a relational table.
 
-?>Debe utilizarse sólo para mostrar información, nunca para crear o actualizar, para ello, disponemos de campos relacionales
+>It should be used only to display information, never to create or update, for this cases, we have the relational fields.
 
-Por ejemplo, si nuestra tabla tiene información sobre vehículos, y disponemos de otra con información de la ubicación GPS del vehículo, en este caso, no queremos que el usuario pueda modificar la información GPS, ya que se actualiza de forma automática, pero si queremos mostrarla. Es en estos casos, cuando puede utilizarse un campo `Text` con relaciones.
+For example, imagine that our table has information on vehicles, and that we also have another table with information on the GPS location of the vehicle. What we do not want, is that the user can modify the GPS information, but what we want is to show the GPS information along with the vehicle information. 
+
+It is in these cases, when a `Text` field with relations can be used.
 
 ```php
 use Daguilarm\Belich\Fields\Types\Text;
@@ -817,11 +818,11 @@ public function fields(Request $request) {
 }
 ```
 
-El ejemplo anterior, buscará la información `$field->location->gps_location`. 
+The previous example will search for: `$field->location->gps_location`. 
 
-Este campo se mostrará en las vistas: `index` y `show`, se le añadirá el attributo `disabled` en la vista `edit` y se eliminará de la vista: `create`.
+This field will be shown in the views: `index` and `show`, the attribute `disabled` will be added in the `edit` view and removed from the view: `create`.
 
-Para evitar problemas n+1, debemos añadir la relación al modelo. Para ello, al definir el modelo de nuestro recurso, debemos hacer lo siguiente:
+To avoid N+1 problems, we must add the relationship to the model. To do this, when defining our resource, we must do the following:
 
 ```php
 /** @var string [Model path] */
@@ -831,11 +832,11 @@ public static $model = '\App\Models\Car';
 public static $relationships = ['location'];
 ```
 
->Este campo se guarda automáticamente como `string`. Puede consultar la sección [Tipos](/es/fields/cats.md) para modificar el valor.
+>This field is automatically saved as `string`. You can check the section [Casts](casts) to modify it.
 
-### Campo TextArea 
+### TextArea field
 
-Nos permite crear un campo de formulario: `textarea`. A continuación, un ejemplo mostrando todas las opciones posibles para poder ser comentadas una a una:
+It allows us to create a form field: `textarea`. Here is an example showing all the possible options to be commented out one by one:
 
 ```php
 use Daguilarm\Belich\Fields\Types\Text;
@@ -858,23 +859,23 @@ public function fields(Request $request) {
 }
 ```
 
-El campo `textarea`, soporta los siguientes métodos:
+The `textarea` field supports the following methods:
 
-- `fullText()`: Por defecto, las áreas de texto, muestran una cadena de texto acortado, utilizando javascript para mostrar el texto completo. Si quiere que el texto se muestre íntegro, por defecto, debe añadir este método. 
-- `fullTextOnIndex()`: El texto se muestra completo en la vista: `index`, pero parcial en la vista: `show`.
-- `fullTextOnShow()`: El texto se muestra completo en la vista: `show`, pero parcial en la vista: `index`.
-- `maxlength()`: Nos permite definir el número máximo de caracteres del campo.
-- `count()`: Igual que `maxlength()`, pero además, muestra bajo el campo, el número de caracteres restantes hasta llegar al número máximo (figura 6).
-- `rows()`: nos permite definir el número de filas o líneas que tendrá nuestra área de texto.
+- `fullText()`: By default, text areas show a shortened text string, using javascript to display the full text. If you want the text to be displayed in full, by default, you must add this method.
+- `fullTextOnIndex()`: The text is shown full in the view: `index`, but partial in the view:` show`.
+- `fullTextOnShow()`: The text is shown full in the view: `show`, but partial in the view:` index`.
+- `maxlength()`: It allows us to define the maximum number of characters in the field.
+- `count()`: Same as `maxlength()`, but also, it shows under the field, the number of characters remaining until reaching the maximum number (figure 6).
+- `rows()`: allows us to define the number of rows or lines that our text area will have.
 
 ![TextArea example](../../../assets/images/fields/textarea.png)
-<div id="legend"><b>fig 7</b>: Ejemplo de textarea con caracteres restantes</div>
+<div id="legend"><b>fig 7</b>: Textarea example with remaining characters</div>
 
->Este campo se guarda automáticamente como `string`. Puede consultar la sección [Tipos](fields/casts) para modificar el valor.
+>This field is automatically saved as `string`. You can check the section [Casts](casts) to modify it.
 
 <div class="blockquote-alert">
     <div class="title">
-        <strong>Métodos no recomendados</strong> (O no funcionan o no tiene sentido utilizarlos)
+        <strong>Not recommended methods</strong> (Either they don't work or it makes no sense to use them)
     </div>
     <u>
         <li>defaultValue()</li>
@@ -885,9 +886,9 @@ El campo `textarea`, soporta los siguientes métodos:
     </u>
 </div>
 
-### Campo Time
+### Time field
 
-Es un alias para el campo `HTML5` time. Su funcionamiento básico es el siguiente:
+It is an alias for the `HTML5` time field. Its basic operation is as follows:
 
 ```php
 use Daguilarm\Belich\Fields\Types\Time;
@@ -908,16 +909,17 @@ public function fields(Request $request) {
 }
 ```
 
-Permite los campos:
+Permite los métodos:
 
-- `min()`, para determinar el valor mínimo.
-- `max()`, para determinar el valor máximo.
-- `step()`, el intervalo de incremento del valor.
+- `min()`, to determine the minimum value.
+- `max()`, to determine the maximum value.
+- `step()`, the range of value increase.
 
+### Year field
 
-### Campo Year 
+A field to manage dates will be created. For this, the `sql` format for the years will be used, that is, an `integer` field with four digits.
 
-Nos creará un campo para para gestionar fechas, usando el formato de `sql` para años, es decir, un campo `integer` de cuatro caracteres. Belich autináticamente validará el formato al añadir el campo, usando `Carbon\Carbon`.
+**Belich** will automatically validate the format by adding the field, using `Carbon\Carbon`.
 
 ```php
 use Daguilarm\Belich\Fields\Types\Year;
@@ -935,4 +937,4 @@ public function fields(Request $request) {
 }
 ```
 
->Este campo se guarda automáticamente como objeto `Carbon\Carbon`. Puede consultar la sección [Tipos](fields/casts) para modificar el valor.
+>This field is automatically saved as `Carbon\Carbon` object. You can check the section [Casts](casts) to modify it.
