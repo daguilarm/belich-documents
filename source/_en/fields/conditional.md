@@ -1,19 +1,19 @@
 ---
-title: Campos condicionales dependientes 
-description: Gestión de campos de formulario condicionales dependientes
+title: Conditional Dependent Fields 
+description: Management of dependent conditional form fields
 extends: _layouts.documentation
 section: content
-locate: es
+locate: en
 folder: fields
 ---
 
-# Campos condicionales dependientes
+# Conditional Dependent Fields
 
-**Belich**, dispone de campos condicionales dependientes. Es decir, si un campo boleano está activo (true o 1), mostrará los campos dependientes. Si por el contrario su valor es falso (false o 0), los campos estarán ocultos.
+**Belich**, has conditional dependent fields. In other words, if a Boolean field is active (true or 1), it will show the dependent fields. If instead its value is false (false or 0), the fields will be hidden.
 
-> El valor `null`, se considera falso.
+> The value `null` is considered false.
 
-Veamos un ejemplo:
+Let's see an example:
 
 ```php
 use Daguilarm\Belich\Fields\Types\Boolean;
@@ -42,9 +42,9 @@ public function fields(Request $request): array
 }
 ```
 
-Mientras el campo boleano: `test_boolean`, esté *apagado* (con valor `false` o `0`), el campo: `test_email` estará oculto.
+While the Boolean field: `Boolean test`, is off (with `false` or `0`), the field: `test_email` will be hidden.
 
-También funciona con los campos `Select`:
+It also works with the `Select` fields:
 
 ```php
 use Daguilarm\Belich\Fields\Types\Boolean;
@@ -72,7 +72,7 @@ public function fields(Request $request): array
 }
 ```
 
-Por supuesto, también funciona con un campo `Text`:
+Of course, it also works with a `Text` field:
 
 ```php
 use Daguilarm\Belich\Fields\Types\Boolean;
@@ -98,15 +98,15 @@ public function fields(Request $request): array
 }
 ```
 
-En el momento que escribamos algo, y hagamos `click` fuera del campo `input` (evento: `blur`), aparecerá el campo `test_surname` y a la inversa.
+The moment we write something and click on the `input` field (event:` blur`), the `test_surname` field will appear and vice versa.
 
-La estructura de un campo condicional, será por tanto la siguiente:
+The structure of a conditional field will therefore be the following:
 
 ```php
 Conditional::make(callable $callback)
     ->dependsOn(string $parent, ?bool $value);
 ```
 
-Indicando el campo *padre* del que se depende (`$parent`) y el valor que puede tomar (`$value`);
+Indicating the *parent* field on which it depends (`$parent`) and the value it can take (`$value`);
 
->El campo `$value`, aceptará los siguientes valores: true, false, 1, 0 y null.
+>The `$value` field will accept the following values: true, false, 1, 0 and null.
