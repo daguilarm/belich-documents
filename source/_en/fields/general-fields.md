@@ -1,17 +1,17 @@
 ---
-title: Tipos de campo generales 
+title: General field types
 description: Gestión de campos de formulario generales
 extends: _layouts.documentation
 section: content
-locate: es
+locate: en
 folder: fields
 ---
 
-# Tipos de campo generales
+# General field types
 
-**Belich**, dispone de una amplia lista de campos predefinidos. Los hemos divido en dos tipos, los genéricos (que son de los que hablaremos en este punto), y los específicos, los cuales, por su complejidad o peculiaridades, los hemos confinado su propia sección. 
+**Belich** has an extensive list of predefined fields. We have divided them into two types, the generic ones (which are the ones that we will talk about at this point), and the specific ones, which, due to their complexity or peculiarities, we have confined to their own section.
 
-Los campos específicos soportados por **Belich**, son:
+The specific fields supported by **Belich**, are:
 
 - [Autocomplete](autocomplete)
 - [File](files)
@@ -20,7 +20,7 @@ Los campos específicos soportados por **Belich**, son:
 - [Pattern](patterns)
 - [Tabs](tabs)
 
-Los campos genéricos soportados por **Belich**, son:
+The generic fields supported by **Belich**, are:
 
 - `Boolean`
 - `Color`
@@ -43,23 +43,23 @@ Los campos genéricos soportados por **Belich**, son:
 - `PasswordConfirmation`
 - `Year`
 
-Cada campo, puede disponer de métodos exclusivos para cada uno de ellos. A continuación, vamos a explicar estos métodos genéricos, uno por uno.
+Each field can have exclusive methods for each of them. Next, we will explain these generic methods, one by one.
 
->Todos los campos que admiten decimales: `Decimal()`, `Number()` o `Coordenates()`, utilizan la etiqueta `<html lang="en">` de la cabecera de la web, para utilizar el separador adecuado: coma o punto. 
+>All fields that support decimals: `Decimal()`, `Number()` or `Coordenates()`, use the tag `<html lang="en">` from the web header, to use the appropriate separator: comma or period. 
 
-### Campo Boolean 
+### Boolean field
 
-Nos permite generar un `checkbox` que admite los valores: verdadero o falso.
+It allows us to generate a checkbox that supports the values: true or false.
 
 ![Boolean example - 1](../../../assets/images/fields/boolean-1.png)
-<div id="legend"><b>fig 1</b>: Ejemplo de campo boleano</div>
+<div id="legend"><b>fig 1</b>: Example of boolean field 1</div>
 
-Este campo se visualiza en las vistas `index` y `show` de la siguiente forma:
+This field is displayed in the views `index` and `show` as follows:
 
 ![Boolean example - 2](../../../assets/images/fields/boolean-2.png)
-<div id="legend"><b>fig 2</b>: Ejemplo de campo boleano</div>
+<div id="legend"><b>fig 2</b>: Example of boolean field 2</div>
 
-Pero a veces nos interesa que en estas vistas (`index` y `show`), en vez de mostrarle un valor activo o no, se muestre un texto para cuando está activo y otro para cuando esta desactivado. Veamos un ejemplo:
+But sometimes we are interested that in these views (`index` and `show`), instead of showing an active value, a text will be displayed. Let's see an example:
 
 ```php
 use Daguilarm\Belich\Fields\Types\Boolean;
@@ -79,22 +79,22 @@ public function fields(Request $request) {
 }
 ```
 
->Si ambos métodos no tienen un valor asignado, no se mostrará ninguno de los dos.
+>If both methods do not have an assigned value, neither will be displayed.
 
->Este campo se guarda automáticamente como `bool`. Puede consultar la sección [Tipos](casts) para modificar esto.
+>This field is automatically saved as `bool`. You can check the section [Casts](casts) to modify this.
 
-Se puede seleccionar el color del campo, el sistema solo permite los colores: `green`, `blue` y `red`, el valor por defecto es `green`. La variable color, puede asignarse de la siguiente forma:
+You can select the color of the field, the system only allows the colors: `green`, `blue` and `red`, the default value is `green`. The color variable can be assigned as follows:
 
 ```php
 Boolean::make('Status', 'status')
     ->color('red'),
 ```
 
-Este campo es editable, en las vistas: `edit` y `create`.
+This field is editable, in the views: `edit` and `create`.
 
 <div class="blockquote-alert">
     <div class="title">
-        <strong>Métodos no recomendados</strong> (O no funcionan o no tiene sentido utilizarlos)
+        <strong>Not recommended methods</strong> (Either they don't work or it makes no sense to use them)
     </div>
     <u>
         <li>addClass()</li>
@@ -106,9 +106,9 @@ Este campo es editable, en las vistas: `edit` y `create`.
     </u>
 </div>
 
-### Campo Color 
+### Color field
 
-Es un alias para el campo `HTML5` color:
+It is an alias for the `HTML5` color field:
 
 ```php
  use Daguilarm\Belich\Fields\Types\Color;
@@ -127,19 +127,19 @@ Es un alias para el campo `HTML5` color:
  }
 ```
 
-Mostrando:
+It will show:
 
 ```html
 <input class="mr-3" value="#e66465" dusk="dusk-color" id="color" name="color" type="color">
 ```
 
-Otra funcionalidad de este campo, es el que en las vistas: `index` y `show`, se muestre el color (como si fuera `html`), en vez del código. Mostrando algo así:
+Another functionality of this field is that in the views: `index` and `show`, the color is displayed (as if it were `html`), instead of the code. Showing something like this:
 
 ```html
 <div class="w-12 h-2 rounded" style="background-color:#a9d1bf">&nbsp;</div>
 ```
 
-Para ello, utilizaremos el método: `asColor()`
+To do this, we will use the method: `asColor()`
 
 ```php
  use Daguilarm\Belich\Fields\Types\Color;
@@ -159,9 +159,9 @@ Para ello, utilizaremos el método: `asColor()`
  }
 ```
 
-### Campo Coordenates 
+### Coordenates field
 
-Con este campo, podremos añadir a nuestra base de datos las coordenadas: latitud y longitud. Veamos un ejemplo:
+With this field, we can add to our database the coordinates: latitude and longitude. Let's see an example:
 
 ```php
  use Daguilarm\Belich\Fields\Types\Coordenates;
@@ -179,7 +179,7 @@ Con este campo, podremos añadir a nuestra base de datos las coordenadas: latitu
  }
 ```
 
-Este código, nos generará un campo númerico con seis decimales. Podemos indicar que queremos que nos calcule la coordenada en grados, minutos y segundos, para ello, debemos indicar el tipo de conversión, y si el campo es de latitud o longitud:
+This code will generate a numerical field with six decimals. We can indicate that we want the coordinate to be calculated in degrees, minutes and seconds, for this, we must indicate the conversion type, and if the field is of latitude or longitude:
 
 ```php
 use Daguilarm\Belich\Fields\Types\Coordenates;
@@ -198,19 +198,19 @@ public function fields(Request $request) {
 }
 ```
 
-Esto es necesario para determinar la componente cardinal de la coordenada: N, S, E u O. El campo `toDegrees()` acepta los valores:
+This is necessary to determine the cardinal component of the coordinate: N, S, E or W. The `toDegrees ()` field accepts the values:
 
 - lat
 - latitude 
 - lng 
 - longitude
 
-![Coordenadas](../../../assets/images/fields/coordenate.png)
-<div id="legend"><b>fig 3</b>: Ejemplo de campo para coordenadas</div>
+![Coordenates](../../../assets/images/fields/coordenate.png)
+<div id="legend"><b>fig 3</b>: Example field for coordinates</div>
 
 <div class="blockquote-alert">
     <div class="title">
-        <strong>Métodos no recomendados</strong> (O no funcionan o no tiene sentido utilizarlos)
+        <strong>Not recommended methods</strong> (Either they don't work or it makes no sense to use them)
     </div>
     <u>
         <li>displayUsing()</li>
@@ -220,11 +220,11 @@ Esto es necesario para determinar la componente cardinal de la coordenada: N, S,
     </u>
 </div>
 
-### Countries
+### Country field
 
-Este campo nos permite listar los paises del mundo mediante un campo autocompletado, usando la etiqueta `<datalist></datalist>`. Es un alias del campo `Autocomplete()`, al que se le inyecta directamente un archivo de idioma, con la lista de paises.
+This field allows us to list the countries of the world through an autocomplete field, using the `<datalist></datalist>` tag. It is an alias of the `Autocomplete()` field, which is directly injected with a language file, with the list of countries.
 
-A partir del archivo de idioma ubicado en `./resources/lang/vendor/belich/metrics.php`, obtenemos un array con los paises y con el siguiente formato:
+From the language file located in `./resources/lang/vendor/belich/metrics.php`, we get an array with the countries and the following format:
 
 ```php
     ['code' => 'ES', 'name' => 'Spain'],
@@ -232,9 +232,9 @@ A partir del archivo de idioma ubicado en `./resources/lang/vendor/belich/metric
     ...
 ```
 
->Por supuesto, se puede modificar este archivo de idioma, y por tanto, ampliar o cambiar cualquier nombre o código.
+>Of course, you can modify this language file, and therefore, expand or change any name or code.
 
-El sistema convertirá el `array` anterior con los paises, en un `array` listo para ser usuado por el campo `<datalist></datalist>`:
+The system will convert the previous `array` with the countries, into an `array` ready to be used by the field `<datalist></datalist>`:
 
 ```php
     ['ES' => 'Spain'],
@@ -242,7 +242,7 @@ El sistema convertirá el `array` anterior con los paises, en un `array` listo p
     ...
 ```
 
-El funcionamiento, será:
+The code will work as follows:
 
 ```php
 use Daguilarm\Belich\Fields\Types\Countries;
@@ -260,16 +260,16 @@ public function fields(Request $request) {
 }
 ```
 
-Mostrando:
+Showing on screen:
 
 ![Countries example](../../../assets/images/fields/countries.png)
-<div id="legend"><b>fig 4</b>: Ejemplo de campo para paises</div>
+<div id="legend"><b>fig 4</b>: Example: country field</div>
 
->El campo `Country` no soporta los métodos: `prefix()`, `sufix()` y `displayUsing()`.
+>The `Country` field does not support the methods: `prefix()`, `sufix()` and `displayUsing()`.
 
 <div class="blockquote-alert">
     <div class="title">
-        <strong>Métodos no recomendados</strong> (O no funcionan o no tiene sentido utilizarlos)
+        <strong>Not recommended methods</strong> (Either they don't work or it makes no sense to use them)
     </div>
     <u>
         <li>autofocus()</li>
@@ -279,9 +279,9 @@ Mostrando:
     </u>
 </div>
 
-### Campo Date 
+### Date field
 
-Nos creará un campo para para gestionar fechas. Este campo automáticamente se encarga de gestionar el formato adecuado para ser almacenado en la base de datos, y nos permite definir el formato en el que queremos mostrar la fecha:
+We will create a field to manage dates. This field automatically takes care of managing the appropriate format to be stored in the database, and allows us to define the format in which we want to display the date:
 
 ```php
 use Daguilarm\Belich\Fields\Types\Date;
@@ -300,13 +300,13 @@ public function fields(Request $request) {
 }
 ```
 
->Si no indicamos el formato, utilizará el predefinido en el archivo `./config/belich.php`
+>If we do not indicate the format, it will use the default value from the file: `./config/belich.php`
 
->Este campo se guarda automáticamente como objeto `Carbon\Carbon`. Puede consultar la sección [Tipos](casts) para modificar el valor.
+>This field is automatically saved as a `Carbon\Carbon` object. You can check the section [Casts](casts) to modify it.
 
 <div class="blockquote-alert">
     <div class="title">
-        <strong>Métodos no recomendados</strong> (O no funcionan o no tiene sentido utilizarlos)
+        <strong>Not recommended methods</strong> (Either they don't work or it makes no sense to use them)
     </div>
     <u>
         <li>asHtml()</li>
@@ -316,7 +316,7 @@ public function fields(Request $request) {
     </u>
 </div>
 
-### Campo Decimal 
+### Decimal field 
 
 Nos genera un campo decimal (float), pero en el que podemos limitar el número de decimales:
 
