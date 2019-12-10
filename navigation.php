@@ -66,7 +66,7 @@ return [
         ]
     ],
     'Views||Vistas' => [
-        'url' => '_location_/views/views',
+        'url' => '_location_/views/views-default',
         'children' => [
             'Actions||Acciones' => '_location_/views/actions',
             'Blade||Blade' => '_location_/views/directives',

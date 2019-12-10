@@ -6,7 +6,7 @@
 
 /* Dropdown Content (Hidden by Default) */
 .dropdown-content {
-    @apply absolute hidden bg-gray-100 shadow rounded border border-gray-400;
+    @apply absolute hidden bg-gray-100 rounded border border-gray-400;
     min-width: 160px;
     z-index: 1;
 }
