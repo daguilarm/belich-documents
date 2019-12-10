@@ -1,4 +1,13 @@
-# Métodos para modificar los tipos de un campo
+---
+title: Métodos para modificar las declaraciones de tipo
+description: Gestión de campos de formulario para modificar las declaraciones de tipo
+extends: _layouts.documentation
+section: content
+locate: es
+folder: fields
+---
+
+# Métodos para modificar las declaraciones de tipo
 
 **Belich** te permite asignar el tipo de un campo antes de guardarlo en la base de datos, y sin necesidad de utilizar `accessors` o `mutators`.
 
@@ -21,7 +30,7 @@ public function fields(Request $request) {
 }
 ```
 
-Y el campo será convertido en `integer` antes de añadirse a la base de datos. Justo después de la validación, ya que esta modificación se realiza en el `Form Request` correspondiente a la acción del Controlador.
+Y el campo será convertido en `integer` antes de añadirse a la base de datos. Justo después de la validación, ya que esta modificación se realiza en el *Form Request* correspondiente a la acción del Controlador.
 
 Los tipos disponibles son:
 
@@ -33,4 +42,4 @@ Los tipos disponibles son:
 - `toYear()`
 - `toString()`
 
-?>Especial mención al campo `toDate()`, que nos va a obligar a añadir el formato de la fecha, ya que creará un objeto `Carbon\Carbon` a partir de dicho formato.
+>Especial mención al método `toDate()`, que como puede verse, nos obliga a añadir el formato de la fecha, ya que es necesario para crear el objeto `Carbon\Carbon`.
