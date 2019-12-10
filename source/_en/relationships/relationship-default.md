@@ -1,8 +1,17 @@
-# Campos relacionales
+---
+title: Relational Fields
+description: Managing relational fields
+extends: _layouts.documentation
+section: content
+locate: en
+folder: relationships
+---
 
-**Belich** dispone de un sistema automático de gestión de relaciones entre modelos, utilizando campos de formulario. 
+# Relational Fields
 
-A modo de ejemplo:
+**Belich** has an automatic system for managing relationships between models, using the form fields.
+
+As an example:
 
 ```php
 /**
@@ -26,7 +35,7 @@ public function fields(Request $request): array
 }
 ```
 
-Los campos soportados por **Belich**, son:
+The fields supported by **Belich**, are:
 
 - `HasOne()`
 - `BelongsTo()`

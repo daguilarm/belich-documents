@@ -1,15 +1,15 @@
 ---
-title: Tabs / Tabuladores
-description: Gestión de campos de formulario mediante tabs o tabuladores
+title: Tabs
+description: Management of form fields using tabs or tabs
 extends: _layouts.documentation
 section: content
-locate: es
+locate: en
 folder: fields
 ---
 
-# Tabs / Tabuladores
+# Tabs
 
-**Belich** incorpora la opción de agrupar los campos en tabs. El funcionamiento, es idéntico al de los [Paneles](panels). La única diferencia, es la de activar la variable `$tabs`, de la siguiente forma:
+**Belich** incorporates the option to group the fields into tabs. The operation is identical to [Panels](panels). The only difference is to activate the `$tabs` variable, as follows:
 
 ```php
 /** 
@@ -18,7 +18,7 @@ folder: fields
 public static $tabs = true;
 ```
 
-Por lo que el código del recurso, quedaría así:
+So the code of the resource would look like this:
 
 ```php
 use Daguilarm\Belich\Fields\Types\Boolean;
@@ -70,16 +70,16 @@ public function fields(Request $request) {
 }
 ```
 
-Obteniendo:
+Showing the following:
 
 ![Tabs](../../../assets/images/fields/tabs.png)
-<div id="legend"><b>fig 3</b>: Campos agrupados por tabs</div>
+<div id="legend"><b>fig 3</b>: Fields grouped by tabs</div>
 
->Los campos `Tabs` se visualizan en todas las vistas salvo en el `index`
+>The `Tabs` fields are displayed in all views except in the `index`
 
-Los campos `Tabs`, son realmente campos `Panels`, a los que se les ha quitado el campo `Header` que se utiliza como título. 
+The `Tabs` fields are really `Panels` fields, with the only different that the `Header` field, that is used as the title, has been removed.
 
-De hecho, la clase `Tabs`, no hereda de la clase `Field`, como la mayoría de campos, lo hace de la clase `Panels`.
+In fact, the `Tabs` class does not inherit from the `Field` class, like most of the fields, it does from the `Panels` class.
 
 ```php
 namespace Daguilarm\Belich\Fields\Types;

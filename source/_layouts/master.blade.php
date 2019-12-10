@@ -45,10 +45,18 @@
                         <h1 class="text-lg md:text-2xl text-blue-900 font-semibold hover:text-blue-600 my-0 pr-4">{{ $page->locate === 'en' ? 'Belich: documents' : 'Belich: documentación' }}</h1>
                     </a>
                     <div class="flex w-auto">
-                        <img src="../../../../assets/img/icons/github.svg" alt="Github logo" class="flex flex-1 mr-3">
-                        <a href="https://github.com/daguilarm/belich" class="flex-1 mr-2">Belich</a> <span class="mx-2">/</span>
-                        <a href="https://github.com/daguilarm/belich-documents" class="flex-1 mr-2">{{ $page->locate === 'en' ? 'Documents' : 'Documentos' }}</a> <span class="mx-2">/</span>
-                        <a href="https://github.com/daguilarm/belich-dashboard" class="flex-1 mr-2">{{ $page->locate === 'en' ? 'Examples' : 'Ejemplos' }}</a>
+                        <div class="dropdown">
+                            <button onclick="javascript:dropdown('github-container');" class="dropdown-click outline-none focus:outline-none">
+                                <div class="flex items-center h-10 p-4 rounded border border-gray-400 bg-gray-100 dropdown-click">
+                                    <img src="../../../../assets/img/icons/github.svg" alt="Github logo" class="dropdown-click"> <i class="arrow-down"></i>
+                                </div>
+                            </button>
+                            <div id="github-container" class="dropdown-content">
+                                <a href="https://github.com/daguilarm/belich" class="flex-1 p-2">Belich</a>
+                                <a href="https://github.com/daguilarm/belich-documents" class="flex-1 p-2">{{ $page->locate === 'en' ? 'Documents' : 'Documentos' }}</a>
+                                <a href="https://github.com/daguilarm/belich-dashboard" class="flex-1 p-2">{{ $page->locate === 'en' ? 'Examples' : 'Ejemplos' }}</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -75,6 +83,23 @@
                     linksTargetBlank[i].target = "_blank";
                 }
             }, false);
+
+            function dropdown(id) {
+                document.getElementById(id).classList.toggle('show');
+            }
+
+            window.onclick = function(event) {
+                if (!event.target.matches('.dropdown-click')) {
+                    var sharedowns = document.getElementsByClassName('dropdown-content');
+                    var i;
+                    for (i = 0; i < sharedowns.length; i++) {
+                        var openSharedown = sharedowns[i];
+                        if (openSharedown.classList.contains('show')) {
+                            openSharedown.classList.remove('show');
+                        }
+                    }
+                }
+            }
         </script>
         <footer class="bg-white text-center text-sm mt-12 py-4" role="contentinfo">
             <ul class="flex flex-col md:flex-row justify-center">

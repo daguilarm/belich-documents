@@ -30,7 +30,7 @@ Nos devolverá:
 
 Al añadir el texto, automáticamente añade `mr-2` para crear una separación entre el texto y el icono.
 
-?>Se puede añadir un texto de un archivo de idioma, para ello, debe hacer así `@icon('edit', 'belich::file.fileText')`. El sistema automáticamente añadirá el texto dentro de el helper `trans()`.
+>Se puede añadir un texto de un archivo de idioma, para ello, debe hacer así `@icon('edit', 'belich::file.fileText')`. El sistema automáticamente añadirá el texto dentro de el helper `trans()`.
 
 También puede utilizarse como `helper`, usando la siguiente sintaxis:
 

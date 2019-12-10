@@ -42,4 +42,4 @@ Los tipos disponibles son:
 - `toYear()`
 - `toString()`
 
->Especial mención al método `toDate()`, que como puede verse, nos obliga a añadir el formato de la fecha, ya que es necesario para crear el objeto `Carbon\Carbon`.
+>Especial mención al método `toDate()`, que como puede verse, nos obliga a añadir el formato de la fecha ya que es necesario para crear el objeto `Carbon\Carbon`.

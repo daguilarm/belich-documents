@@ -20,7 +20,7 @@ Este archivo contiene las acciones básicas, y tiene el siguiente código:
 </a>
 ```
 
-?>No modifique este archivo. Si quiere personalizarlo, cree un archivo nuevo y haga en él las modificaciones.
+>No modifique este archivo. Si quiere personalizarlo, cree un archivo nuevo y haga en él las modificaciones.
 
 Para configurar este nuevo archivo para que lo use un recurso, sólo tenemos que sobreescribir la variable `$actions` de nuestro recurso:
 
@@ -35,4 +35,4 @@ Al hacer esto, indicamos al sistema que utilice el archivo:
 
 Si el archivo no existe, el sistema cargará el archivo por defecto.
 
-?>La variable `$data`, será automáticamente incluida en la vista, por lo que podrá utilizar los datos directamente en su archivo personalizado.
+>La variable `$data`, será automáticamente incluida en la vista, por lo que podrá utilizar los datos directamente en su archivo personalizado.

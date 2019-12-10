@@ -1,28 +1,28 @@
 ---
-title: Campos personalizados
-description: Gestión de campos personalizados
+title: Custom fields
+description: Custom Field Management
 extends: _layouts.documentation
 section: content
-locate: es
+locate: en
 folder: fields
 ---
 
-# Campos personalizados
+# Custom fields
 
-**Belich**, permite crear campos totalmente personalizados, a parte de los que incluye por defecto. La idea es poder crear campos que se adapten perfectamente a nuestras necesidades.
+**Belich**, allows you to create fully customized fields, apart from those included by default. The idea is to be able to create fields that adapt perfectly to our needs.
 
-Esta funcionalidad, nos permite definir el funcionamiento de nuestro campo en las cuatro vistas soportadas:
+This functionality allows us to define the operation of our field in the four supported views:
 
 - `index` 
 - `create` 
 - `edit` 
 - `show` 
 
-Para crear un campo personalizado, podemos hacerlo mediante `artisan`:
+To create a custom field, we can do it using `artisan`:
 
 `php artisan belich:component ClassName`
 
-Automáticamente, se creará las siguientes carpetas y archivos:
+Automatically, the following folders and files will be created:
 
 ```html
 ├App
@@ -38,7 +38,7 @@ Automáticamente, se creará las siguientes carpetas y archivos:
                         ├show.blade.php
 ```
 
-Empecemos por el archivo base: `ClassName.php`, que actua como controlador:
+Let's start with the base file: `ClassName.php`, that acts as a controller:
 
 ```php
 <?php
@@ -111,13 +111,13 @@ class ClassName extends CustomField implements CrudContract
 
 ```
 
-En este archivo, se definen las vistas de cada acción de nuestro campo, y por supuesto, nos permitirá enviar a la vista cualquier variable que necesitemos.
+In this file, we can handle all the views, and of course, it will allow us to send any data we need.
 
-> Por defecto, las vistas reciben las variables `$field` y `$data`, que corresponden al campo y a su valor, es decir, podemos acceder a cualquier atributo del campo, y al modelo correspondiente a este.
+> By default, the views receive the variables `$field` and `$data`, which correspond to the field and its value, so we can access any attribute of the field, and its corresponding model.
 
-### Personalizando las vistas
+### Customizing the views
 
-Las vistas `create` y `edit`, disponen de dos plantillas por defecto, la normal y la basada en [Blade X](https://github.com/spatie/laravel-blade-x){.link-out}. Por lo que podemos utilizar la que más nos guste:
+The `create` and `edit` views have two default templates, the normal one and the one based on [Blade X](https://github.com/spatie/laravel-blade-x){.link-out}. So we can use either:
 
 ```html
 {{-- Vanilla example for input[type=text] --}}
@@ -143,7 +143,7 @@ Las vistas `create` y `edit`, disponen de dos plantillas por defecto, la normal 
 </belich::fields>
 ```
 
-Y las vistas `index` y `show`, disponen de la siguiente plantilla:
+And the `index` and `show` views, have the following template:
 
 ```html
 // Your custom component for the index view
@@ -151,11 +151,11 @@ Y las vistas `index` y `show`, disponen de la siguiente plantilla:
 {{ $data->{$field->attribute} }}
 ```
 
-> Podemos modificar y adaptar cada archivo a nuestras necesidades.
+> We can modify and adapt each file to our needs.
 
-### Usando nuestro campo personalizado 
+### Using our custom field
 
-Su funcionamiento, es idéntico al del resto de campos:
+Its operation is identical to the rest of the fields:
 
 ```php 
 use \App\Belich\Components\MyField\MyField;
@@ -174,15 +174,15 @@ public function fields(Request $request): array
 }
 ```
 
-Nuestro campo personalizado, requiere de tres variables:
+Our custom field requires three variables:
 
-- La etiqueta `label`, vinculada a nuestro campo.
-- La columna de la base de datos, con la que vincularlo.
-- La clase personalizada. Si, hay que incluirla, la idea de añadir métodos `mágicos` para obtenerla, puede dar problemas...
+- The label `label`, linked to our field.
+- The column of the database.
+- The custom class. Yes, it must be included, the idea of adding `magical` methods to obtain it...
 
-### Métodos aplicables 
+### Applicable Methods
 
-Los campos personalizados, heredan los mismos métodos que el resto de campos, por lo que podemos utilizar todos los métodos disponibles, especialmente, los de visibilidad:
+Custom fields inherit the same methods as the rest of the fields, so we can use all available methods, especially visibility ones:
 
 ```php 
 /**

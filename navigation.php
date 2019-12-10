@@ -1,9 +1,9 @@
 <?php
 
 return [
-    'Getting started||Empezando' => [
+    'Belich||Belich' => [
+        'url' => '_location_/home/about',
         'children' => [
-            'About||Acerca de' => '_location_/home/about',
             'Features||Características' => '_location_/home/features',
             'Status||Estado' => '_location_/home/status',
         ],
@@ -60,7 +60,7 @@ return [
         ]
     ],
     'Relationships||Relaciones' => [
-        'url' => '_location_/relationships/default',
+        'url' => '_location_/relationships/relationship-default',
         'children' => [
             'HasOne||HasOne' => '_location_/relationships/hasOne',
         ]
