@@ -17,7 +17,7 @@ Let's start talking about each of them separately:
 
 It is the variable sent to the views from the controller. Depending on the view, you will have more or less information.
 
-Access to the parameters of the `$request` variable, is done as if it were an object:
+You can access to the parameters of the `$request` variable as an object:
 
 ```php
 $request->actions

@@ -1,12 +1,21 @@
+---
+title: Botones de acción en vistas
+description: Gestionando botones de acción en las vistas
+extends: _layouts.documentation
+section: content
+locate: es
+folder: views
+---
+
 # Acciones
 
-Las acciones, son los botones con opciones que aparecen en la vista `index` y que nos permiten: ver, editar y borrar cada item de cada recurso.
+Las acciones, son los botones con opciones que aparecen en la vista `index` y que nos permiten: *ver*, *editar* y *borrar* cada item de cada recurso.
 
-Por defecto, el sistema soporta los tres métodos expuestos anteriormente. Al instalar belich, se generó automáticamente una carpeta llamada `actions`, en la ruta:
+Por defecto, el sistema soporta los tres métodos expuestos anteriormente. Durante la instalación de **Belich**, se generó automáticamente una carpeta llamada `actions`, en la ruta:
 
 `resources/views/vendor/belich/actions/default.blade.php`
 
-Este archivo contiene las acciones básicas, y tiene el siguiente código:
+Este archivo contiene las tres acciones básicas:
 
 ```php
 <a href="{{ Utils::route('show', $data) }}" class="action">
@@ -22,12 +31,14 @@ Este archivo contiene las acciones básicas, y tiene el siguiente código:
 
 >No modifique este archivo. Si quiere personalizarlo, cree un archivo nuevo y haga en él las modificaciones.
 
-Para configurar este nuevo archivo para que lo use un recurso, sólo tenemos que sobreescribir la variable `$actions` de nuestro recurso:
+Si queremos que nuestro recurso utilice el nuevo archivo (personalizado), sólo tenemos que sobreescribir la variable `$actions` del recurso:
 
 ```php
 /** @var string */
 public static $actions = 'newActionFile';
 ```
+
+>*Belich* buscará directamente en la carpeta de acciones, por lo que no hay que indicar la ruta. ¡Recuerde añadir su archivo allí!.
 
 Al hacer esto, indicamos al sistema que utilice el archivo:
 
@@ -35,4 +46,4 @@ Al hacer esto, indicamos al sistema que utilice el archivo:
 
 Si el archivo no existe, el sistema cargará el archivo por defecto.
 
->La variable `$data`, será automáticamente incluida en la vista, por lo que podrá utilizar los datos directamente en su archivo personalizado.
+>La variable `$data`, será automáticamente inyectada en la vista, por lo que podrá utilizar los datos directamente en su archivo personalizado.
