@@ -1,17 +1,17 @@
 ---
 title: Breadcrumbs
-description: Gestionando Breadcrumbs
+description: Managing Breadcrumbs
 extends: _layouts.documentation
 section: content
-locate: es
+locate: en
 folder: views
 ---
 
 # Breadcrumbs
 
-Los *breadcrumbs* pueden ser configurados desde la vista situada en `resources/views/vendor/belich/partials/navigation/breadcrumbs.blade.php`. 
+The *breadcrumbs* can be configured from the view located in `resources/views/vendor/belich/partials/navigation/breadcrumbs.blade.php`. 
 
-El template básico tiene el siguiente formato:
+The basic template has the following format:
 
 ```php
 {{-- Customize your breadcrumbs --}}
@@ -38,11 +38,11 @@ El template básico tiene el siguiente formato:
 </nav>
 ```
 
-### Crear un breadcrumb personalizado para un recurso
+### Create a custom breadcrumb for a resource
 
-Simplemente debemos abrir el archivo del recurso (por ejemplo: *User*), ubicado en: `\App\Belich\Resources\User.php`, y en él, se podrá añadir un método para personalizar el *breadcrumb*. 
+Simply open the resource file (for example: *User*), located at: `\App\Belich \Resources\User.php`, and in it, you can add a method to customize the *breadcrumb*.
 
-A modo de ejemplo:
+As an example:
 
 ```php
 /**
@@ -60,6 +60,6 @@ public static function breadcrumbs()
 }
 ```
 
-El ejemplo anterior, mostrá un *breadcrumb* con los textos y enlaces indicados. 
+The previous example shows a *breadcrumb* with the texts and links indicated.
 
-Si se fija, el último elemento del array no tiene *url*, eso es debido a que es la página actual... en cualquier caso, es libre de poner una *url* si lo desea, pero: **¿Tiene sentido poner un enlace a la página actual?**
+If you look closely, the last element in the array does not have an *url*, that is because it is the current page... in any case, you are free to add an *url* if you wish, but: **Does it make sense to put a link in the current page?**

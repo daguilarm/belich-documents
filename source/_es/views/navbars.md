@@ -1,8 +1,17 @@
+---
+title: Barra de navegación
+description: Gestionando la Barra de navegación de Belich
+extends: _layouts.documentation
+section: content
+locate: es
+folder: views
+---
+
 # Barra de navegación
 
-Automáticamente, Belich genera el archivo: `App\Belich\Navbar.php` este archivo, es el que generea el menú de navegación superior.
+Automáticamente, **Belich** genera el archivo: `App\Belich\Navbar.php` este archivo, es el que generea el menú de navegación.
 
-Por defecto, Belich generará automáticamente el menú en base a los recursos añadidos a la carpeta: `App\Belich\Resources`.
+Por defecto, *Belich* configurará el menú, en base a los recursos añadidos a la carpeta: `App\Belich\Resources`.
 
 Para agrupar los recursos, utilizaremos la variable `$group`, que deberemos añadir a nuestro recurso, de la siguiente forma:
 
@@ -29,7 +38,7 @@ Todos, los recursos que compartan la variable `$group`, estarán agrupados en el
 
 Los menús de navegación pueden ser configurados desde la vista situada en `resources/views/vendor/belich/partials/navigation/navbar.blade.php`. 
 
-El código por defecto es:
+El código por defecto utilizado por **Belich** es:
 
 ```php
 {{-- This section is segregate in case you want to customize --}}
@@ -82,3 +91,5 @@ El código por defecto es:
     </ul>
 </nav>
 ```
+
+Siente libre de cambiarlo y configurarlo según tus necesidades.
