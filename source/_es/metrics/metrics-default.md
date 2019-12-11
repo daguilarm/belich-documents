@@ -192,7 +192,7 @@ public function calculate(Request $request) : array
 }
 ```
 
-Las opciones de configuración, vienen explicadas en el apartado: [Cálculos con gráficas](calculate). 
+Las opciones de configuración, vienen explicadas en el apartado: [Cálculos con gráficas](metrics-calculate). 
 
 ### Labels 
 
@@ -210,7 +210,7 @@ public function labels(Request $request) : array
 }
 ```
 
-Pueden ser personalizadas por el usuario (recordando siempre que debe devolverse un array), o utilizar la librería de creación de etiquetas de **Belich**, la cual se explica en su propio apartado [Etiquetas para gráficas](labels). 
+Pueden ser personalizadas por el usuario (recordando siempre que debe devolverse un array), o utilizar la librería de creación de etiquetas de **Belich**, la cual se explica en su propio apartado [Etiquetas para gráficas](metrics-labels). 
 
 A continuación se puede ver un ejemplo:
 

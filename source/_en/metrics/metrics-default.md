@@ -192,7 +192,7 @@ public function calculate(Request $request) : array
 }
 ```
 
-The configuration options are explained in the section: [Calculations with graphs](calculate). 
+The configuration options are explained in the section: [Calculations with graphs](metrics-calculate). 
 
 ### Labels 
 
@@ -210,7 +210,7 @@ public function labels(Request $request) : array
 }
 ```
 
-They can be customized by the user (always remembering that an array should be returned), or you can use the **Belich** tag creation library, which is explained in its own section [Labels for graphics](labels). 
+They can be customized by the user (always remembering that an array should be returned), or you can use the **Belich** tag creation library, which is explained in its own section [Labels for graphics](metrics-labels). 
 
 An example can be seen below:
 
