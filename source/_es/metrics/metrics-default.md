@@ -13,7 +13,6 @@ Para la visualización de gráficas, se ha optado por la librería [ChartistJS](
 
 **Belich** permite configurar gráficas de forma sencilla y rápida, utilizando para ello, el terminal:
 
-
 ```php
 php artisan belich:metric MetricName
 ```
@@ -60,7 +59,7 @@ Indica el ancho de la gráfica. Para ello, se utilizan las opciones que ofrece l
 - w-2/3
 - w-full
 
->Por supuesto, puedes crear tus propias clases CSS e incluirlas
+>Por supuesto, puedes crear tus propias clases CSS e incluirlas.
 
 También se puede usar el método `width()` para asignar el ancho. Para más información consulte aqui: [Mas información](../resources/mandatory-methods#width).
 
@@ -77,9 +76,10 @@ El formato para el color, debe utilizarse el nombre del mismo, a partir de la li
 public $color = 'red';
 ```
 
->Recuerde: solo el nombre, no la intensidad. No utilice: `teal-dark`, use: `teal`
+<div class="blockquote-alert"><strong>Recuerde</strong>: solo el nombre, no la intensidad. No utilice: <code>teal-500</code>, use: <code>teal</code>, porque estamos definiendo la plantilla de color, no un color específico.
+</div>
 
-Si lo desea, puede utilizar colores hexadecimales o rgb, pero solo aceptarán al gráfico, dejando el resto de valores: el título, la legenda, las etiquetas,... con los valores predeterminados.
+Si lo desea, puede utilizar colores hexadecimales o rgb, pero solo aceptarán al gráfico, dejando el resto de valores: el título, la legenda, las etiquetas,... con los valores predeterminados... ¿no parece la mejor opción, no?
 
 ```php
 /** @var string */
@@ -103,6 +103,8 @@ public $defineColors = [
     'area-color'   => 'red', 
 ]
 ```
+
+<div class="blockquote-alert"><strong>Recuerde</strong>: solo el nombre, no la intensidad. No utilice: <code>teal-500</code>, en su lugar, use: <code>teal</code>, el sistema añadirá la intensidad automáticamente en función del campo.</div>
 
 Ambas variables: `$color` y `$defineColors` son compatibles, podemos definir un color general y luego matizar una parte del gráfico:
 
