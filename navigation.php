@@ -72,7 +72,7 @@ return [
             'Blade||Blade' => '_location_/views/directives',
             'Breadcrumbs||Breadcrumbs' => '_location_/views/breadcrumbs',
             'Navbars||Navegación' => '_location_/views/navbars',
-            'Dashboard||Inicio' => '_location_/views/home',
+            'Dashboard||Dashboard' => '_location_/views/dashboard',
         ]
     ],
     'Graphs && Metrics||Graficas y Métricas' => [
