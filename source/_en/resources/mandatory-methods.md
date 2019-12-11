@@ -95,7 +95,7 @@ public static function metrics(Request $request) {
 
 You can find more information at: [Graphs and Metrics](../metrics/metrics), where all available options are specified.
 
-### Assign width to Graphics and Cards from the resource
+### Assign width to Graphics and Cards from the resource{#width}
 
 You can also assign the width of the metric (or card) directly from here, without the need to configure the metric (or card) file. As an example (valid for both):
 

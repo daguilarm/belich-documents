@@ -1,6 +1,15 @@
+---
+title: Gráficas y estadísticas
+description: Gestionando las Gráficas y estadísticas de Belich
+extends: _layouts.documentation
+section: content
+locate: es
+folder: metrics
+---
+
 # Gráficas y estadísticas
 
-Para la visualización de gráficas, se ha optado por https://gionkunz.github.io/chartist-js/index.html una libreria muy ligera y completa.
+Para la visualización de gráficas, se ha optado por la librería [ChartistJS](https://gionkunz.github.io/chartist-js/index.html){.link-out}, una opción muy ligera, completa y funcional.
 
 **Belich** permite configurar gráficas de forma sencilla y rápida, utilizando para ello, el terminal:
 
@@ -9,10 +18,11 @@ Para la visualización de gráficas, se ha optado por https://gionkunz.github.io
 php artisan belich:metric MetricName
 ```
 
-Generando un archivo base en la ubicación: `App\Belich\Metics`. En este archivo, encontraremos dos variables para definir:
-
+Generando un archivo en la ubicación: `App\Belich\Metics`. En este archivo, encontraremos dos variables para definir:
 
 ```php
+//app\Belich\Metrics\MetricName.php
+
 /** @var string */
 public $type = 'bars';
 
@@ -20,13 +30,13 @@ public $type = 'bars';
 public $width = 'w-1/3';
 ```
 
-Aunque, como veremos después, **Belich** nos ofrece una más amplia gama de variables para configurar, que posteriormente desarrollaremos. 
+Aunque, como veremos después, **Belich** nos ofrecerá una gama de variables para configurar bastante más amplia. Aspecto que posteriormente desarrollaremos con más detenimiento. 
 
 ## Variables 
 
-Empecemos por las variables `$type` y `$with`, que hemos mencionada, y continuemos con las demás:
+Empecemos por las variables `$type` y `$with`, que hemos mencionado anteriormente:
 
-### type
+###a) type
 
 Nos permite indicar el tipo de gráfica que queremos mostrar, las opciones disponibles son:
 
@@ -35,24 +45,24 @@ Nos permite indicar el tipo de gráfica que queremos mostrar, las opciones dispo
 - horizontal-bars
 - pie (en desarrollo)
 
-![Metrics types](../../images/metrics/graph-types.png)
+![Metrics types](../../assets/images/metrics/graph-types.png)
 <div id="legend"><b>fig 1</b>: Tipos de gráficas</div>
 
 En la *figura 1*, podemos ver de izquierda a derecha, una gráfica `horizontal-bars`, otra `line` y la última: `bars`.
 
-?>Las gráficas de `pie` o gráfico circular, está disponibles solo como opción muy básica, ya que de forma nativa no está demasiado desarrollada.
+>Las gráficas de `pie` o gráfico circular, está disponibles solo como opción muy básica, ya que de forma nativa no está demasiado desarrollada.
 
-### width
+###b) width
 
-Indica el ancho de la gráfica. Para ello, se utilizan las opciones que ofrece la librería tailwindcss, y por tanto, las más utilizadas en nuestros proyectos van a ser:
+Indica el ancho de la gráfica. Para ello, se utilizan las opciones que ofrece la librería [tailwindcss](https://www.tailwindcss.com){.link-out}, y por tanto, las más utilizadas en nuestros proyectos van a ser:
 
 - w-1/3
 - w-2/3
 - w-full
 
-?>Por supuesto, puedes crear tus propias clases CSS e incluirlas
+>Por supuesto, puedes crear tus propias clases CSS e incluirlas
 
-También se puede usar el método `width()` para asignar el ancho. Para más información consulte [aquí](/es/resources/methods.md).
+También se puede usar el método `width()` para asignar el ancho. Para más información consulte aqui: [Mas información](../resources/mandatory-methods#width).
 
 El resto de variables que podemos utilizar, y que no están por defecto en el archivo que ha generado **Belich**, son:
 
@@ -150,7 +160,7 @@ Podemos asignar un marcador para cada punto de la gráfica (gráficas lineales).
 - **square**: Muestra un cuadrado.
 - **round**: Muestra un circulo.
 
-![Metrics types](../../images/metrics/graph-markers.png)
+![Metrics types](../../assets/images/metrics/graph-markers.png)
 <div id="legend"><b>fig 2</b>: Tipos de marcadores</div>
 
 ```php
@@ -180,7 +190,7 @@ public function calculate(Request $request) : array
 }
 ```
 
-Las opciones de configuración, vienen explicadas en el apartado: [Cálculos con gráficas](/es/metrics/calculate.md). 
+Las opciones de configuración, vienen explicadas en el apartado: [Cálculos con gráficas](calculate). 
 
 ### Labels 
 
@@ -198,7 +208,7 @@ public function labels(Request $request) : array
 }
 ```
 
-Pueden ser personalizadas por el usuario (recordando siempre que debe devolverse un array), o utilizar la librería de creación de etiquetas de **Belich**, la cual se explica en su propio apartado [Etiquetas para gráficas](/es/metrics/labels.md). 
+Pueden ser personalizadas por el usuario (recordando siempre que debe devolverse un array), o utilizar la librería de creación de etiquetas de **Belich**, la cual se explica en su propio apartado [Etiquetas para gráficas](labels). 
 
 A continuación se puede ver un ejemplo:
 
@@ -236,7 +246,7 @@ public function name(Request $request)
 
 Nos permite definir nuestra gráfica con un identificador para cada una de ellas. Este parámetro se genera de forma automática al crear la gráfica con `artisan`, aunque puede ser modificado.
 
-?>Posibles errores en la visualización de gráficas: comprobar que no tengan el mismo `uriKey`.
+>Posibles errores en la visualización de gráficas: comprobar que no tengan el mismo `uriKey`.
 
 ```php
 /**

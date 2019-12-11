@@ -76,11 +76,11 @@ return [
         ]
     ],
     'Graphs && Metrics||Graficas y Métricas' => [
-        'url' => '_location_/metrics/metrics',
+        'url' => '_location_/metrics/metrics-default',
         'children' => [
-            'Labels||Etiquetas' => '_location_/metrics/labels',
-            'Cache||Caché' => '_location_/metrics/cache',
-            'Calculations||Cálculos' => '_location_/metrics/calculate',
+            'Labels||Etiquetas' => '_location_/metrics/metrics-labels',
+            'Cache||Caché' => '_location_/metrics/metrics-cache',
+            'Calculations||Cálculos' => '_location_/metrics/metrics-calculate',
         ]
     ],
     'Cards||Cards' => [

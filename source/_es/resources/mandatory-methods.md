@@ -95,7 +95,7 @@ public static function metrics(Request $request) {
 
 Puede encontrar más información en: [Gráficas y estadísticas](../metrics/metrics), donde se especifican todas las opciones disponibles.
 
-### Asignar ancho a Gráficas y Cards desde el recurso
+### Asignar ancho a Gráficas y Cards desde el recurso{#width}
 
 También se puede asignar el ancho de la métrica (o card) directamente desde aquí, sin necesidad de configurar el archivo de la métrica (o card). A modo de ejemplo (válido para ambos):
 
