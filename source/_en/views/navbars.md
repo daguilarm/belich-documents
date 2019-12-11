@@ -1,19 +1,19 @@
 ---
-title: Barra de navegación
-description: Gestionando la Barra de navegación de Belich
+title: Navigation bar
+description: Managing the Belich Navigation Bar
 extends: _layouts.documentation
 section: content
-locate: es
+locate: en
 folder: views
 ---
 
-# Barra de navegación
+# Navigation bar
 
-Automáticamente, **Belich** genera el archivo: `App\Belich\Navbar.php`. Este archivo, es el que generea el menú de navegación.
+Automatically, **Belich** generates the file: `App\Belich\Navbar.php`. This file is the one that generates the navigation menu.
 
-Por defecto, **Belich** configurará el menú, en base a los recursos añadidos a la carpeta: `App\Belich\Resources`.
+By default, **Belich** configure the menu, based on the resources added to the folder: `App\Belich\Resources`.
 
-Para agrupar los recursos, utilizaremos la variable `$group`, que deberemos añadir a nuestro recurso, de la siguiente forma:
+To group the resources, we will use the variable `$group`, which we must add to our resource, as follows:
 
 ```php
 /** @var string [Model path] */
@@ -32,13 +32,13 @@ public static $label = 'Invoice';
 public static $pluralLabel = 'Invoices';
 ```
 
-En el ejemplo anterior, se muestra como sería la configuración de variables de un recurso.
+The previous example shows how the configure the variables of a resource.
 
-Todos, los recursos que compartan la variable `$group`, estarán agrupados en el mismo menú desplegable.
+All, the resources that share the variable `$group`, will be grouped in the same drop-down menu.
 
-Los menús de navegación pueden ser configurados desde la vista situada en `resources/views/vendor/belich/partials/navigation/navbar.blade.php`. 
+Navigation menus can be configured from the view located in `resources/views/vendor/belich/partials/navigation/navbar.blade.php`. 
 
-El código por defecto utilizado por **Belich** es:
+The default code used by **Belich** is:
 
 ```php
 {{-- This section is segregate in case you want to customize --}}
@@ -92,4 +92,4 @@ El código por defecto utilizado por **Belich** es:
 </nav>
 ```
 
-Siente libre de cambiarlo y configurarlo según tus necesidades.
+Feel free to change and configure it according to your needs.
