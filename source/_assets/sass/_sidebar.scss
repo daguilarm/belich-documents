@@ -1,46 +1,48 @@
 // Sidebar
-#js-nav-menu > ul > li,
-#js-nav-menu > ul > li > ul > li,
-#js-nav-menu > ul > li > ul > li > ul > li {
-    @apply list-none;
-}
+#js-nav-menu {
+    ul > li,
+    ul > li > ul > li,
+    ul > li > ul > li > ul > li {
+        @apply list-none;
+    }
 
-#js-nav-menu > .lvl-base {
-    @apply block no-underline my-0 text-base;
-}
+    ul > li > .lvl-base {
+        @apply block no-underline my-0 text-base;
+    }
 
-#js-nav-menu > p.lvl-base,
-#js-nav-menu > a.lvl-base {
-    @apply text-black p-2 font-normal;
-}
+    ul > li > p.lvl-base,
+    ul > li > a.lvl-base {
+        @apply text-black p-2 font-normal;
+    }
 
-#js-nav-menu > a.lvl-base.active {
-    @apply text-blue-500 bg-gray-200 border-l border-blue-500;
-}
+    ul > li > a.lvl-base.active {
+        @apply text-blue-500 bg-gray-200 border-l border-blue-500;
+    }
 
-#js-nav-menu > p.lvl0,
-#js-nav-menu > a.lvl0 {
-    @apply font-bold;
-}
+    ul > li > p.lvl0,
+    ul > li > a.lvl0 {
+        @apply font-bold;
+    }
 
-#js-nav-menu > p.lvl1,
-#js-nav-menu > a.lvl1 {
-    @apply pl-8;
-}
+    ul > li > ul > li > p.lvl1,
+    ul > li > ul > li > a.lvl1 {
+        @apply pl-8;
+    }
 
-#js-nav-menu > p.lvl1:before,
-#js-nav-menu > a.lvl1:before {
-    content: '+';
-    @apply pr-2;
-}
+    ul > li > ul > li > p.lvl1:before,
+    ul > li > ul > li > a.lvl1:before {
+        content: '+';
+        @apply pr-2;
+    }
 
-#js-nav-menu > p.lvl2,
-#js-nav-menu > a.lvl2 {
-    @apply pl-16;
-}
+    ul > li > ul > li > ul > li > p.lvl2,
+    ul > li > ul > li > ul > li > a.lvl2 {
+        @apply pl-16;
+    }
 
-#js-nav-menu > p.lvl2:before,
-#js-nav-menu > a.lvl2:before {
-    content: '-';
-    @apply pr-2;
+    ul > li > ul > li > ul > li > p.lvl2:before,
+    ul > li > ul > li > ul > li > a.lvl2:before {
+        content: '-';
+        @apply pr-2;
+    }
 }
