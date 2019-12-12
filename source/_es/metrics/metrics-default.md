@@ -44,7 +44,7 @@ Nos permite indicar el tipo de gráfica que queremos mostrar, las opciones dispo
 - horizontal-bars
 - pie (en desarrollo)
 
-![Metrics types](../../assets/images/metrics/graph-types.png)
+![Metrics types](../../../assets/images/metrics/graph-types.png)
 <div id="legend"><b>fig 1</b>: Tipos de gráficas</div>
 
 En la *figura 1*, podemos ver de izquierda a derecha, una gráfica `horizontal-bars`, otra `line` y la última: `bars`.
@@ -162,7 +162,7 @@ Podemos asignar un marcador para cada punto de la gráfica (gráficas lineales).
 - **square**: Muestra un cuadrado.
 - **round**: Muestra un circulo.
 
-![Metrics types](../../assets/images/metrics/graph-markers.png)
+![Metrics types](../../../assets/images/metrics/graph-markers.png)
 <div id="legend"><b>fig 2</b>: Tipos de marcadores</div>
 
 ```php

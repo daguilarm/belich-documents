@@ -44,7 +44,7 @@ It allows us to indicate the type of graph we want to show, the available option
 - horizontal-bars
 - pie (developing...)
 
-![Metrics types](../../assets/images/metrics/graph-types.png)
+![Metrics types](../../../assets/images/metrics/graph-types.png)
 <div id="legend"><b>fig 1</b>: Metrics types</div>
 
 In the *figure 1*, we can see from left to right: `horizontal-bars`, `line` and `bars`.
@@ -162,7 +162,7 @@ We can assign a marker for each point of the graph (only in linear graphs). By d
 - **square**: Show a square.
 - **round**: Show a circle.
 
-![Metrics types](../../assets/images/metrics/graph-markers.png)
+![Metrics types](../../../assets/images/metrics/graph-markers.png)
 <div id="legend"><b>fig 2</b>: Marker types</div>
 
 ```php
