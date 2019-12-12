@@ -6,42 +6,42 @@
         @apply list-none;
     }
 
-    ul > li > .lvl-base {
+    ul > li > .level-base {
         @apply block no-underline my-0 text-base;
     }
 
-    ul > li > p.lvl-base,
-    ul > li > a.lvl-base {
+    ul > li > p.level-base,
+    ul > li > a.level-base {
         @apply text-black p-2 font-normal;
     }
 
-    ul > li > a.lvl-base.active {
+    ul > li > a.level-base.active {
         @apply text-blue-500 bg-gray-200 border-l border-blue-500;
     }
 
-    ul > li > p.lvl0,
-    ul > li > a.lvl0 {
+    ul > li > p.level-0,
+    ul > li > a.level-0 {
         @apply font-bold;
     }
 
-    ul > li > ul > li > p.lvl1,
-    ul > li > ul > li > a.lvl1 {
+    ul > li > ul > li > p.level-1,
+    ul > li > ul > li > a.level-1 {
         @apply pl-8;
     }
 
-    ul > li > ul > li > p.lvl1:before,
-    ul > li > ul > li > a.lvl1:before {
+    ul > li > ul > li > p.level-1:before,
+    ul > li > ul > li > a.level-1:before {
         content: '+';
         @apply pr-2;
     }
 
-    ul > li > ul > li > ul > li > p.lvl2,
-    ul > li > ul > li > ul > li > a.lvl2 {
+    ul > li > ul > li > ul > li > p.level-2,
+    ul > li > ul > li > ul > li > a.level-2 {
         @apply pl-16;
     }
 
-    ul > li > ul > li > ul > li > p.lvl2:before,
-    ul > li > ul > li > ul > li > a.lvl2:before {
+    ul > li > ul > li > ul > li > p.level-2:before,
+    ul > li > ul > li > ul > li > a.level-2:before {
         content: '-';
         @apply pr-2;
     }

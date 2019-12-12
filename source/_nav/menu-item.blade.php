@@ -5,13 +5,13 @@
         @endphp
         {{-- Menu item with URL--}}
         <a href="{{ $page->url($url) }}"
-            class="{{ 'lvl' . $level }} lvl-base {{ $page->isActiveParent($item) ? 'lvl' . $level . '-active' : '' }} {{ $page->isActive($url) ? 'active' : '' }} hover:text-blue-500"
+            class="level-base {{ 'level-' . $level }} {{ $page->isActive($url) ? 'active' : '' }} hover:text-blue-500"
         >
             {{ $label }}
         </a>
     @else
         {{-- Menu item without URL--}}
-        <p class="{{ 'lvl' . $level }} lvl-base">{{ $label }}</p>
+        <p class="level-base {{ 'level-' . $level }}">{{ $label }}</p>
     @endif
 
     @if (! is_string($item) && $item->children)
