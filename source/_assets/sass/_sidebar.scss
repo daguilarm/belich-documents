@@ -3,16 +3,21 @@
     ul > li,
     ul > li > ul > li,
     ul > li > ul > li > ul > li {
-        @apply list-none;
+        list-style-type: none !important;
     }
 
     ul > li > .level-base {
-        @apply block no-underline my-0 text-base;
+        display: block;
+        text-decoration: none;
+        margin-top: 0;
+        margin-bottom: 0;
+        font-size: 1rem;
     }
 
     ul > li > p.level-base,
     ul > li > a.level-base {
-        @apply text-black p-2 font-normal;
+        color: black;
+        padding: 0.5rem;
     }
 
     ul > li > a.level-base.active {
@@ -26,23 +31,23 @@
 
     ul > li > ul > li > p.level-1,
     ul > li > ul > li > a.level-1 {
-        @apply pl-8;
+        padding-left: 2rem !important;
     }
 
     ul > li > ul > li > p.level-1:before,
     ul > li > ul > li > a.level-1:before {
-        content: '+';
-        @apply pr-2;
+        content: '+' !important;
+        padding-right: 0.5rem !important;
     }
 
     ul > li > ul > li > ul > li > p.level-2,
     ul > li > ul > li > ul > li > a.level-2 {
-        @apply pl-16;
+        padding-left: 4rem !important;
     }
 
     ul > li > ul > li > ul > li > p.level-2:before,
     ul > li > ul > li > ul > li > a.level-2:before {
-        content: '-';
-        @apply pr-2;
+        content: '-' !important;
+        padding-right: 0.5rem !important;
     }
 }
