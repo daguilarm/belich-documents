@@ -14,39 +14,39 @@
         font-size: 1rem;
     }
 
-    ul > li > p.level-base,
-    ul > li > a.level-base {
+    ul li p.level-base,
+    ul li a.level-base {
         color: black;
         padding: 0.5rem;
     }
 
-    ul > li > a.level-base.active {
+    ul li a.level-base.active {
         @apply text-blue-500 bg-gray-200 border-l border-blue-500;
     }
 
-    ul > li > p.level-0,
-    ul > li > a.level-0 {
+    ul li p.level-0,
+    ul li a.level-0 {
         @apply font-bold;
     }
 
-    ul > li > ul > li > p.level-1,
-    ul > li > ul > li > a.level-1 {
+    ul li ul li p.level-1,
+    ul li ul li a.level-1 {
         padding-left: 2rem !important;
     }
 
-    ul > li > ul > li > p.level-1:before,
-    ul > li > ul > li > a.level-1:before {
+    ul li ul li p.level-1:before,
+    ul li ul li a.level-1:before {
         content: '+' !important;
         padding-right: 0.5rem !important;
     }
 
-    ul > li > ul > li > ul > li > p.level-2,
-    ul > li > ul > li > ul > li > a.level-2 {
+    ul li ul li ul li p.level-2,
+    ul li ul li ul li a.level-2 {
         padding-left: 4rem !important;
     }
 
-    ul > li > ul > li > ul > li > p.level-2:before,
-    ul > li > ul > li > ul > li > a.level-2:before {
+    ul li ul li ul li p.level-2:before,
+    ul li ul li ul li a.level-2:before {
         content: '-' !important;
         padding-right: 0.5rem !important;
     }
