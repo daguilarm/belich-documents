@@ -6,7 +6,8 @@
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <title>{{ $page->locale === 'es' ? 'Gestor de contenidos para Laravel' : $page->siteName }}{{ $page->title ? ' | ' . $page->title : '' }}</title>
         <meta name="description" content="{{ $page->locale === 'es' ? 'Gestor de contenidos Belich' : 'Belich dashboard' }}. {{ $page->description ?? $page->siteDescription }}">
-
+        <link rel="alternate" hreflang="en" href="{{ str_replace('/es/', '/en/', $page->getUrl()) }}" />
+        <link rel="alternate" hreflang="es" href="{{ str_replace('/en/', '/es/', $page->getUrl()) }}" />
         <meta property="og:site_name" content="{{ $page->siteName }}"/>
         <meta property="og:title" content="{{ $page->title ?  $page->title . ' | ' : '' }}{{ $page->siteName }}"/>
         <meta property="og:description" content="{{ $page->description ?? $page->siteDescription }}"/>
