@@ -29,6 +29,12 @@
         @apply font-bold;
     }
 
+    ul li a.level-0:hover,
+    ul li ul li a.level-1:hover,
+    ul li ul li ul li a.level-2:hover {
+        color: #4299e1;
+    }
+
     ul li ul li p.level-1,
     ul li ul li a.level-1 {
         padding-left: 2rem !important;
