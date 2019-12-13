@@ -52,7 +52,7 @@
                                     <img src="../../../../assets/img/icons/github.svg" alt="Github logo" class="dropdown-click"> <i class="arrow-down"></i>
                                 </div>
                             </button>
-                            <div id="github-container" class="dropdown-content">
+                            <div id="github-container" class="dropdown-content border border-gray-400 mt-1">
                                 <a href="https://github.com/daguilarm/belich" class="flex-1 p-2">Belich</a>
                                 <a href="https://github.com/daguilarm/belich-documents" class="flex-1 p-2">{{ $page->locate === 'en' ? 'Documents' : 'Documentos' }}</a>
                                 <a href="https://github.com/daguilarm/belich-dashboard" class="flex-1 p-2">{{ $page->locate === 'en' ? 'Examples' : 'Ejemplos' }}</a>
