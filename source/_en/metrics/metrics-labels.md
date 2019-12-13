@@ -13,15 +13,15 @@ folder: metrics
 
 Este archivo se encuentra en:
 
-~~~
+```bash
 \resources\lang\vendor\belich\en\metrics.php
-~~~
+```
 
 Y por tanto, puede crearse el archivo:
 
-~~~
+```bash
 \resources\lang\vendor\belich\es\metrics.php
-~~~
+```
 
 Con su respectiva traducción al Castellano. A modo de ejemplo, la utilización de este *helper*, sería de la siguiente forma:
 
