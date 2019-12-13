@@ -31,7 +31,7 @@ Empecé cambiando todo el concepto de funcionamiento interno del código (ahora 
 
 Otra gran influencia a la hora de desarrollar este proyecto, ha sido [Sharp](https://github.com/code16/sharp){.link-out} y su forma de abordar algunos problemas con el código.
 
-La idea final es, ha sido la de poner todo el peso en la parte de `Php`, pero permitiendo la flexibilidad necesaria para que cada usuario, pueda integrar cualquier tecnología o **framework** que desee.
+La idea final ha sido la de poner todo el peso en la parte de `Php`, pero permitiendo la flexibilidad necesaria para que cada usuario, pueda integrar cualquier tecnología o **framework** que desee.
 
 **¿Y todo esto para qué?** Básicamente, para ganar en simplicidad. Con **Belich** es muy realmente sencillo personalizar cualquier campo o sección, y todo ello, sin tener que desarrollar complejos componentes con **javascript**. 
 
