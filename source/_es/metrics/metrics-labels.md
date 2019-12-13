@@ -17,13 +17,15 @@ Este archivo se encuentra en:
 \resources\lang\vendor\belich\en\metrics.php
 ```
 
-Y por tanto, puede crearse el archivo:
+Y por tanto, si quisieramos crear un archivo en español:
 
 ```bash
 \resources\lang\vendor\belich\es\metrics.php
 ```
 
-Con su respectiva traducción al Castellano. A modo de ejemplo, la utilización de este *helper*, sería de la siguiente forma:
+>**Belich** automáticamente, determinará que archivo de idioma a elegir, en base al idioma en que esté configurado **Laravel**.
+
+Las etiquetas se  utilizaran de la siguiente forma:
 
 ```php
 use Daguilarm\Belich\Components\Metrics\Labels;
@@ -58,7 +60,7 @@ El cual puede ser utilizado directamente por las gráficas. Veamos a continuaci�
 
 ### Métodos soportados
 
-- `countriesOfTheWorld()`: Devuelve un array con todos los nombres de los paises del mundo.
+- `countriesOfTheWorld()`: Devuelve un array con todos los nombres de los países del mundo.
 - `daysOfTheWeek()`: Devuelve un array con los nombres de los días de la semana.
 - `daysOfTheWeekMin()`: Devuelve un array con los nombres de días de la semana (usando abreviaciones).
 - `daysOfTheMonth()`: Devuelve un array con los días del mes: de 1 a (28, 29, 30 o 31).
@@ -126,8 +128,42 @@ public function labels(Request $request) : array
 ['MONDAY', 'TUESDAY', ...]
 ```
 
-Es decir, podemos formatear la salida del array. Las opciones soportadas son:
+Es decir, podemos formatear la salida del *array*. Las opciones soportadas son:
 
 - **capitalize**: nos devolverá el texto en mayúsculas.
 - **lower**: nos devolverá el texto en minúculas.
 - **title**:  nos devolverá el texto con la primera letra capitalizada (ucfirst). Esta es la opción por defecto.
+
+Por supuesto, podemos personalizar el método con nuestros propios *arrays*, no tenemos por qué utilizar los predeterminados:
+
+```php
+use Daguilarm\Belich\Components\Metrics\Labels;
+
+/**
+ * Get the values from storage
+ *
+ * @return string
+ */
+public function labels(Request $request) : array
+{
+    // Odd days
+    return [1, 3, 5, 7, 9, 11];
+}
+```
+
+O incluso:
+
+```php
+use Daguilarm\Belich\Components\Metrics\Labels;
+
+/**
+ * Get the values from storage
+ *
+ * @return string
+ */
+public function labels(Request $request) : array
+{
+    // Three days a week
+    return ['monday', 'wednesday', 'friday'];
+}
+```

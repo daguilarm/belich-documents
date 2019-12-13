@@ -1,29 +1,31 @@
 ---
-title: Etiquetas para gráficas
-description: Gestionando las Etiquetas para gráficas de Belich
+title: Labels for graphics
+description: Managing Belich's Labels for graphics
 extends: _layouts.documentation
 section: content
-locate: es
+locate: en
 folder: metrics
 ---
 
-# Etiquetas para gráficas
+# Labels for graphics
 
-**Belich** incluye una serie de etiquetas predeterminadas y basadas en la localización de **Laravel**, y que pueden ser traducidas.
+**Belich** includes a series of predetermined labels based on the location of **Laravel**, and this labels can be easily translated.
 
-Este archivo se encuentra en:
+You can find this file in:
 
 ```bash
 \resources\lang\vendor\belich\en\metrics.php
 ```
 
-Y por tanto, puede crearse el archivo:
+And therefore, if we wanted to create a file in Spanish:
 
 ```bash
 \resources\lang\vendor\belich\es\metrics.php
 ```
 
-Con su respectiva traducción al Castellano. A modo de ejemplo, la utilización de este *helper*, sería de la siguiente forma:
+>**Belich** automatically, will determine which language file to choose, based on the language configured in **Laravel**.
+
+The tags will be used as follows:
 
 ```php
 use Daguilarm\Belich\Components\Metrics\Labels;
@@ -39,7 +41,7 @@ public function labels(Request $request) : array
 }
 ```
 
-Que devolvería un array con:
+That would return an array with:
 
 ```php
 Array
@@ -54,20 +56,20 @@ Array
 )
 ```
 
-El cual puede ser utilizado directamente por las gráficas. Veamos a continuación la lista de etiquetas predeterminadas por **Belich**.
+Which can be used directly by the graphs. Let's see below the list of default labels soported by **Belich**.
 
-### Métodos soportados
+### Supported methods
 
-- `countriesOfTheWorld()`: Devuelve un array con todos los nombres de los paises del mundo.
-- `daysOfTheWeek()`: Devuelve un array con los nombres de los días de la semana.
-- `daysOfTheWeekMin()`: Devuelve un array con los nombres de días de la semana (usando abreviaciones).
-- `daysOfTheMonth()`: Devuelve un array con los días del mes: de 1 a (28, 29, 30 o 31).
-- `hoursOfTheday()`: Devuelve un array con valores de 1 a 24.
-- `monthsOfTheYear()`: Devuelve un array con los nombres de los meses del año.
-- `monthsOfTheYearMin()`: Devuelve un array con los nombres de los meses del año (usando abreviaciones).
-- `listOfYears()`: Devuelve un array con los años en función del año inicial.
+- `countriesOfTheWorld()`: Returns an array with all the names of the countries of the world.
+- `daysOfTheWeek()`: Returns an array with the names of the days of the week.
+- `daysOfTheWeekMin()`: Returns an array with the names of days of the week (using abbreviations).
+- `daysOfTheMonth()`: Returns an array with the days of the month: from 1 to (28, 29, 30 or 31).
+- `hoursOfTheday()`: Returns an array with values from 1 to 24.
+- `monthsOfTheYear()`: Returns an array with the names of the months of the year.
+- `monthsOfTheYearMin()`: Returns an array with the names of the months of the year (using abbreviations).
+- `listOfYears()`: Returns an array with the years depending on the initial year.
 
-Agunos ejemplos:
+A few examples:
 
 ```php
 use Daguilarm\Belich\Components\Metrics\Labels;
@@ -86,7 +88,7 @@ public function labels(Request $request) : array
 ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday']
 ```
 
-Veamos el ejemplo que puede crear más dudas:
+Let's look at the example that can create more doubts:
 
 ```php
 use Daguilarm\Belich\Components\Metrics\Labels;
@@ -105,9 +107,9 @@ public function labels(Request $request) : array
 [2017, 2018, 2019]
 ```
 
-Le hemos indicado que nos devuelva un array con los tres últimos años.
+We have indicated that we return an array with the last three years.
 
-Todos los métodos devuelven *arrays*, pero aquellos que el *array* contiene texto (*strings*) y no números, puede ser formateado. Estos métodos, como por ejemplo: `Labels::daysOfTheWeek()`, admiten un parámetro adicional:
+All methods return *arrays*, but those that the * array * contains text (*strings*) and not numbers, can be formatted. These methods, such as: `Labels::daysOfTheWeek()`, support an additional parameter:
 
 ```php
 use Daguilarm\Belich\Components\Metrics\Labels;
@@ -126,8 +128,42 @@ public function labels(Request $request) : array
 ['MONDAY', 'TUESDAY', ...]
 ```
 
-Es decir, podemos formatear la salida del array. Las opciones soportadas son:
+So, we can format the output of the *array*. The supported options are:
 
-- **capitalize**: nos devolverá el texto en mayúsculas.
-- **lower**: nos devolverá el texto en minúculas.
-- **title**:  nos devolverá el texto con la primera letra capitalizada (ucfirst). Esta es la opción por defecto.
+- **capitalize**: It will return the text in capital letters.
+- **lower**: It will return the text in lowercase.
+- **title**: It will return the text with the first capitalized letter (ucfirst()). This is the default option.
+
+Of course, we can customize the method with our own *arrays*, we don't have to use the default ones:
+
+```php
+use Daguilarm\Belich\Components\Metrics\Labels;
+
+/**
+ * Get the values from storage
+ *
+ * @return string
+ */
+public function labels(Request $request) : array
+{
+    // Odd days
+    return [1, 3, 5, 7, 9, 11];
+}
+```
+
+Or even: 
+
+```php
+use Daguilarm\Belich\Components\Metrics\Labels;
+
+/**
+ * Get the values from storage
+ *
+ * @return string
+ */
+public function labels(Request $request) : array
+{
+    // Three days a week
+    return ['monday', 'wednesday', 'friday'];
+}
+```
