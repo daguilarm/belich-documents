@@ -23,15 +23,19 @@ folder: home
 
 My goal was always to do something like that, and it wasn't until it came up [Nova](https://nova.laravel.com){.link-out}, that continuing with this idea and taking it further, it got a complete and functional product.
 
-I started working with **Nova**, and at first it was great, but then the first problems arrived. My project required flexibility and functionality that **Nova** could not give me, so I spent all the day designing patches and *packages* to add the features I needed. In the end, I had no choice but to start **Belich**, with the idea of trying to solve all these problems, and above all, leaving aside **Javascript frameworks**, such as: [VueJS](https://vuejs.org/){.link-out}, [React](https://reactjs.org){.link-out} or even [Jquery](https://jquery.com/){.link-out}, my final goal was to leave everything (or almost everything) in the hands of: [Php](http://php.net){.link-out}. 
+Entonces, empecé a trabajar con **Nova** y al principio todo fue genial, pero no tardaron en llegar los primeros problemas. Mi proyecto exigía de una flexibilidad y funcionabilidades que **Nova** no me podía dar. La situación era que me pasaba el día diseñando parches y *packages* para añadir las funcionalidades que necesitaba. Hay que matizar, que por aquel entonces, **Nova** estaba muy lejos de ser lo que es ahora, por aquel entonces tenía la impresión de que habían lanzado el producto sin terminar... hoy en día, es un producto mucho más completo y perfeccionado, aunque sigue siendo (para mi), un producto con una dependencia excesiva en **javascript**. 
 
-Once I started developing **Belich**, I had an important problem: I had to find a way to migrate my old project with **Nova** to **Belich**... so I chose to use a similar syntax in the form management, which was the most complicated part to migrate (I didn't want migration to become a nightmare).
+I started working with **Nova**, and at first it was great, but then the first problems arrived. My project required flexibility and functionality that **Nova** could not give me. The situation was that I spent the day designing *patches* and *packages* to add the functionalities I needed. I must clarify, that at that time, **Nova** was far from being what it is now, at in that time I had the impression that they had launched an unfinished product ... today, it is a much more complete and perfected product, although it remains (for me), a product with an excessive dependence on **javascript**.
 
-I started by changing the whole concept of internal code operation (now it was rendered directly by **Blade** and not by **VueJS**) and above all, adding new functionalities and simplifying processes.
+In the end, I decided to start **Belich**, with the idea of solving these problems, and above all, having in mind the idea of keeping away *frameworks* based on *javascript*, such as: [VueJS](https://vuejs.org/){.link-out}, [React](https://reactjs.org){.link-out} or even [Jquery](https://jquery.com/){.link-out}. 
 
-Another great influence when developing this project has been [Sharp](https://github.com/code16/sharp){.link-out} and how to address some problems with the code.
+The goal, in the end, was to leave all the prominence (or almost everything) to [Php](http://php.net){.link-out}. 
 
-The final idea has been to put all the weight in the `Php` part, but allowing the necessary flexibility so that each user can integrate any technology or **framework** that they want.
+Once I started developing **Belich**, I had an important problem: I had to find a way to migrate my old project with **Nova** to **Belich**... I saw the main problem in the resources, since it had about 70 of them created, and migrating all the resources look lika a chaos. I finally opted to try to maintain some homogeneity in the way of processing these files, in order to keep the transition as simple as possible, and this led me to maintain some consistency between the syntax of both projects.
+
+All this, keeping in mind the idea of changing the whole concept of the internal code operation, changing the way in which the resources were rendered, now working directly through **Blade** instead of **VueJS** as It was with **Nova**. During this process, some technical problems arose, but thanks to [Sharp](https://github.com/code16/sharp){.link-out} and his way of addressing these situations, I found some interesting ideas.
+
+As a summary, the concept on which **Belich** has been developed, is to put all the weight in the `Php` part, but always allowing the necessary flexibility, so that each user can integrate any technology or *framework* you want.
 
 **And all this for what?** Basically, to win in simplicity. With **Belich** is very easy to customize any field or section, and all this simplicity, without having to develop complex components with **javascript**.
 
