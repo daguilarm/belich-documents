@@ -84,11 +84,11 @@ return [
         ]
     ],
     'Cards||Cards' => [
-        'url' => '_location_/cards/card',
+        'url' => '_location_/cards/cards-default',
         'children' => [
-            'Controllers||Controlladores' => '_location_/cards/controller',
-            'Views||Vistas' => '_location_/cards/view',
-            'Cache||Caché' => '_location_/cards/cache',
+            'Controllers||Controlladores' => '_location_/cards/cards-controller',
+            'Views||Vistas' => '_location_/cards/cards-view',
+            'Cache||Caché' => '_location_/cards/cards-cache',
         ]
     ],
     'Tools||Tools/Herramientas' => '_location_/tools',
