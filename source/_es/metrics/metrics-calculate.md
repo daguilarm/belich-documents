@@ -1,3 +1,12 @@
+---
+title: Métodos de cálculo para gráficas
+description: Gestionando Métodos de cálculo para gráficas con Belich
+extends: _layouts.documentation
+section: content
+locate: es
+folder: metrics
+---
+
 # Métodos de cálculo para gráficas
 
 **Belich**, permite la implementación rápida de métricas, para ello, integra una serie de métodos que nos simplificarán el trabajo.
@@ -22,7 +31,7 @@ public function calculate(Request $request) : array
 }
 ```
 
-?>Como es lógico, podemos utilizar nuestra propia lógica para obtener los datos, simplemente hay que tener en cuenta que el resultado, deben de ser un `array`.
+>Como es lógico, podemos utilizar nuestra propia lógica para obtener los datos, simplemente hay que tener en cuenta que el resultado, deben de ser un `array`.
 
 ### make()
 
@@ -34,7 +43,7 @@ Por defecto, este parámetro se puede dejar en blanco, y **Belich**, utilizará 
 
 El resto de métodos son variables, y por tanto, los veremos agrupados por funcionalidad.
 
-?>Los métodos de caché, pueden consultarse en el apartado [Caché para gráficas](/es/metrics/cache.md)
+>Los métodos de caché, pueden consultarse en el apartado [Caché para gráficas](cache)
 
 ## Determinación de fecha
 
@@ -61,7 +70,7 @@ Connection::make(User::class)
     ->endDate(Carbon::now())
 ```
 
-Para simplificar este trabajo de determinación de fechas (aún más), se han añadido una serie de helpers, que configuran las fechas por nosotros:
+Para simplificar este trabajo de determinación de fechas (aún más), se han añadido una serie de *helpers*, que configuran las fechas por nosotros:
 
 - `toDay()`
 - `oneDay(int $day, int $month, int $year)`
@@ -74,7 +83,7 @@ Para simplificar este trabajo de determinación de fechas (aún más), se han a�
 - `lastYear()`
 - `lastYears(int $numberOfYears)`
 
-Básicamente, estas clases lo que hacen es esto:
+Estas clases, lo que realmente hacen es:
 
 ```php
 /**
@@ -93,7 +102,7 @@ public function lastMonth() : self
 
 ## Determinación del valor
 
-Para calcular el resultado del modelo, disponemos de los siguientes helpers:
+Para calcular el resultado del modelo, disponemos de los siguientes *helpers*:
 
 - totalByHour()
 - totalByDay()
