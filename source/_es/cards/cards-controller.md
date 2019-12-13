@@ -1,3 +1,12 @@
+---
+title: Controladores de tarjetas (Card Controllers)
+description: Gestionando Controladores de tarjetas
+extends: _layouts.documentation
+section: content
+locate: es
+folder: cards
+---
+
 # Cards: Controladores
 
 El controlador, se puede generar mediante consola: 
@@ -66,7 +75,7 @@ class UserCard extends Card {
 }
 ```
 
-Este archivo, que actuará como Controlador, nos permitirá guardar toda la lógica de la `Card`, y por tanto, la vista estará libre de código `PHP`.
+Este archivo, que actuará como *Controlador*, nos permitirá guardar toda la lógica de la `Card`, y por tanto, la vista estará libre de código `PHP`.
 
 A través del método `view()`, definimos la ubicación de la vista. Por tanto, podemos ubicar la vista donde queramos, aunque por defecto, la ubicación para las vistas de las **Cards** es:
 
@@ -105,7 +114,8 @@ a) Utilizando la variable `$width` del controlador.
  */
 public $width = 'w-full';
 ```
-2. Cuando inicializamos la clase desde `App\Belich\Resource\MyResource.php`, podemos indicarlo, de la siguiente forma:
+
+b) Cuando inicializamos la clase desde `App\Belich\Resource\MyResource.php`, podemos indicarlo, de la siguiente forma:
 
 ```php 
 App\Belich\Resource\MyResource.php
@@ -123,3 +133,21 @@ public static function cards(Request $request): array
     ];
 }
 ```
+
+No elimine el *Constructor*:
+
+```php 
+/**
+ * Initialize the card
+ *
+ * @return string
+ */
+public function __construct(Request $request)
+{
+    parent::__construct();
+}
+```
+
+<div class="blockquote-alert">
+    Importante: No elimine el <i>Constructor</i> de la clase o no funcionará nada...
+</div>
