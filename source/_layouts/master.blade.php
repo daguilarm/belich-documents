@@ -39,7 +39,7 @@
     </head>
 
     <body class="flex flex-col justify-between min-h-screen bg-gray-100 text-gray-800 leading-normal font-sans">
-        <header class="flex items-center shadow bg-white border-b h-24 mb-8 py-4" role="banner">
+        <header class="flex items-center shadow bg-white border-b h-24 py-4" role="banner">
             <div class="container max-w-8xl mx-auto px-4 lg:px-8">
                 <div class="flex items-center justify-between">
                     <a href="/" title="{{ $page->siteName }} home" class="inline-flex items-center">
@@ -74,35 +74,7 @@
         <main role="main" class="w-full flex-auto">
             @yield('body')
         </main>
-
-        <script src="{{ mix('js/main.js', 'assets/build') }}"></script>
-        @stack('scripts')
-        <script>
-            document.addEventListener('DOMContentLoaded', function() {
-                var linksTargetBlank = document.querySelectorAll('.link-out');
-                for (var i = 0; i < linksTargetBlank.length; i++) {
-                    linksTargetBlank[i].target = "_blank";
-                }
-            }, false);
-
-            function dropdown(id) {
-                document.getElementById(id).classList.toggle('show');
-            }
-
-            window.onclick = function(event) {
-                if (!event.target.matches('.dropdown-click')) {
-                    var sharedowns = document.getElementsByClassName('dropdown-content');
-                    var i;
-                    for (i = 0; i < sharedowns.length; i++) {
-                        var openSharedown = sharedowns[i];
-                        if (openSharedown.classList.contains('show')) {
-                            openSharedown.classList.remove('show');
-                        }
-                    }
-                }
-            }
-        </script>
-        <footer class="bg-white text-center text-sm mt-12 py-4" role="contentinfo">
+        <footer class="bg-white text-center text-sm sm:mt-8 py-4" role="contentinfo">
             <ul class="flex flex-col md:flex-row justify-center">
                 <li class="md:mr-2">
                     &copy; <a href="https://www.daguilar.dev" title="Damián Aguilar">Damián Aguilar</a> {{ date('Y') }}.
@@ -113,6 +85,34 @@
                     {{ $page->locale === 'es' ? 'y' : 'and' }} <a href="https://tailwindcss.com" title="Tailwind CSS - CSS framework">Tailwind CSS</a>.
                 </li>
             </ul>
+            {{-- Scripts --}}
+            <script src="{{ mix('js/main.js', 'assets/build') }}"></script>
+            @stack('scripts')
+            <script>
+                function dropdown(id) {
+                    document.getElementById(id).classList.toggle('show');
+                }
+
+                document.addEventListener('DOMContentLoaded', function() {
+                    var linksTargetBlank = document.querySelectorAll('.link-out');
+                    for (var i = 0; i < linksTargetBlank.length; i++) {
+                        linksTargetBlank[i].target = "_blank";
+                    }
+                }, false);
+
+                window.onclick = function(event) {
+                    if (!event.target.matches('.dropdown-click')) {
+                        var sharedowns = document.getElementsByClassName('dropdown-content');
+                        var i;
+                        for (i = 0; i < sharedowns.length; i++) {
+                            var openSharedown = sharedowns[i];
+                            if (openSharedown.classList.contains('show')) {
+                                openSharedown.classList.remove('show');
+                            }
+                        }
+                    }
+                }
+            </script>
         </footer>
     </body>
 </html>
