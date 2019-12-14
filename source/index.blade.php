@@ -2,7 +2,7 @@
 
 @section('body')
 <section class="container max-w-6xl mx-auto px-2 sm:px-6 my-4">
-    <div class="flex justify-center w-full mb-12">
+    <div class="hidden sm:block flex justify-center w-full mb-12">
         <img class="w-3/4 rounded-lg shadow" src="assets/img/thumbnail.jpg">
     </div>
     <div class="sm:flex lg:mb-8 mx-auto">
