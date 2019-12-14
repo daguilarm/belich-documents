@@ -7,7 +7,7 @@
     </div>
     <div class="sm:flex sm:-mt-6 mx-auto">
         <div class="w-full mx-0 sm:mx-4 mb-4 sm:mb-0 bg-white rounded-lg p-6 shadow-lg">
-            <h3 class="text-blue-800">Belich: The dashboard admin for Laravel</h3>
+            <h2 class="text-blue-800 mb-4 text-2xl">The dashboard admin for Laravel</h2>
             <ul class="p-2 mx-6 text-gray-600">
                 <li>No JS frameworks, just vanilla JS.</li>
                 <li>Focus on PHP.</li>
@@ -20,7 +20,7 @@
             </div>
         </div>
         <div class="w-full mx-0 sm:mx-4 bg-white rounded-lg p-6 shadow-lg">
-            <h3 class="text-blue-800">Belich: Panel de administración para Laravel</h3>
+            <h2 class="text-blue-800 mb-4 text-2xl">Panel de administración para Laravel</h2>
             <ul class="p-2 mx-6 text-gray-600">
                 <li>Sin frameworks JS, solo vanilla JS.</li>
                 <li>Centrado en PHP.</li>
