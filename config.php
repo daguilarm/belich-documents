@@ -2,7 +2,7 @@
 
 return [
     'baseUrl' => 'https://www.belich.dev',
-    'production' => true,
+    'production' => false,
     'siteName' => 'Dashboard admin for Laravel',
     'siteDescription' => 'Belich is a Laravel dashboard admin. You can find all the documentation here...',
 
