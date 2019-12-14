@@ -3,7 +3,7 @@
 @section('body')
 <section class="container max-w-6xl mx-auto px-2 sm:px-6 my-4">
     <div class="hidden sm:flex justify-center w-full mb-12">
-        <img class="w-3/4 rounded-lg shadow" src="assets/img/thumbnail.jpg">
+        <img class="w-3/4 rounded-lg shadow" src="assets/img/thumbnail.jpg" class="lazyLoad">
     </div>
     <div class="sm:flex sm:-mt-6 mx-auto">
         <div class="w-full mx-0 sm:mx-4 mb-4 sm:mb-0 bg-white rounded-lg p-6 shadow-lg">
@@ -35,3 +35,25 @@
     </div>
 </section>
 @endsection
+
+@push('scripts')
+    <script>
+        function onScrollEvent(entries, observer) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                    var attributes = entry.target.attributes;
+                    var src = attributes['data-src'].textContent;
+                    entry.target.src = src;
+                    entry.target.classList.add('lazyLoad-visible');
+                }
+            });
+        }
+
+        var targets = document.querySelectorAll('.lazyLoad');
+        var observer = new IntersectionObserver(onScrollEvent);
+
+        targets.forEach(function(entry) {
+            observer.observe(entry);
+        });
+    </script>
+@endpush
