@@ -37,6 +37,7 @@
 @endsection
 
 @push('scripts')
+    <script src="https://polyfill.io/v2/polyfill.min.js?features=IntersectionObserver"></script>
     <script>
         function onScrollEvent(entries, observer) {
             entries.forEach(function(entry) {
