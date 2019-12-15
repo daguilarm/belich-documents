@@ -1,9 +1,9 @@
 // Images
 img {
-    @apply shadow-lg rounded-lg block my-6 object-center;
+    @apply shadow-lg rounded-lg block mt-12 object-center;
 }
 
     // Image legend
     #legend {
-        @apply text-center w-full -mt-2 italic;
+        @apply text-center w-full -mt-4 mb-10 italic;
     }

@@ -15,12 +15,12 @@ This functionality consists of two parts: a **controller** and a **view**.
 
 The cards adapt perfectly to the structure of the metrics, so we can exchange them with each other, as you can see in the **figure 1**:
 
-![Card example](../../assets/images/cards/cards.png)
+![Card example](../../assets/images/cards/cards.webp){.mx-auto .wp-75}
 <div id="legend"><b>fig 1</b>: Card example integrated with Graph</div>
 
 Or we can show it separately:
 
-![Card full example](../../assets/images/cards/cards-full.png)
+![Card full example](../../assets/images/cards/cards-full.webp){.mx-auto .wp-75}
 <div id="legend"><b>fig 2</b>: A segregated Card example</div>
 
 Because the *card* is outside the line of the metrics, we can configure the height of the container, and any other option. In any case, the container will be sorted automatically in the best possible way.
