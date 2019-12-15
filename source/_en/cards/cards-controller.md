@@ -1,21 +1,21 @@
 ---
-title: Controladores de tarjetas (Card Controllers)
-description: Gestionando Controladores de tarjetas
+title: Card Controllers
+description: Managing Card Controllers
 extends: _layouts.documentation
 section: content
-locate: es
+locate: en
 folder: cards
 ---
 
-# Cards: Controladores
+# Card
 
-El controlador, se puede generar mediante consola: 
+A **Card**, can be generated using the console:
 
 ```php
 artisan belich:card CardName
 ```
 
-Será guardado en la carpeta: `\App\Belich\Cards`, y tendrá la siguiente estructura:
+It will be saved in the folder: `\App\Belich\Cards`, and will have the following structure:
 
 ```php
 namespace App\Belich\Cards;
@@ -75,79 +75,11 @@ class UserCard extends Card {
 }
 ```
 
-Este archivo, que actuará como *Controlador*, nos permitirá guardar toda la lógica de la `Card`, y por tanto, la vista estará libre de código `PHP`.
+This file, which will act as *Controller*, will allow us to save all the logic of the `Card`, and therefore, the view will be free of `Php` code.
 
-A través del método `view()`, definimos la ubicación de la vista. Por tanto, podemos ubicar la vista donde queramos, aunque por defecto, la ubicación para las vistas de las **Cards** es:
+Through the method `view()`, we define the location of the view. Therefore, we can locate the view where we want, although by default, the location for the **Cards** views will be:
 
 ~~~
 ./resources/views/vendor/belich/cards/
 ~~~
 
-Allí, encontraremos un archivo de ejemplo llamado: `example.blade.php`, que nos servirá como plantilla para crear nuestra vista.
-
-También disponemos del método `withMeta()` que nos permitirá devolver un array con variables que será inyectado directamente a la vista, y por tanto, accesible desde ella.
-
-En el ejemplo anterior, tendremos disponibles en nuestra vista, las variables: 
-
-- `$data1`
-- `$data2`
-
-Dentro de la variable `$card->withMeta`:
-
-```php 
-[
-  "data1" => "Example 1"
-  "data2" => "Example 2"
-]
-```
-
-Al igual que sucedía con las [Gráficas](/es/metrics/metrics.md), disponemos del método `uriKey()` que nos permitirá identificar con una clave única nuestra `Card`.
-
-Y también disponemos de la opción de determinar el ancho de nuestra `Card`, podemos hacerlo de dos formas:
-
-a) Utilizando la variable `$width` del controlador.
-
-```php 
-/**
- *
- * @var string
- */
-public $width = 'w-full';
-```
-
-b) Cuando inicializamos la clase desde `App\Belich\Resource\MyResource.php`, podemos indicarlo, de la siguiente forma:
-
-```php 
-App\Belich\Resource\MyResource.php
-
-/**
- * Set the custom cards
- *
- * @param  \Illuminate\Http\Request  $request
- * @return Illuminate\Support\Collection
- */
-public static function cards(Request $request): array
-{
-    return [
-        (new \App\Belich\Cards\MyCard($request))->width('w-1/3'),
-    ];
-}
-```
-
-No elimine el *Constructor*:
-
-```php 
-/**
- * Initialize the card
- *
- * @return string
- */
-public function __construct(Request $request)
-{
-    parent::__construct();
-}
-```
-
-<div class="blockquote-alert">
-    Importante: No elimine el <i>Constructor</i> de la clase o no funcionará nada...
-</div>

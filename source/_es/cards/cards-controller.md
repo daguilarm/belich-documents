@@ -7,15 +7,17 @@ locate: en
 folder: cards
 ---
 
-# Cards: Controllers
+# Cards
 
-El controlador, se puede generar mediante consola: 
+Una **Card**, se puede generar mediante consola: 
 
 ```php
 artisan belich:card CardName
 ```
 
-Será guardado en la carpeta: `\App\Belich\Cards`, y tendrá la siguiente estructura:
+Este comando, nos creará dos archivos: una *Vista* y un *Controlador*. 
+
+El *Controlador*, se generará en la carpeta: `\App\Belich\Cards`, y tendrá la siguiente estructura:
 
 ```php
 namespace App\Belich\Cards;
@@ -75,17 +77,56 @@ class UserCard extends Card {
 }
 ```
 
-Este archivo, que actuará como *Controlador*, nos permitirá guardar toda la lógica de la `Card`, y por tanto, la vista estará libre de código `PHP`.
+Este archivo, nos permitirá guardar toda la lógica de la `Card`, y por tanto, la *Vista* estará libre de código `Php`.
 
-A través del método `view()`, definimos la ubicación de la vista. Por tanto, podemos ubicar la vista donde queramos, aunque por defecto, la ubicación para las vistas de las **Cards** es:
+La vista, se ha guardado por defecto en:
 
 ~~~
 ./resources/views/vendor/belich/cards/
 ~~~
 
-Allí, encontraremos un archivo de ejemplo llamado: `example.blade.php`, que nos servirá como plantilla para crear nuestra vista.
+Aunque esto, puede cambiarse fácilmente desde el archivo `app\config\belich.php`.
 
-También disponemos del método `withMeta()` que nos permitirá devolver un array con variables que será inyectado directamente a la vista, y por tanto, accesible desde ella.
+## Métodos disponibles 
+
+Cada archivo de **Cards**, dispone de una serie de métodos, los cuales describimos a continuación:
+
+### view()
+
+A través del método `view()`, definimos la ubicación de la vista. Por tanto, podemos ubicar la vista donde queramos.
+
+```php
+/**
+ * Return the view
+ *
+ * @return string
+ */
+public function view() : string
+{
+    return 'belich::cards.users';//By default in /resources/views/vendor/belich/cards/users.blade.php
+}
+```
+
+>Importante: debemos indicar la ruta correcta de nuestra Vista, sobre todo si modificamos el archivo de configuración (`app\config\belich.php`) y la ruta por defecto.
+
+### withMeta()
+
+También disponemos del método `withMeta()` que nos permitirá devolver un *array* con variables que será inyectado directamente a la vista, y por tanto, accesible desde ella.
+
+```php
+/**
+ * Return the view data
+ *
+ * @return string
+ */
+public function withMeta() : array
+{
+    return [
+        'data1' => 'Example 1',
+        'data2' => 'Example 2',
+    ];
+}
+```
 
 En el ejemplo anterior, tendremos disponibles en nuestra vista, las variables: 
 
@@ -101,7 +142,9 @@ Dentro de la variable `$card->withMeta`:
 ]
 ```
 
-Al igual que sucedía con las [Gráficas](/es/metrics/metrics.md), disponemos del método `uriKey()` que nos permitirá identificar con una clave única nuestra `Card`.
+### uriKey()
+
+Al igual que sucedía con las [Gráficas](metrics/metrics-default), disponemos del método `uriKey()` que nos permitirá identificar con una clave única nuestra `Card`.
 
 Y también disponemos de la opción de determinar el ancho de nuestra `Card`, podemos hacerlo de dos formas:
 
@@ -133,6 +176,8 @@ public static function cards(Request $request): array
     ];
 }
 ```
+
+### Importante
 
 No elimine el *Constructor*:
 

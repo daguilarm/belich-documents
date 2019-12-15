@@ -86,7 +86,7 @@ return [
     'Cards||Cards' => [
         'url' => '_location_/cards/cards-default',
         'children' => [
-            'Controllers||Controlladores' => '_location_/cards/cards-controller',
+            'Creating a Card||Creando una Card' => '_location_/cards/cards-controller',
             'Views||Vistas' => '_location_/cards/cards-view',
             'Cache||Caché' => '_location_/cards/cards-cache',
         ]

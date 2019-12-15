@@ -237,3 +237,23 @@ Podemos definir el icono o imagen que se verá cuando estemos cargado páginas o
 */
 'loading' => '<i class="fas fa-spinner fa-spin fa-10x text-blue-200"></i>',
 ```
+
+### Cards 
+
+Las **Cards** generadas por **Belich**, requieren de una vista para renderización. Desde este archivo *config*, podemos definir la ruta donde se guardan estas vistas.
+
+>Sirve para cuando creamos las **Cards** desde [Artisan](cards/cards-controller')
+
+```php
+/*
+|--------------------------------------------------------------------------
+| Cards
+|--------------------------------------------------------------------------
+|
+| Define the storage directory for card views. By default Belich will create all the
+| views for the Cards in the folder: /resources/views/vendor/belich/cards/
+*/
+'cards' => [
+    'path' => resource_path('views/vendor/belich/cards'),
+], 
+```
