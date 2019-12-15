@@ -15,7 +15,9 @@ A **Card**, can be generated using the console:
 artisan belich:card CardName
 ```
 
-It will be saved in the folder: `\App\Belich\Cards`, and will have the following structure:
+This command will create two files: a *View* and a *Controller*.
+
+The *Controller* will be generated in the folder: `\App\Belich\Cards`, and will have the following structure:
 
 ```php
 namespace App\Belich\Cards;
@@ -75,11 +77,34 @@ class UserCard extends Card {
 }
 ```
 
-This file, which will act as *Controller*, will allow us to save all the logic of the `Card`, and therefore, the view will be free of `Php` code.
+This file, will allow us to save all the logic of the `Card`, and therefore, the view will be free of `Php` code.
 
-Through the method `view()`, we define the location of the view. Therefore, we can locate the view where we want, although by default, the location for the **Cards** views will be:
+The view will be stored by default in:
 
 ~~~
 ./resources/views/vendor/belich/cards/
 ~~~
 
+>This can be easily changed from the file: `app\config\belich.php`.
+
+## Available methods
+
+Each **Cards** file has a series of methods, which we are going to describe below:
+
+### view()
+
+A través del método `view()`, definimos la ubicación de la vista. Por tanto, podemos ubicar la vista donde queramos.
+
+```php
+/**
+ * Return the view
+ *
+ * @return string
+ */
+public function view() : string
+{
+    return 'belich::cards.users';//By default in /resources/views/vendor/belich/cards/users.blade.php
+}
+```
+
+>Importante: debemos indicar la ruta correcta de nuestra Vista, sobre todo si modificamos el archivo de configuración (`app\config\belich.php`) y la ruta por defecto.

@@ -79,13 +79,13 @@ class UserCard extends Card {
 
 Este archivo, nos permitirá guardar toda la lógica de la `Card`, y por tanto, la *Vista* estará libre de código `Php`.
 
-La vista, se ha guardado por defecto en:
+La vista, se guardará por defecto en:
 
 ~~~
 ./resources/views/vendor/belich/cards/
 ~~~
 
-Aunque esto, puede cambiarse fácilmente desde el archivo `app\config\belich.php`.
+>Esto, puede cambiarse fácilmente desde el archivo: `app\config\belich.php`.
 
 ## Métodos disponibles 
 
