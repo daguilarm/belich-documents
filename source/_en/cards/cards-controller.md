@@ -1,13 +1,13 @@
 ---
-title: Card Controllers
+title: Controladores de tarjetas (Card Controllers)
 description: Gestionando Controladores de tarjetas
 extends: _layouts.documentation
 section: content
-locate: en
+locate: es
 folder: cards
 ---
 
-# Cards: Controllers
+# Cards: Controladores
 
 El controlador, se puede generar mediante consola: 
 
