@@ -1,20 +1,9 @@
 // Images
 img {
-    @apply shadow-lg rounded-lg block my-6;
+    @apply shadow-lg rounded-lg block my-6 object-center;
 }
 
     // Image legend
     #legend {
         @apply text-center w-full -mt-2 italic;
     }
-
-// Lazy load images
-.lazyLoad {
-    width: 100%;
-    opacity: 0;
-}
-
-.lazyLoad-visible {
-    transition: opacity 1000ms ease;
-    opacity: 1;
-}

@@ -98,6 +98,10 @@
                     for (var i = 0; i < linksTargetBlank.length; i++) {
                         linksTargetBlank[i].target = "_blank";
                     }
+                    var lazyImages = document.getElementsByTagName('img');
+                    for (var i = 0; i < lazyImages.length; i++) {
+                        lazyImages[i].setAttribute('loading', 'lazy');
+                    }
                 }, false);
 
                 window.onclick = function(event) {
