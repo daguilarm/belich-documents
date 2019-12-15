@@ -17,7 +17,7 @@ artisan belich:card CardName
 
 Este comando, nos creará dos archivos: una *Vista* y un *Controlador*. 
 
-El *Controlador*, se generará en la carpeta: `\App\Belich\Cards`, y tendrá la siguiente estructura:
+El *Controlador*, se generará en la carpeta: `\app\Belich\Cards`, y tendrá la siguiente estructura:
 
 ```php
 namespace App\Belich\Cards;
@@ -93,7 +93,7 @@ Cada archivo de **Cards**, dispone de una serie de métodos, los cuales describi
 
 ### view()
 
-A través del método `view()`, definimos la ubicación de la vista. Por tanto, podemos ubicar la vista donde queramos.
+A través del método `view()`, definimos la ubicación de la vista. Por lo tanto, podemos guardar la vista donde queramos.
 
 ```php
 /**
@@ -107,11 +107,11 @@ public function view() : string
 }
 ```
 
->Importante: debemos indicar la ruta correcta de nuestra Vista, sobre todo si modificamos el archivo de configuración (`app\config\belich.php`) y la ruta por defecto.
+>Importante: debemos indicar la ruta correcta de nuestra *Vista*, sobre todo si modificamos el archivo de configuración (`app\config\belich.php`) y la ruta por defecto.
 
 ### withMeta()
 
-También disponemos del método `withMeta()` que nos permitirá devolver un *array* con variables que será inyectado directamente a la vista, y por tanto, accesible desde ella.
+También disponemos del método `withMeta()` que nos permitirá devolver un *array* con variables que será inyectado directamente a la *Vista*, y por tanto, accesible desde ella.
 
 ```php
 /**
@@ -148,7 +148,7 @@ Al igual que sucedía con las [Gráficas](metrics/metrics-default), disponemos d
 
 Y también disponemos de la opción de determinar el ancho de nuestra `Card`, podemos hacerlo de dos formas:
 
-a) Utilizando la variable `$width` del controlador.
+a) Utilizando la variable `$width` en el archivo del *Controlador*: `\app\Belich\Cards\CardName.php`.
 
 ```php 
 /**
@@ -158,7 +158,7 @@ a) Utilizando la variable `$width` del controlador.
 public $width = 'w-full';
 ```
 
-b) Cuando inicializamos la clase desde `App\Belich\Resource\MyResource.php`, podemos indicarlo, de la siguiente forma:
+b) Desde el *Recurso*: `App\Belich\Resource\MyResource.php`, de la siguiente forma:
 
 ```php 
 App\Belich\Resource\MyResource.php
@@ -194,5 +194,5 @@ public function __construct(Request $request)
 ```
 
 <div class="blockquote-alert">
-    Importante: No elimine el <i>Constructor</i> de la clase o no funcionará nada...
+    ¡Importante!: No elimine el <i>Constructor</i> de la clase o no funcionará nada...
 </div>

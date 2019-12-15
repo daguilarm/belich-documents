@@ -17,7 +17,7 @@ artisan belich:card CardName
 
 This command will create two files: a *View* and a *Controller*.
 
-The *Controller* will be generated in the folder: `\App\Belich\Cards`, and will have the following structure:
+The *Controller* will be generated in the folder: `\app\Belich\Cards`, and will have the following structure:
 
 ```php
 namespace App\Belich\Cards;
@@ -93,7 +93,7 @@ Each **Cards** file has a series of methods, which we are going to describe belo
 
 ### view()
 
-A través del método `view()`, definimos la ubicación de la vista. Por tanto, podemos ubicar la vista donde queramos.
+Through the `view()` method, we can define the location of the view. Therefore, we can locate the view where we want.
 
 ```php
 /**
@@ -107,4 +107,93 @@ public function view() : string
 }
 ```
 
->Importante: debemos indicar la ruta correcta de nuestra Vista, sobre todo si modificamos el archivo de configuración (`app\config\belich.php`) y la ruta por defecto.
+>Important: we must indicate the correct path for our *View*, especially if we have modified the configuration file (`app\config\belich.php`) and the default route.
+
+### withMeta()
+
+We also have the `withMeta()` method that will allow us to return an *array* with variables that will be injected directly into the *View*.
+
+```php
+/**
+ * Return the view data
+ *
+ * @return string
+ */
+public function withMeta() : array
+{
+    return [
+        'data1' => 'Example 1',
+        'data2' => 'Example 2',
+    ];
+}
+```
+
+In the previous example, we will have available in our view, the variables:
+
+- `$data1`
+- `$data2`
+
+Within de variable: `$card->withMeta`:
+
+```php 
+[
+  "data1" => "Example 1"
+  "data2" => "Example 2"
+]
+```
+
+### uriKey()
+
+As was the case with [Graphs](metrics/metrics-default), we have the `uriKey()` method that will allow us to identify with a unique key our `Card`.
+
+And we also have the option to determine the width of our `Card`. We can do it in two ways:
+
+a) Using the variable `$width` in the *Controller* file: `\app\Belich\Cards\CardName.php`.
+
+```php 
+/**
+ *
+ * @var string
+ */
+public $width = 'w-full';
+```
+
+b) From the *Resource*: `App\Belich\Resource\MyResource.php`, as follows:
+
+```php 
+App\Belich\Resource\MyResource.php
+
+/**
+ * Set the custom cards
+ *
+ * @param  \Illuminate\Http\Request  $request
+ * @return Illuminate\Support\Collection
+ */
+public static function cards(Request $request): array
+{
+    return [
+        (new \App\Belich\Cards\MyCard($request))->width('w-1/3'),
+    ];
+}
+```
+
+### Important!
+
+Don't remove the *Constructor*:
+
+```php 
+/**
+ * Initialize the card
+ *
+ * @return string
+ */
+public function __construct(Request $request)
+{
+    parent::__construct();
+}
+```
+
+<div class="blockquote-alert">
+    Important!: Don't remove the <i>Constructor</i> of class or nothing will work properly...
+</div>
+
