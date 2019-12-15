@@ -1,6 +1,10 @@
 // Images
 img {
-    @apply shadow-lg rounded-lg block mt-12 object-center;
+    @apply shadow-lg rounded-lg block;
+}
+
+img:not(.dropdown-click) {
+    @apply mt-12;
 }
 
     // Image legend
