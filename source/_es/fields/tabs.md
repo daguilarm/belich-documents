@@ -72,7 +72,7 @@ public function fields(Request $request) {
 
 Obteniendo:
 
-![Tabs](../../../assets/images/fields/tabs.png)
+![Tabs](../../../assets/images/fields/tabs.webp){.mx-auto}
 <div id="legend"><b>fig 3</b>: Campos agrupados por tabs</div>
 
 >Los campos `Tabs` se visualizan en todas las vistas salvo en el `index`

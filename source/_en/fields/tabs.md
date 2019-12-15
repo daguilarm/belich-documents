@@ -72,7 +72,7 @@ public function fields(Request $request) {
 
 Showing the following:
 
-![Tabs](../../../assets/images/fields/tabs.png)
+![Tabs](../../../assets/images/fields/tabs.webp){.mx-auto}
 <div id="legend"><b>fig 3</b>: Fields grouped by tabs</div>
 
 >The `Tabs` fields are displayed in all views except in the `index`

@@ -60,7 +60,7 @@ public function fields(Request $request) {
 
 Obteniendo:
 
-![Panels](../../../assets/images/fields/panels.png)
+![Panels](../../../assets/images/fields/panels.webp){.mx-auto .wp-75}
 <div id="legend"><b>fig 3</b>: Campos agrupados por paneles</div>
 
 >Los paneles se visualizan en todas las vistas salvo el `index`

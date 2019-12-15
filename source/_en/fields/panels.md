@@ -60,7 +60,7 @@ public function fields(Request $request) {
 
 Showing on screen:
 
-![Panels](../../../assets/images/fields/panels.png)
+![Panels](../../../assets/images/fields/panels.webp){.mx-auto .wp-75}
 <div id="legend"><b>fig 3</b>: Fields grouped in panels</div>
 
 >The panels are displayed in all views except the `index`
