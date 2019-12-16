@@ -1,16 +1,15 @@
 ---
-title: Herramientas (Tools)
-description: Gestionando Herramientas (Tools) con Belich
+title: Tools
+description: Managing Tools with Belich
 extends: _layouts.documentation
 section: content
-locate: es
+locate: en
 ---
 
-# Herramientas (Tools)
+# Tools
+**Belich** has a series of tools by default, which can be used on both the home page: `resources\views\vendor\belich\dashboard.blade.php`, and in any *Resource*, using them as `Cards`.
 
-**Belich** dispone de una serie de herramientas (tools) por defecto, que pueden ser utilizados tanto en la página principal: `resources\views\vendor\belich\dashboard.blade.php`, como en cualquier *Recurso*, utilizándolos como `Cards`.
-
-Nuestra página principal, ya incluye algunos componentes por defecto:
+Our main page, already includes some components by default:
 
 ```php
 // resources\views\vendor\belich\dashboard.blade.php
@@ -30,7 +29,7 @@ Nuestra página principal, ya incluye algunos componentes por defecto:
 @endsection
 ```
 
-Pero podemos utilizar estos complementos como si fueran `Cards`, he incluirlas en nuestros *Recursos*. Para ello, debemos crear una nueva `Card` e incluirla en el *Recurso*:
+But we can use these tools as if they were `Cards`, and include them in our *Resources*. To do this, we must create a new `Card` and include it in the *Resource*:
 
 ```php
 // app\Belich\Resources\User.php
@@ -49,7 +48,7 @@ public static function cards(Request $request): array
 }
 ```
 
-Creamos nuestra `Card`:
+We create our `Card`:
 
 ```php
 // app\Belich\Resources\Cards\CalendarCard.php
@@ -65,7 +64,7 @@ public function view() : string
 }
 ```
 
-Y luego en la `Card` en cuestión, devolvemos la ruta de nuestra nueva vista. En el ejemplo anterior, nuestro componente se encuentra en la carpeta: `Resources\Views\Cards`
+And then in the `Card` in question, we return the route of our new view. In the previous example, our component is located in the folder: `Resources\Views\Cards`
 
 ```php
 // resources\views\cards\calendar.blade.php
@@ -73,11 +72,11 @@ Y luego en la `Card` en cuestión, devolvemos la ruta de nuestra nueva vista. En
 <belich::calendar id="tool-calendar" width="w-1/3"></belich::calendar>'
 ```
 
-Los componentes por defecto, se encuentran en la carpeta:
+The default components are in the folder:
 
 `resources\views\vendor\belich\components\tools`
 
-Por el momento, se dispone de las siguientes herramientas:
+At the moment, the following tools are available:
 
-- `Calendar`: nos muestra un calenario.
-- `Model`: nos muestra una tabla con los resultados de un modelo, pudiendo configurar que campos que aparecen y su número.
+- `Calendar`: It show us a calendar.
+- `Model`: It shows us a table with the results of a model, being able to configure which fields appear and their number.
