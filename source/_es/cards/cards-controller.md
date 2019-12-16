@@ -3,7 +3,7 @@ title: Controllers de tarjetas (Cards)
 description: Gestionando Controladores de tarjetas
 extends: _layouts.documentation
 section: content
-locate: en
+locate: es
 folder: cards
 ---
 
