@@ -1,19 +1,19 @@
 ---
-title: Vistas de tarjetas (Cards)
-description: Gestionando Vistas de tarjetas
+title: Cards views
+description: Managing Card Views
 extends: _layouts.documentation
 section: content
-locate: es
+locate: en
 folder: cards
 ---
 
-# Cards: Vistas
+# Cards views
 
-Una vez que hemos asignado la ubicación de la *Vista* en el *Controlador*, podremos proceder como si de cualquier otra vista se tratara. Para ello, **Belich** ofrece un *Componente para Blade*, que nos ayudará a mantener el formato predeterminado. 
+Once we have assigned the correct path for the *View* in the *Controller*, we can proceed as we would normally do with another view. To do this, **Belich** has a *Component for Blade*, which will help us to maintain the default format.
 
->Por supuesto, podemos no utilizar el componente, y utilizar la vista directamente.
+>Of course, we can not use the component, and use the view directly.
 
-Veamos la estructura del componente para **Cards** que tiene por defecto **Belich**. Algo tan simple como esto:
+Let's look at the structure of the component for **Cards** which has **Belich** by default. Something as simple as this:
 
 ```php
 <div id="cards-{{ $card->uriKey }}" class="{{ $card->width }} p-8 overflow-hidden shadow bg-{{ $background ?? 'white' }} border border-gray-200">
@@ -21,7 +21,7 @@ Veamos la estructura del componente para **Cards** que tiene por defecto **Belic
 </div>
 ```
 
-Por lo que en nuestra vista, tendremos que hacer algo como así:
+So in our view, we will have to do something like this:
 
 ```php
 //Direct version using Blade components
@@ -36,7 +36,7 @@ Por lo que en nuestra vista, tendremos que hacer algo como así:
 @endcomponent
 ```
 
-**Belich** soporta [BladeX](https://github.com/spatie/laravel-blade-x), por lo que si adaptamos el ejemplo anterior:
+**Belich** supports [BladeX](https://github.com/spatie/laravel-blade-x), so if we adapt the previous example:
 
 ```php
 //Same example using BladeX (https://github.com/spatie/laravel-blade-x)
@@ -50,11 +50,11 @@ Por lo que en nuestra vista, tendremos que hacer algo como así:
 </belich::card>
 ```
 
->Ambas opciones son perfectamente válidas.
+>Both options are perfectly valid.
 
-Por supuesto, podemos acceder a las variables que hemos enviado desde el *Controlador* (en el ejemplo mostrado en el capítulo sobre [Controladores](cards-controller), las variables que enviábamos era: `$data1` y `$data2`). 
+Of course, we can access the variables we have sent from the *Controller* (in the example shown in the chapter on [Controllers](cards-controller), the variables that were sent to the view, were: `$data1` and `$data2`). 
 
-Usando **Blade-X**:
+Using **Blade-X**:
 
 ```php
 <belich::card :card="$card">
@@ -65,7 +65,7 @@ Usando **Blade-X**:
 </belich::card>
 ```
 
-Usando **Blade Components**:
+Using **Blade Components**:
 
 ```php
 @component('belich::components.card')

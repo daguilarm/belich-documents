@@ -1,5 +1,5 @@
 ---
-title: Card Controllers
+title: Controllers de tarjetas (Cards)
 description: Gestionando Controladores de tarjetas
 extends: _layouts.documentation
 section: content
@@ -7,7 +7,7 @@ locate: en
 folder: cards
 ---
 
-# Cards
+# Cards: Controladores
 
 Una **Card**, se puede generar mediante consola: 
 

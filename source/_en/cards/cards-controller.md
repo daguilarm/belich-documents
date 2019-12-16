@@ -7,7 +7,7 @@ locate: en
 folder: cards
 ---
 
-# Card
+# Card: Controllers
 
 A **Card**, can be generated using the console:
 
