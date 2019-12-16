@@ -74,6 +74,6 @@ class UserCard extends Card {
 }
 ```
 
-Por lo que en la *Vista*, podremos acceder a los usuarios ($users) a través de la variable: `$card->withMeta`.
+Por lo que en la *Vista*, podremos acceder a los usuarios (`$users`) a través de la variable: `$card->withMeta`.
 
 >Seguramente, en el futuro se decida cambiar esto, pero a día de hoy, creo que es la mejor opción.
