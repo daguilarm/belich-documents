@@ -79,5 +79,33 @@ Los componentes por defecto, se encuentran en la carpeta:
 
 Por el momento, se dispone de las siguientes herramientas:
 
-- `Calendar`: nos muestra un calenario.
-- `Model`: nos muestra una tabla con los resultados de un modelo, pudiendo configurar que campos que aparecen y su número.
+![Default Tools](../../../assets/images/tools.webp){.mx-auto}
+<div id="legend"><b>fig 1</b>: Componentes por defecto</div>
+
+### Calendar
+
+Nos muestra un calenario, que podemos mostrar en nuestras vistas de la siguiente forma:
+
+```php
+//Calendar
+<belich::calendar id="tool-calendar" width="w-1/3"></belich::calendar>
+```
+
+Donde podemos configurar los campos: `id` y `width`.
+
+### Model to table
+
+Nos muestra una tabla con los resultados de un modelo, pudiendo configurar que campos que aparecen y su número.
+
+```php
+//Model to table
+<belich::model id="tool-model" :columns="['id', 'name', 'email']" model="\App\User" width="w-2/3" limit="5" ></belich::model>
+```
+
+Donde podemos configurar los campos:
+
+- **id**
+- **columns**: Enviando un *array* con las columnas de la tabla que queremos mostrar.
+- **model**: Indicando donde se encuentra nuestro *Modelo*, para poder instanciarlo.
+- **width**: Donde indicamos el ancho del componente.
+- **limit**: El número de resultados a mostrar en la tabla.

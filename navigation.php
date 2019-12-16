@@ -93,5 +93,6 @@ return [
     ],
     'Tools||Tools/Herramientas' => '_location_/tools',
     'Customization||Personalización' => '_location_/customization',
+    'Export||Exportar' => '_location_/exports',
     'Credits||Créditos' => '_location_/credits',
 ];
