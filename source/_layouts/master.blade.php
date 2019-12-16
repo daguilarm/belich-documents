@@ -2,6 +2,7 @@
 <html lang="{{ $page->locale === 'es' ? 'es' : 'en' }}">
     <head>
         <meta charset="utf-8">
+        <meta name="theme-color" content="#FFFFFF"/>
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <title>{{ $page->locale === 'es' ? 'Gestor de contenidos para Laravel' : $page->siteName }}{{ $page->title ? ' | ' . $page->title : '' }}</title>
@@ -30,7 +31,8 @@
         @if ($page->production)
             <!-- Insert analytics code here -->
         @endif
-
+        <link rel="dns-prefetch" href="//fonts.googleapis.com">
+        <link rel="preconnect" href="//fonts.googleapis.com" crossorigin>
         <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,300i,400,400i,700,700i,800,800i" rel="stylesheet">
         <link rel="stylesheet" href="{{ mix('css/main.css', 'assets/build') }}">
         @if ($page->docsearchApiKey && $page->docsearchIndexName)
@@ -43,7 +45,7 @@
             <div class="container max-w-8xl mx-auto px-4 lg:px-8">
                 <div class="flex items-center justify-between">
                     <a href="/" title="{{ $page->siteName }} home" class="inline-flex items-center">
-                        <h1 class="text-lg md:text-2xl text-blue-900 font-semibold hover:text-blue-600 my-0 pr-4">{{ $page->locate === 'en' ? 'Belich: documents' : 'Belich: documentación' }}</h1>
+                        <div class="text-lg md:text-2xl text-blue-900 font-semibold hover:text-blue-600 my-0 pr-4"><img src="../../../../assets/img/logo.svg" alt="Belich" class="bg-transparent dropdown-click shadow-none float-left"></div>
                     </a>
                     <div class="flex w-auto">
                         <div class="dropdown">
@@ -54,8 +56,8 @@
                             </button>
                             <div id="github-container" class="dropdown-content border border-gray-400 mt-1">
                                 <a href="https://github.com/daguilarm/belich" class="flex-1 p-2">Belich</a>
-                                <a href="https://github.com/daguilarm/belich-documents" class="flex-1 p-2">{{ $page->locate === 'en' ? 'Documents' : 'Documentos' }}</a>
-                                <a href="https://github.com/daguilarm/belich-dashboard" class="flex-1 p-2">{{ $page->locate === 'en' ? 'Examples' : 'Ejemplos' }}</a>
+                                <a href="https://github.com/daguilarm/belich-documents" class="flex-1 p-2">{{ $page->locale === 'en' ? 'Documents' : 'Documentos' }}</a>
+                                <a href="https://github.com/daguilarm/belich-dashboard" class="flex-1 p-2">{{ $page->locale === 'en' ? 'Examples' : 'Ejemplos' }}</a>
                             </div>
                         </div>
                     </div>
@@ -97,6 +99,7 @@
                     var linksTargetBlank = document.querySelectorAll('.link-out');
                     for (var i = 0; i < linksTargetBlank.length; i++) {
                         linksTargetBlank[i].target = "_blank";
+                        linksTargetBlank[i].rel = "noopener";
                     }
                     var lazyImages = document.getElementsByTagName('img');
                     for (var i = 0; i < lazyImages.length; i++) {
