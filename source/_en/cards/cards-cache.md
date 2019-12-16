@@ -1,21 +1,21 @@
 ---
-title: Cache de tarjetas (Cards)
+title: Cards cache
 description: Gestionando Cache en tarjetas (Cards)
 extends: _layouts.documentation
 section: content
-locate: es
+locate: en
 folder: cards
 ---
 
-# Cards: Cache
+# Cards cache
 
-La primera versión de este *package*, incluia un sistema de caché nativo, pero después de pensarlo detenidamente, se llegó a la conclusión de que iba contra la filosofía de **Belich**.
+The first version of this package included a native cache system, but after careful thought, it was concluded that it was against the philosophy of **Belich**.
 
-La idea de **Belich** es la de facilitar el desarrollo y dar libertad al desarrollador. Introducir un sistema de cache nativo, hubiera supuesto limitar esta libertad y encorsetar demasiado las opciones de desarrollo.
+The idea of **Belich** is to facilitate development and give the developer freedom. Introducing a native cache system would have meant limiting for this freedom and curbing development options too much.
 
-Otro aspecto que se ha tenido en cuenta, es que no siempre vamos a necesitar cachear bases de datos en nuestro controlador, y cuando sea el caso, lo mejor es simplemente implementar la caché directamente. 
+Another aspect that has been taken into account, is that we are not always going to need to cache databases in our *Controller*, and if it will be necessary, it is the best way to proceed just implementing the cache directly.
 
-Veamos un ejemplo de como hacerlo:
+Let's see an example of how to do it:
 
 ```php
 namespace App\Belich\Cards;
@@ -74,6 +74,6 @@ class UserCard extends Card {
 }
 ```
 
-Por lo que en la *Vista*, podremos acceder a los usuarios ($users) a través de la variable: `$card->withMeta`.
+So, in the *View*, we can be able to access to `$users` through the variable: `$card->withMeta`.
 
->Seguramente, en el futuro se decida cambiar esto, pero a día de hoy, creo que es la mejor opción.
+>Surely, in the future we decide to change this, but today, I think it is the best option.
