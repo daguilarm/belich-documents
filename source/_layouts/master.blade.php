@@ -67,7 +67,7 @@
                         <div class="dropdown">
                             <button onclick="javascript:dropdown('github-container');" class="dropdown-click outline-none focus:outline-none">
                                 <div class="flex items-center h-10 p-4 rounded border border-gray-400 bg-gray-100 dropdown-click">
-                                    <img src="../../../../assets/img/icons/github.svg" alt="Github logo" class="dropdown-click"> <i class="arrow-down"></i>
+                                    <img src="../../../../assets/images/icons/github.svg" alt="Github logo" class="dropdown-click"> <i class="arrow-down"></i>
                                 </div>
                             </button>
                             <div id="github-container" class="dropdown-content border border-gray-400 mt-1">
