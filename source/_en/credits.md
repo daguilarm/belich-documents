@@ -1,20 +1,20 @@
 ---
-title: Créditos
-description: Créditos de Belich
+title: Credits
+description: Belich creditds
 extends: _layouts.documentation
 section: content
-locate: es
+locate: en
 ---
 
 # Créditos 
 
-A continuación se enumeran las personas, librerias, código, etc... que han colaborado o se han utilizado para desarrollar este *package*.
+Listed below are the people, libraries, code, etc ... who have collaborated or have been used to develop this *package*.
 
-## Autores
+## Authors
 
 - [Damián Aguilar](https://github.com/daguilarm/){.link-out}
 
-## Librerías y código utilizado
+## Packages and code used
 
 ### Packages
 
