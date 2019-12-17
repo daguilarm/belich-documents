@@ -51,7 +51,7 @@ En la *figura 1*, podemos ver de izquierda a derecha, una gráfica `horizontal-b
 
 >Las gráficas de `pie` o gráfico circular, está disponibles solo como opción muy básica, ya que de forma nativa no está demasiado desarrollada.
 
-![Metrics types](../../../assets/images/metrics/graph-pie.webp){.mx-auto .w-80 }
+![Metrics types](../../../assets/images/metrics/graph-pie.png){.mx-auto .w-80 }
 <div id="legend"><b>fig 2</b>: Gráfica de tarta</div>
 
 ###b) width

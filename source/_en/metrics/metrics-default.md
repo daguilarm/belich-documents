@@ -44,14 +44,14 @@ It allows us to indicate the type of graph we want to show, the available option
 - horizontal-bars
 - pie (developing...)
 
-![Metrics types](../../../assets/images/metrics/graph-types.webp){.mx-auto}
+![Metrics types](../../../assets/images/metrics/graph-types.png){.mx-auto}
 <div id="legend"><b>fig 1</b>: Metrics types</div>
 
 In the *figure 1*, we can see from left to right: `horizontal-bars`, `line` and `bars`.
 
 >The pie chart, are available only as a very basic option, since natively it is not too developed.
 
-![Metrics types](../../../assets/images/metrics/graph-pie.webp){.mx-auto .w-80 }
+![Metrics types](../../../assets/images/metrics/graph-pie.png){.mx-auto .w-80 }
 <div id="legend"><b>fig 2</b>: Pie Chart</div>
 
 ###b) width
@@ -165,7 +165,7 @@ We can assign a marker for each point of the graph (only in linear graphs). By d
 - **square**: Show a square.
 - **round**: Show a circle.
 
-![Metrics types](../../../assets/images/metrics/graph-markers.webp){.mx-auto}
+![Metrics types](../../../assets/images/metrics/graph-markers.png){.mx-auto}
 <div id="legend"><b>fig 3</b>: Marker types</div>
 
 ```php
