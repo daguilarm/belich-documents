@@ -1,6 +1,14 @@
+---
+title: Exportar / Descargar archivo
+description: Gestionando la exportación o descarga de archivos con Belich
+extends: _layouts.documentation
+section: content
+locate: es
+---
+
 # Exportar / Descargar archivo
 
-**Belich** permite descargar el modelo del recurso actual en formato: `csv`, `xls` y `xlsx`. La descarga se realiza desde el `index` de cada recurso.
+**Belich** permite descargar el *Recurso* actual (a partir de su *Modelo*) en formato: `csv`, `xls` y `xlsx`. La descarga se realiza desde la *Vista* `index` de cada *Recurso*.
 
 Entre las opciones de descarga que tenemos, podemos encontrar:
 
@@ -9,15 +17,15 @@ Entre las opciones de descarga que tenemos, podemos encontrar:
 
 ### Configuración del driver
 
-**Belich**, permite utilizar diversos drivers de conversión de archivos. Por defecto utiliza [FastExcel](https://github.com/rap2hpoutre/fast-excel).
+**Belich**, permite utilizar diversos *drivers* de conversión de archivos. Por defecto utiliza [FastExcel](https://github.com/rap2hpoutre/fast-excel).
 
-Para configurar el driver, hay que hacerlo desde el archivo de configuración, ubicado en:
+Para configurar el *driver*, hay que hacerlo desde el archivo de configuración, ubicado en:
 
 ```php
-.\Config\belich.php
+.\config\belich.php
 ```
 
-En el encontrará el siguiente código:
+En él encontrará el siguiente código:
 
 ```php
 /*
@@ -37,11 +45,9 @@ En el encontrará el siguiente código:
 ],
 ```
 
-Por defecto, se descargarán todas las columnas de la tabla mediante una `Illuminate\Database\Eloquent\Collection`. Si lo que queremos es determinar que columnas descargar, podemos indicárselo desde el mismo modelo, añadiendo el método `download()`:
+Si no se indica nada, se descargarán todas las columnas de la tabla mediante una `Illuminate\Database\Eloquent\Collection`. Si lo que queremos es determinar qué columnas queremos descargar, podemos indicárselo desde el *Modelo*, añadiendo el método `download()`:
 
 ```php
-<?php
-
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
@@ -64,12 +70,12 @@ class MyModel extends Model
 }
 ```
 
-Actualmente, los drivers soportados son:
+Actualmente, los *drivers* soportados son:
 
-- `fast-excel`
-- `maatwebsite` (En desarrollo, actualmente hay en error con el package...)
+- `fast-excel`.
+- `maatwebsite` (En desarrollo, actualmente hay en error con el *package*...).
 
-Y por último, en el recurso que quieras que sea descargable, tendrás que añadir el siguiente código:
+Y por último, en el *Recurso* que quieras que sea descargable, tendrás que añadir el siguiente código:
 
 ```php
 /** 
