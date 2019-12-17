@@ -43,7 +43,7 @@ En la carpeta `./resources/views/vendor/belich/partials/buttons` encontrá las v
 
 Correspondientes a los botones ubicados en la vista: `index`:
 
-![Buttons example](../../assets/images/buttons.webp)
+![Buttons example](../../assets/images/buttons.jpg)
 <div id="legend"><b>fig 1</b>: Ejemplo de botones</div>
 
 Podemos añadir todos los botones que queramos en el archivo: `./resources/views/vendor/belich/dashboard/index/search`. Actualmente, tiene este aspecto:

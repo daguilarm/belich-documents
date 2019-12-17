@@ -78,7 +78,7 @@ The default components are in the folder:
 
 At the moment, the following tools are available:
 
-![Default Tools](../../../assets/images/tools.webp){.mx-auto}
+![Default Tools](../../../assets/images/tools.jpg){.mx-auto}
 <div id="legend"><b>fig 1</b>: Default components</div>
 
 ### Calendar

@@ -43,7 +43,7 @@ In the folder `./resources/views/vendor/belich/partials/buttons`, you will find 
 
 Corresponding to the buttons located in the view: `index`:
 
-![Buttons example](../../assets/images/buttons.webp)
+![Buttons example](../../assets/images/buttons.jpg)
 <div id="legend"><b>fig 1</b>: Example of buttons</div>
 
 We can add all the buttons we want in the file: `./resources/views/vendor/belich/dashboard/index/search`. Currently, it looks like this:

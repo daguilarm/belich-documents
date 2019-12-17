@@ -51,12 +51,12 @@ Each field can have exclusive methods for each of them. Next, we will explain th
 
 It allows us to generate a checkbox that supports the values: true or false.
 
-![Boolean example - 1](../../../assets/images/fields/boolean-1.webp){.mx-auto .wp-66}
+![Boolean example - 1](../../../assets/images/fields/boolean-1.png){.mx-auto .wp-66}
 <div id="legend"><b>fig 1</b>: Example of boolean field 1</div>
 
 This field is displayed in the views `index` and `show` as follows:
 
-![Boolean example - 2](../../../assets/images/fields/boolean-2.webp){.mx-auto .wp-66}
+![Boolean example - 2](../../../assets/images/fields/boolean-2.png){.mx-auto .wp-66}
 <div id="legend"><b>fig 2</b>: Example of boolean field 2</div>
 
 But sometimes we are interested that in these views (`index` and `show`), instead of showing an active value, a text will be displayed. Let's see an example:
@@ -205,7 +205,7 @@ This is necessary to determine the cardinal component of the coordinate: N, S, E
 - lng 
 - longitude
 
-![Coordenates](../../../assets/images/fields/coordenate.webp){.mx-auto}
+![Coordenates](../../../assets/images/fields/coordenate.png){.mx-auto}
 <div id="legend"><b>fig 3</b>: Example field for coordinates</div>
 
 <div class="blockquote-alert">
@@ -262,7 +262,7 @@ public function fields(Request $request) {
 
 Showing on screen:
 
-![Countries example](../../../assets/images/fields/countries.webp){.mx-auto}
+![Countries example](../../../assets/images/fields/countries.png){.mx-auto}
 <div id="legend"><b>fig 4</b>: Example: country field</div>
 
 >The `Country` field does not support the methods: `prefix()`, `sufix()` and `displayUsing()`.
@@ -473,7 +473,7 @@ public function fields(Request $request) {
 
 An example of how the **Header** fields would look:
 
-![Header example](../../../assets/images/fields/header.webp){.mx-auto}
+![Header example](../../../assets/images/fields/header.png){.mx-auto}
 <div id="legend"><b>fig 5</b>: Example of custom header field</div>
 
 This field is only accessible from the `edit` and `create` views. But we can add the `show` view, using:
@@ -615,7 +615,7 @@ public function fields(Request $request) {
 
 Showing the following:
 
-![Markdown example](../../../assets/images/fields/markdown.webp){.mx-auto}
+![Markdown example](../../../assets/images/fields/markdown.png){.mx-auto}
 <div id="legend"><b>fig 7</b>: Markdown field example with preview</div>
 
 ### Number field
@@ -685,7 +685,7 @@ public function fields(Request $request) {
 ```
 In this case, you should not send the minimum or maximum value, simply the range of values and the range. Next, let's see how the two previous examples would look like:
 
-![Range example](../../../assets/images/fields/range.webp){.mx-auto}
+![Range example](../../../assets/images/fields/range.png){.mx-auto}
 <div id="legend"><b>fig 6</b>: Example of a range field</div>
 
 >At the moment, the use of the method: `options ()`, is not supported by all browsers, so its display will depend on them. More information in: [Range field](https://developer.mozilla.org/es/docs/Web/HTML/Elemento/input/range)
@@ -868,7 +868,7 @@ The `textarea` field supports the following methods:
 - `count()`: Same as `maxlength()`, but also, it shows under the field, the number of characters remaining until reaching the maximum number (figure 6).
 - `rows()`: allows us to define the number of rows or lines that our text area will have.
 
-![TextArea example](../../../assets/images/fields/textarea.webp){.mx-auto}
+![TextArea example](../../../assets/images/fields/textarea.png){.mx-auto}
 <div id="legend"><b>fig 7</b>: Textarea example with remaining characters</div>
 
 >This field is automatically saved as `string`. You can check the section [Casts](casts) to modify it.

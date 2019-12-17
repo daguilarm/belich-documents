@@ -79,7 +79,7 @@ Los componentes por defecto, se encuentran en la carpeta:
 
 Por el momento, se dispone de las siguientes herramientas:
 
-![Default Tools](../../../assets/images/tools.webp){.mx-auto}
+![Default Tools](../../../assets/images/tools.jpg){.mx-auto}
 <div id="legend"><b>fig 1</b>: Componentes por defecto</div>
 
 ### Calendar

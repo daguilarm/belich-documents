@@ -1,4 +1,4 @@
----
+/assets/images/favicon/---
 title: Tipos de campo generales 
 description: Gestión de campos de formulario generales
 extends: _layouts.documentation
@@ -51,12 +51,12 @@ Cada campo, puede disponer de métodos exclusivos para cada uno de ellos. A cont
 
 Nos permite generar un `checkbox` que admite los valores: verdadero o falso.
 
-![Boolean example - 1](../../../assets/images/fields/boolean-1.webp){.mx-auto .wp-66}
+![Boolean example - 1](../../../assets/images/fields/boolean-1.png){.mx-auto .wp-66}
 <div id="legend"><b>fig 1</b>: Ejemplo de campo boleano</div>
 
 Este campo se visualiza en las vistas `index` y `show` de la siguiente forma:
 
-![Boolean example - 2](../../../assets/images/fields/boolean-2.webp){.mx-auto .wp-66}
+![Boolean example - 2](../../../assets/images/fields/boolean-2.png){.mx-auto .wp-66}
 <div id="legend"><b>fig 2</b>: Ejemplo de campo boleano</div>
 
 Pero a veces nos interesa que en estas vistas (`index` y `show`), en vez de mostrarle un valor activo o no, se muestre un texto para cuando está activo y otro para cuando esta desactivado. Veamos un ejemplo:
@@ -205,7 +205,7 @@ Esto es necesario para determinar la componente cardinal de la coordenada: N, S,
 - lng 
 - longitude
 
-![Coordenadas](../../../assets/images/fields/coordenate.webp){.mx-auto .w-75}
+![Coordenadas](../../../assets/images/fields/coordenate.png){.mx-auto .w-75}
 <div id="legend"><b>fig 3</b>: Ejemplo de campo para coordenadas</div>
 
 <div class="blockquote-alert">
@@ -262,7 +262,7 @@ public function fields(Request $request) {
 
 Mostrando:
 
-![Countries example](../../../assets/images/fields/countries.webp){.mx-auto .w-75}
+![Countries example](../../../assets/images/fields/countries.png){.mx-auto .w-75}
 <div id="legend"><b>fig 4</b>: Ejemplo de campo para paises</div>
 
 >El campo `Country` no soporta los métodos: `prefix()`, `sufix()` y `displayUsing()`.
@@ -473,7 +473,7 @@ public function fields(Request $request) {
 
 Un ejemplo de como quedarían los campos **Header**:
 
-![Header example](../../../assets/images/fields/header.webp){.mx-auto .w-75}
+![Header example](../../../assets/images/fields/header.png){.mx-auto .w-75}
 <div id="legend"><b>fig 5</b>: Ejemplo de campo header personalizado</div>
 
 Este campo solo es accesible desde las vistas `edit` y `create`. Pero podemos añadir la vista `show`, usando: 
@@ -616,7 +616,7 @@ public function fields(Request $request) {
 
 Mostrando lo siguiente:
 
-![Markdown example](../../../assets/images/fields/markdown.webp){.mx-auto .w-75}
+![Markdown example](../../../assets/images/fields/markdown.png){.mx-auto .w-75}
 <div id="legend"><b>fig 7</b>: Ejemplo de campo Markdown con preview</div>
 
 ### Campo Number 
@@ -686,7 +686,7 @@ public function fields(Request $request) {
 ```
 En este caso, no hay que enviar el valor mínimo ni el máximo, simplemente el intervalo de valores. A continuación, veamos como quedarían los dos ejemplos anteriores:
 
-![Range example](../../../assets/images/fields/range.webp){.mx-auto .w-75}
+![Range example](../../../assets/images/fields/range.png){.mx-auto .w-75}
 <div id="legend"><b>fig 6</b>: Ejemplo de campos range</div>
 
 >De momento, el uso del método: `options()`, no está soportando por todos los navegadores, por lo que su visualización, dependerá de ellos. Mas información en: [Campo range](https://developer.mozilla.org/es/docs/Web/HTML/Elemento/input/range)
@@ -867,7 +867,7 @@ El campo `textarea`, soporta los siguientes métodos:
 - `count()`: Igual que `maxlength()`, pero además, muestra bajo el campo, el número de caracteres restantes hasta llegar al número máximo (figura 6).
 - `rows()`: nos permite definir el número de filas o líneas que tendrá nuestra área de texto.
 
-![TextArea example](../../../assets/images/fields/textarea.webp){.mx-auto .w-75}
+![TextArea example](../../../assets/images/fields/textarea.png){.mx-auto .w-75}
 <div id="legend"><b>fig 7</b>: Ejemplo de textarea con caracteres restantes</div>
 
 >Este campo se guarda automáticamente como `string`. Puede consultar la sección [Tipos](casts) para modificar el valor.
