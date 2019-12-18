@@ -20,6 +20,7 @@ A continuación se enumeran las personas, librerias, código, etc... que han col
 
 - [Laravel excel](https://laravel-excel.com/){.link-out}
 - [matthiasmullie/minify](https://github.com/matthiasmullie/minify){.link-out}
+- [Moneyphp](http://moneyphp.org/){.link-out}
 - [nckg/laravel-minify-html](https://github.com/nckg/laravel-minify-html){.link-out}
 - [nunomaduro/phpinsights](https://github.com/nunomaduro/phpinsights){.link-out}
 - [rap2hpoutre/fast-excel](https://github.com/rap2hpoutre/fast-excel){.link-out}
