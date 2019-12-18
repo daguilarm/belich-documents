@@ -50,6 +50,7 @@ return [
             'Autocomplete||Autocompletar' => '_location_/fields/autocomplete',
             'Files/Img||Archivos/Img' => '_location_/fields/files',
             'Conditional||Condicionales' => '_location_/fields/conditional',
+            'Currency||Moneda' => '_location_/fields/currency',
             'Visibility||Visualización' => '_location_/fields/visibility',
             'Validation||Validación' => '_location_/fields/validation',
             'Cast||Tipos/Valor' => '_location_/fields/casts',
