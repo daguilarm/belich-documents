@@ -1,4 +1,4 @@
-/assets/images/favicon/---
+---
 title: Tipos de campo generales 
 description: Gestión de campos de formulario generales
 extends: _layouts.documentation

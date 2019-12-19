@@ -11,7 +11,7 @@ folder: fields
 
 Este campo, nos permitirá formatear la salida de un valor, ajustándose a la moneda seleccionada.
 
-<div class="alert success">Este campo require de la instalación de la extensión para <strong>Php</strong>strong>: <i>INTL</i>.</div>
+<div class="alert success">Este campo require de la instalación de la extensión para <strong>Php</strong>: <i>INTL</i>.</div>
 
 ## Instalación de php-intl
 

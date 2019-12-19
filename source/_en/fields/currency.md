@@ -11,7 +11,7 @@ folder: fields
 
 This field will allow us to format the output of a value, base on the selected currency.
 
-<div class="alert success">This field requires the installation of the extension for <strong>Php</strong>strong>: <i>INTL</i>.</div>
+<div class="alert success">This field requires the installation of the extension for <strong>Php</strong>: <i>INTL</i>.</div>
 
 ## Php-intl install
 
