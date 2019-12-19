@@ -5,7 +5,7 @@
         <meta name="theme-color" content="#FFFFFF"/>
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>{{ $page->locale === 'es' ? 'Gestor de contenidos para Laravel' : $page->siteName }}{{ $page->title ? ' | ' . $page->title : '' }}</title>
+        <title>{{ $page->title ? $page->title . ' - ' : 'Belich - ' }}{{ $page->locale === 'es' ? 'Gestor de contenidos para Laravel' : $page->siteName }}</title>
         <meta name="description" content="{{ $page->locale === 'es' ? 'Gestor de contenidos Belich' : 'Belich dashboard' }}. {{ $page->description ?? $page->siteDescription }}">
         <link rel="alternate" hreflang="en" href="{{ str_replace('/es/', '/en/', $page->getUrl()) }}" />
         <link rel="alternate" hreflang="es" href="{{ str_replace('/en/', '/es/', $page->getUrl()) }}" />
