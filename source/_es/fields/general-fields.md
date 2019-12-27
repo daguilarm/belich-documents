@@ -788,6 +788,70 @@ public function fields(Request $request) {
 
 Este método mostrará en las vistas: `index` y `show`, el resultado `Admin`, mientras que la vista `edit`, asignará el valor `1`, haciendo que nuestro campo `select`, funcione correctamente.
 
+También podemos definir el primer campo de nuestro `select`, con el método `firstOption()`. Veamos un ejemplo:
+
+```php
+use Daguilarm\Belich\Fields\Types\Select;
+
+/**
+ * Get the fields displayed by the resource.
+ *
+ * @param  \Illuminate\Http\Request  $request
+ * @return Illuminate\Support\Collection
+ */
+public function fields(Request $request) {
+    return [
+        // Ejemplo 1
+        Select::make('Role', 'role')
+            ->options([
+                1 => 'Admin', 
+                2 => 'Manager', 
+                3 => 'User'
+            ])
+            ->firstOption(),
+        // Ejemplo 2
+        Select::make('Images', 'image')
+            ->options([
+                1 => 'admin.jpg', 
+                2 => 'manager.jpg', 
+                3 => 'user.jpg'
+            ])
+            ->firstOption('No image'),
+        // Ejemplo 3
+        Select::make('Color', 'color')
+            ->options([
+                1 => 'blue', 
+                2 => 'red', 
+                3 => 'yellow'
+            ])
+            ->firstOption('No color', 0)
+    ];
+}
+```
+
+El ejemplo anterior, renderizará:
+
+```html 
+<select>
+    <option></option>
+    <option value="1">Admin</option>
+    <option value="2">Manager</option>
+    <option value="3">User</option>
+</select>
+<select>
+    <option>No image</option>
+    <option value="1">admin.jpg</option>
+    <option value="2">manager.jpg</option>
+    <option value="3">user.jpg</option>
+</select>
+<select>
+    <option value="0">No color</option>
+    <option value="1">blue</option>
+    <option value="2">red</option>
+    <option value="3">yellow</option>
+</select>
+```
+
 ### Campo Text
 
 Este campo adminite los siguientes métodos especiales:
