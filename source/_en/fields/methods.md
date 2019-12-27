@@ -26,6 +26,7 @@ The generic methods currently supported are:
 - `help()`
 - `info()`
 - `id()`
+- `maxlength()`
 - `name()`
 - `pattern()`
 - `placeholder()`
@@ -56,6 +57,7 @@ public function fields(Request $request) {
             ->help('Enter a valid email')
             ->info('Important info')
             ->id('email_id')
+            ->maxlength(100)
             ->name('email_name')
             ->placeholder('my email')
             ->pattern('[a-z]{1,15}')
@@ -69,7 +71,7 @@ Should show:
 
 ```html
 <label>Email</label>
-    <input type="text" class="text-blue font-bold" data-url="http://url.com value="email@email.com" disabled="disabled" dusk="dusk-email" id="email_id" name="email_name" placeholder="my email" pattern="[a-z]{1,15}" autocomplete="off" readonly/>
+    <input type="text" class="text-blue font-bold" data-url="http://url.com value="email@email.com" disabled="disabled" dusk="dusk-email" id="email_id" maxlength="100" name="email_name" placeholder="my email" pattern="[a-z]{1,15}" autocomplete="off" readonly/>
 <div class="help">Enter a valid email</div>
 ```
 
