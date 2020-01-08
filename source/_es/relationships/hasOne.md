@@ -25,19 +25,18 @@ public function profile()
 Ahora, en nuestro recurso: `\App\Belich\Resources\User.php`, podremos añadir un campo de formulario para relación uno a uno:
 
 ```php
-HasOne::make('Profile avatar', 'Profile', '\App\Profile', 'profile_avatar')
+HasOne::make('Profile avatar', 'Profile', 'profile_avatar')
     ->rules('required'),
 ```
 
 La estructura del campo, será:
 
 ```php
-HasOne::make(string $label, string $relationshipClass, ?string $relationshipModel = null, ?string $relationshipModelColumn = null),
+HasOne::make(string $label, string $relationshipClass, ?string $relationshipModelColumn = null),
 ```
 
 - `$label`: Es la etiqueta del campo.
 - `$relationshipClass`: Es el recurso del modelo relacional. Siguiendo nuestro ejemplo: `\App\Belich\Resources\Profile.php`.
-- `$relationshipModel`: Es el modelo vinculado (en nuestro ejemplo: `\App\Profile`). Este campo no es obligatorio, ya que puede obtenerse del recurso a través de la variable `$model`. Si se deja en blanco, **Belich**, automáticamente lo buscará.
 - `$relationshipModelColumn` es la columna de la tabla relacional (en nuestro ejemplo: `profiles`), que queremos mostrar en la relación. Podemos dejarla en blanco, e iniciarla desde en el recurso `User`, de la siguiente forma:
 
 ```php
@@ -61,16 +60,6 @@ En estas vistas, nos encontraremos un enlace con el valor del campo, y apuntando
 
 ### Vistas **create** y **edit**
 
-¿Qué pasa si queremos crear o modificar campos de la tabla `profiles`, desde el formulario de `users`?
-
-**Belich**, nos permite hacerlo. Para ello, debemos indicar que los campos son editables, y por tanto, que pueden aparecer en las vistas: `create` y `edit`. Lo haremos añadiendo el método: `editable()`:
-
-```php
-HasOne::make('Profile avatar', 'Profile', '\App\Profile', 'profile_avatar')
-    ->rules('required')
-    ->editable(),
-```
-
 ####a) Vista **create**
 
 En la vista `create`, nos aparecerá un campo de texto asignado a la columna del modelo relacionado, es decir, usando los ejemplos anteriores, sería el campo `profile_avatar` de la tabla `profiles`.
@@ -92,12 +81,10 @@ public function fields(Request $request): array
             ->rules('required'),
         Text::make('Email', 'email')
             ->rules('required', 'email'),
-        HasOne::make('Profile avatar', 'Profile', '\App\Profile', 'profile_avatar')
-            ->editable()
+        HasOne::make('Profile avatar', 'Profile', 'profile_avatar')
             ->rules('required'),
-        HasOne::make('Profile address', 'Profile', '\App\Profile', 'profile_address')
-            ->rules('required')
-            ->editable(),
+        HasOne::make('Profile address', 'Profile', 'profile_address')
+            ->rules('required'),
     ];
 }
 ```
@@ -136,9 +123,8 @@ public function indexQuery() {
 Si nos fijamos bien, en este ejemplo, sólo podríamos ver nuestro perfil. Pero **¿qué pasa si queremos personalizar la consulta a la base de datos, ignorando la consulta predeterminada en el recurso relacional?**. **Belich**, dispone de un método para personalizar esta consulta:
 
 ```php
-HasOne::make('Profile address', 'Profile', '\App\Profile')
+HasOne::make('Profile address', 'Profile')
     ->rules('required')
-    ->editable()
     ->query(function($query) {
         return $query
             ->where('user_id', auth()->user()->id)
@@ -154,9 +140,8 @@ HasOne::make('Profile address', 'Profile', '\App\Profile')
 Podemos encontrarnos, con la situación que la consulta devuelva demasiados valores para un campo `Select`. Para ello, disponemos de la opción de mostrar el resultado como un `datalist`, mediante el método `searchable()`:
 
 ```php
-HasOne::make('Profile address', 'Profile', '\App\Profile')
+HasOne::make('Profile address', 'Profile')
     ->rules('required')
-    ->editable()
     ->searchable(),
 ```
 

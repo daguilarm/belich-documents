@@ -25,20 +25,19 @@ public function profile()
 Now, in our resource: `\App\Belich\Resources\User.php`, We can add a form field for *one-to-one* relationship:
 
 ```php
-HasOne::make('Profile avatar', 'Profile', '\App\Profile', 'profile_avatar')
+HasOne::make('Profile avatar', 'Profile', 'profile_avatar')
     ->rules('required'),
 ```
 
 The structure of the field will be:
 
 ```php
-HasOne::make(string $label, string $relationshipClass, ?string $relationshipModel = null, ?string $relationshipModelColumn = null),
+HasOne::make(string $label, string $relationshipClass, ?string $relationshipModelColumn = null),
 ```
 
 - `$label`: It is the field label.
 - `$relationshipClass`: It is the resource of the relational model. Following our example: `\App\Belich\Resources\Profile.php`.
-- `$relationshipModel`: It is the linked model (in our example:`\App\Profile`). This field is not mandatory, since it can be obtained from the resource through the variable `$model`. If left blank, **Belich** will automatically search for it in the resource.
-- `$ elationshipModelColumn` is the column of the relational table (in our example: `profiles`), which we want to show in the relationship. We can leave it blank, and start it from the `User` resource, as follows:
+- `$relationshipModelColumn` is the column of the relational table (in our example: `profiles`), which we want to show in the relationship. We can leave it blank, and start it from the `User` resource, as follows:
 
 ```php
 // /** @var string */
@@ -61,16 +60,6 @@ In these views, we will find a link with the value of the field, and pointing it
 
 ### Views **create** and **edit**
 
-What happens if we want to create or modify fields in the `profiles` table, from the` users` form?
-
-**Belich**, allows us to do it. To do this, we must indicate that the fields are editable, and therefore, that they can appear in the views: `create` and `edit`. We will do it by adding the method: `editable()`:
-
-```php
-HasOne::make('Profile avatar', 'Profile', '\App\Profile', 'profile_avatar')
-    ->rules('required')
-    ->editable(),
-```
-
 ####a) **Create** view
 
 In the view `create`, it will show us a text field assigned to the column of the related model, so using the previous examples, it would be the `profile_avatar` field from the `profiles` table.
@@ -92,12 +81,10 @@ public function fields(Request $request): array
             ->rules('required'),
         Text::make('Email', 'email')
             ->rules('required', 'email'),
-        HasOne::make('Profile avatar', 'Profile', '\App\Profile', 'profile_avatar')
-            ->editable()
+        HasOne::make('Profile avatar', 'Profile', 'profile_avatar')
             ->rules('required'),
-        HasOne::make('Profile address', 'Profile', '\App\Profile', 'profile_address')
-            ->rules('required')
-            ->editable(),
+        HasOne::make('Profile address', 'Profile', 'profile_address')
+            ->rules('required'),
     ];
 }
 ```
@@ -136,9 +123,8 @@ public function indexQuery() {
 If we look closely, in this example, we could only see our profile. But, **what if we want to customize the query to the database, ignoring the default query in the relational resource?**. **Belich**, have a method to customize this query:
 
 ```php
-HasOne::make('Profile address', 'Profile', '\App\Profile')
+HasOne::make('Profile address', 'Profile')
     ->rules('required')
-    ->editable()
     ->query(function($query) {
         return $query
             ->where('user_id', auth()->user()->id)
@@ -154,9 +140,8 @@ HasOne::make('Profile address', 'Profile', '\App\Profile')
 We can find, in the situation that the query returns too many values for a `Select` field. To do this, we have the option to show the result as a `datalist`, using the method `searchable()`:
 
 ```php
-HasOne::make('Profile address', 'Profile', '\App\Profile')
+HasOne::make('Profile address', 'Profile')
     ->rules('required')
-    ->editable()
     ->searchable(),
 ```
 
