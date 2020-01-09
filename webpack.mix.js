@@ -30,7 +30,7 @@ mix.js('source/_assets/js/main.js', 'js')
         folders: ['source'],
         whitelistPatterns: [
             /language/, /hljs/, /algolia/,
-            /level-base/, /level-0/, /level-1/, /level-2/,
+            /level-base/, /level-0/, /level-1/, /level-2/, /active/,
         ],
     })
     .version();
