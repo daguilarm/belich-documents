@@ -143,3 +143,27 @@ Es decir, si disponemos de varios campos relacionales, debemos añadir todas las
 /** @var array */
 public static $relationships = ['image', 'profile', 'user'];
 ```
+
+Puedes incluso definir una *foreign key* personalizada, utilizando el método `foreignKey()`:
+
+```php
+/**
+ * Get the fields displayed by the resource.
+ *
+ * @param  \Illuminate\Http\Request  $request
+ * @return Illuminate\Support\Collection
+ */
+public function fields(Request $request): array
+{
+    return [
+        ID::make('Id'),
+        Text::make('User', 'name')
+            ->rules('required'),
+        Text::make('Email', 'email')
+            ->rules('required', 'email'),
+        HasOne::make('Profile avatar', 'Profile')
+            ->foreignKey('custom_id')
+            ->rules('required'),
+    ];
+}
+```

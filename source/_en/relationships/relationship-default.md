@@ -143,3 +143,27 @@ So, if we have several relational fields, we must add all the relationships to t
 /** @var array */
 public static $relationships = ['image', 'profile', 'user'];
 ```
+
+You can also define your custom foreign key, using the method `foreignKey()`:
+
+```php
+/**
+ * Get the fields displayed by the resource.
+ *
+ * @param  \Illuminate\Http\Request  $request
+ * @return Illuminate\Support\Collection
+ */
+public function fields(Request $request): array
+{
+    return [
+        ID::make('Id'),
+        Text::make('User', 'name')
+            ->rules('required'),
+        Text::make('Email', 'email')
+            ->rules('required', 'email'),
+        HasOne::make('Profile avatar', 'Profile')
+            ->foreignKey('custom_id')
+            ->rules('required'),
+    ];
+}
+```
