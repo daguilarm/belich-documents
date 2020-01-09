@@ -63,8 +63,8 @@ return [
     'Relationships||Relaciones' => [
         'url' => '_location_/relationships/relationship-default',
         'children' => [
-            'HasOne||HasOne' => '_location_/relationships/hasOne',
-            'BelongsTo||BelongsTo' => '_location_/relationships/belongsTo',
+            'HasOne||HasOne' => '_location_/relationships/hasone',
+            'BelongsTo||BelongsTo' => '_location_/relationships/belongsto',
         ]
     ],
     'Views||Vistas' => [
