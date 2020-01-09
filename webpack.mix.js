@@ -31,6 +31,7 @@ mix.js('source/_assets/js/main.js', 'js')
         whitelistPatterns: [
             /language/, /hljs/, /algolia/,
             /level-base/, /level-0/, /level-1/, /level-2/, /active/,
+            /blockquote-alert/, /alert/, /success/, /danger/, /info/, /warning/,
         ],
     })
     .version();
