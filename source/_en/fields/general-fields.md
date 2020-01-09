@@ -751,6 +751,27 @@ public function fields(Request $request) {
 }
 ```
 
+<div class="alert danger">Important: If you use a constructor to call the database, remember that if you call this resource from a relational field, you will query the database even if it is not necessary...</div>
+
+Or without a `__construct()`:
+
+```php
+/**
+ * Get the fields displayed by the resource.
+ *
+ * @param  \Illuminate\Http\Request  $request
+ * @return Illuminate\Support\Collection
+ */
+public function fields(Request $request) {
+    return [
+        Select::make('Role', 'role')
+            ->options(\App\User::pluck('name', 'id')->toArray()),
+    ]
+}
+```
+
+<div class="alert success">In general, it is better not to use constructors If we are going to use relational fields in your project.</div>
+
 We can also show in the `index` and `show` views, the result as a value, rather than as a key. For example:
 
 ```php

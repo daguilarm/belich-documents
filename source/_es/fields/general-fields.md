@@ -752,6 +752,27 @@ public function fields(Request $request) {
 }
 ```
 
+<div class="alert danger">Importante: Si utiliza un constructor para llamar a la base de datos, recuerde que si llama a este recurso desde un campo relacional, realizará la consulta a la base de datos aunque no sea necesaria...</div>
+
+O sin constructor:
+
+```php
+/**
+ * Get the fields displayed by the resource.
+ *
+ * @param  \Illuminate\Http\Request  $request
+ * @return Illuminate\Support\Collection
+ */
+public function fields(Request $request) {
+    return [
+        Select::make('Role', 'role')
+            ->options(\App\User::pluck('name', 'id')->toArray()),
+    ]
+}
+```
+
+<div class="alert success">Por lo general, es mejor no utilizar constructores si vamos a utilizar en nuestro proyecto campos relacionales.</div>
+
 También podemos mostrar en las vistas `index` y `show`, el resultado como valor, en vez de como clave. Por ejemplo:
 
 ```php
