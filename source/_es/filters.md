@@ -88,7 +88,7 @@ public static function filters(Request $request): array
 }
 ```
 
-<div class="alert info">Si no utilizamos el método <code>filterAs()</code>, asumirá por defecto el valor: <code>equal</code></div>
+<div class="alert info">Si no utilizamos el método <strong>filterAs()</strong>, asumirá por defecto el valor: <strong>equal</strong></div>
 
 Los filtros soportados por **Belich** son:
 
