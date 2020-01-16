@@ -10,8 +10,8 @@ locate: es
 
 **Belich** utiliza un sistema de filtros para refinar las busquedas en la vista: `index`.
 
-![Filters](../../../assets/images/fields/filters.jpg){.mx-auto .wp-66}
-<div id="legend"><b>fig 1</b>: Ejemplo de Filtros de búsqued</div>
+![Filters](../../../assets/images/filters.jpg){.mx-auto .wp-66}
+<div id="legend"><b>fig 1</b>: Ejemplo de Filtros de búsqueda</div>
 
 Para utilizar los filtros, debemos añadirlos a nuestros recursos. Por ejemplo, para añadir un filtro a los usuarios (como en el ejemplo anterior), nos iremos al archivo: `app\Belich\Resources\User.php`, y añadiremos el siguiente método:
 
@@ -115,4 +115,4 @@ Nos permite indicar el formato que se utilizará en los campos para introducir l
 
 ## mask()
 
-No permite definir la máscara para el formato de fecha. Debe de ser coincidente con el método `format()`. Por defecto, el valor será: `00/00/0000`. Para más información de la utilización del método `mask()`, visite el siguiente apartado: [método mask()](fields/patterns)
+No permite definir la máscara para el formato de fecha. Debe de ser coincidente con el método `format()`. Por defecto, el valor será: `00/00/0000`. Para más información de la utilización del método `mask()`, visite el siguiente apartado: [método mask()](../fields/patterns)
