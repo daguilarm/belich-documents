@@ -10,7 +10,7 @@ locate: es
 
 **Belich** utiliza un sistema de filtros para refinar las busquedas en la vista: `index`.
 
-![Filters](../../../assets/images/filters.jpg){.mx-auto .wp-66}
+![Filters](../../../assets/images/filters.jpg){.mx-auto}
 <div id="legend"><b>fig 1</b>: Ejemplo de Filtros de búsqueda</div>
 
 Para utilizar los filtros, debemos añadirlos a nuestros recursos. Por ejemplo, para añadir un filtro al recurso: **User** (como en el ejemplo anterior), nos iremos al archivo: `app\Belich\Resources\User.php`, y añadiremos el siguiente método:
@@ -107,7 +107,7 @@ Filter::make('By Creation date', 'created_at')
     ->mask('00/00/0000'),
 ```
 
-![Filters](../../../assets/images/filters-date.jpg){.mx-auto .wp-66}
+![Filters](../../../assets/images/filters-date.jpg){.mx-auto}
 <div id="legend"><b>fig 2</b>: Ejemplo de filtro de fechas</div>
 
 Donde disponemos de dos métodos: `format()` y `mask()`.
