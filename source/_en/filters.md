@@ -112,11 +112,11 @@ Filter::make('By Creation date', 'created_at')
 
 Where we have two methods: `format()` y `mask()`.
 
-## format()
+### format()
 
 It allows us to indicate the format used in the fields to enter the date. If left blank, the following format will be used by default: `d/m/Y`.
 
-## mask()
+### mask()
 
 It allows us to define the mask for the date format. It must be consistent with the method `format()`. By default, the value will be: `99/99/9999`. The value 9 in the mask represents that the field only supports numeric characters. 
 
