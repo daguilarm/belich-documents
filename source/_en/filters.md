@@ -107,6 +107,9 @@ Filter::make('By Creation date', 'created_at')
     ->mask('00/00/0000'),
 ```
 
+![Filters](../../../assets/images/filters-date.jpg){.mx-auto .wp-66}
+<div id="legend"><b>fig 2</b>: Date filter Example</div>
+
 Where we have two methods: `format()` y `mask()`.
 
 ## format()
