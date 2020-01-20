@@ -13,7 +13,7 @@ locate: es
 ![Filters](../../../assets/images/filters.jpg){.mx-auto .wp-66}
 <div id="legend"><b>fig 1</b>: Ejemplo de Filtros de búsqueda</div>
 
-Para utilizar los filtros, debemos añadirlos a nuestros recursos. Por ejemplo, para añadir un filtro a los usuarios (como en el ejemplo anterior), nos iremos al archivo: `app\Belich\Resources\User.php`, y añadiremos el siguiente método:
+Para utilizar los filtros, debemos añadirlos a nuestros recursos. Por ejemplo, para añadir un filtro al recurso: **User** (como en el ejemplo anterior), nos iremos al archivo: `app\Belich\Resources\User.php`, y añadiremos el siguiente método:
 
 ```php
 /**
@@ -36,7 +36,7 @@ public static function filters(Request $request): array
 }
 ```
 
-Por ejemplo, si seleccionamos la primera opción: `['user' => 'User']`, crearíamos el siguiente query: 
+Por ejemplo, si seleccionamos la primera opción del ejemplo de arriba: `['user' => 'User']`, crearíamos el siguiente *query*: 
 
 ```php 
 select * from `users` where `role` = 'user' limit 10 offset 0
@@ -48,7 +48,7 @@ El formato del método `filter()` sería:
 Filter::make($label, $tableRowForSearch)...
 ```
 
-En el primer campo, añadimos el nombre de la etiqueta que se mostrará en el desplegable, y el segundo, es el campo de la base de datos que queremos filtrar.
+En el primer campo, añadimos el nombre de la etiqueta que se mostrará en el desplegable, y en el segundo, la tabla de la base de datos que queremos filtrar.
 
 Podemos indicarle diferentes tipos de filtro, utilizando el método: `filterAs()`:
 
@@ -98,7 +98,7 @@ Los filtros soportados por **Belich** son:
     + Intervalos: debemos indicar el intervalo separado por `-` 
     + Mayor o menor que: `>30`, nos buscará los resultados mayores de 30 y `<30` los menores.
 
-Y el método especial para fechas `date`:
+El método especial para fechas, tendría el siguiente formato:
 
 ```php
 Filter::make('By Creation date', 'created_at')
@@ -115,4 +115,6 @@ Nos permite indicar el formato que se utilizará en los campos para introducir l
 
 ## mask()
 
-No permite definir la máscara para el formato de fecha. Debe de ser coincidente con el método `format()`. Por defecto, el valor será: `00/00/0000`. Para más información de la utilización del método `mask()`, visite el siguiente apartado: [método mask()](../fields/patterns)
+Nos permite definir la máscara para el formato de fecha. Debe de ser coincidente con el método `format()`. Por defecto, el valor será: `99/99/9999`. El valor 9 en la máscara, representa que el campo solo admite caracteres numéricos. 
+
+Para más información de la utilización del método `mask()`, visite el siguiente apartado: [método mask()](../fields/patterns)

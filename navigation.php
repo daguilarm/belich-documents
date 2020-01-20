@@ -93,6 +93,7 @@ return [
             'Cache||Caché' => '_location_/cards/cards-cache',
         ]
     ],
+    'Filters||Filtros' => '_location_/filters',
     'Tools||Tools/Herramientas' => '_location_/tools',
     'Customization||Personalización' => '_location_/customization',
     'Export||Exportar' => '_location_/exports',
