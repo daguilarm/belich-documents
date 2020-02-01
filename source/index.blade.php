@@ -14,6 +14,8 @@
                 <li>Fast development: built it in minutes...</li>
                 <li>Fully configurable.</li>
                 <li>Php 7.4, Laravel 6.x, Tailwindcss, ChartistJS...</li>
+                <li>Note: This version is for testing only. At the moment I am working on a new version based on Laravel Livewire and AlpineJS to manage all javascript, but keeping the essence of Belich intact.</li>
+                <li>Belich v2.0 will be release soon...</li>
             </ul>
             <div class="flex justify-center">
                 <a href="en/home/about" class="bg-blue-500 hover:bg-blue-700 hover:text-blue-100 text-white font-bold py-2 px-4 rounded">Documents</a>
@@ -27,6 +29,8 @@
                 <li>Desarrollo rápido: construyelo en minutos...</li>
                 <li>Totalmente configurable.</li>
                 <li>Php 7.4, Laravel 6.x, Tailwindcss, ChartistJS...</li>
+                <li>Nota: Esta versión es solo apta para pruebas. En este momento, estoy trabajando en una nueva versión basada en Laravel Livewire y AlpineJS para gestionar todo el javascript, pero manteniendo la esencia de Belich intacta.</li>
+                <li>Belich v2.0 estará lista muy pronto...</li>
             </ul>
             <div class="flex justify-center">
                 <a href="es/home/about" class="bg-blue-500 hover:bg-blue-700 hover:text-blue-100 text-white font-bold py-2 px-4 rounded">Documentación</a>
