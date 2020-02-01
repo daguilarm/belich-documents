@@ -21,6 +21,8 @@ Generate an icon with text (if applicable). The syntax is as follows:
 Helper::icon(string $icon, $text = '', $css = '')
 ```
 
+<div class="alert info">Belich has two CSS classes to manage icons: icon and icon-light. The first adds an opacity of 50% to the icon, and the second an opacity of 65%.</div>
+
 So it can be used like this:
 
 ```php

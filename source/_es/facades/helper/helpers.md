@@ -18,8 +18,10 @@ A continuación, puedrá consultar la lista de métodos soportados por `Helper`,
 Genera un icono con texto (si aplica). La sintaxis es la siguiente:
 
 ```php
-Helper::icon(string $icon, $text = '', $css = '')
+Helper::icon(string $icon, ?string $text = '', ?string $css = '')
 ```
+
+<div class="alert info">Belich dispone de dos clases CSS para gestionar iconos: icon y icon-light. La primera añade una opacidad del 50% al icono, la segunda del 65%.</div>
 
 Por lo que puede usarse así:
 
