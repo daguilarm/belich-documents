@@ -223,19 +223,38 @@ Este campo nos permite limitar el texto que se muestra en los campos de formular
 'textAreaChars' => 25,
 ```
 
-### Cargando...
+### Gestión de iconos
 
-Podemos definir el icono o imagen que se verá cuando estemos cargado páginas o partes de página mediante ajax. Podemos definirlo en:
+**Belich** permite gestionar diversas librerias de iconos. Por el momento, dispone de drivers para:
+
+- Fontawesome.
+
+Podemos definir la librería de iconos, mediante la clave: `font`. El icono de indicación de carga mediante ajax, lo podemos definir con la clave `loading`, y sus dos sub-claves:
+
+- **icon**: para indicar el icono de la librería que queremos usar.
+- **css**: para definir los estilos `css` que queremos utilizar. Por defecto, aumenta el tamaño diez veces, y muestra el icono en azul claro.
 
 ```php
 /*
 |--------------------------------------------------------------------------
-| Loading status
+| Icons
 |--------------------------------------------------------------------------
 |
 | Show the loading icon for ajax queries
 */
-'loading' => '<i class="fas fa-spinner fa-spin fa-10x text-blue-200"></i>',
+'icons' => [
+    'font' => 'fontawesome',
+    'loading' => [
+        'icon' => 'spin',
+        'css' => 'fa-10x text-blue-200',
+    ],
+],
+```
+
+Si estamos utilizando `Fontawesome`, el ejemplo anterior, devolvería:
+
+```html 
+<i class="fas fa-spinner fa-spin fa-10x text-blue-200"></i>
 ```
 
 ### Cards 

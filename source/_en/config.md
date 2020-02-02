@@ -224,19 +224,38 @@ This field allows us to limit the text shown in the form fields: `textarea`, lim
 'textAreaChars' => 25,
 ```
 
-### Loading...
+### Icon manager
 
-We can define the icon or image that will be seen when we are loaded pages or parts of page through ajax. We can define it in:
+**Belich** allows you to manage different icon libraries. At the moment, it has drivers for:
+
+- Fontawesome.
+
+We can define the icon library, using the key: `font`. The load indication icon can be defined with the key: `loading`, and its two sub-keys:
+
+- **icon**: to indicate the icon library we want to use.
+- **css**: to define the `css` styles that we want to use. By default, increase the size tenfold, and show the icon in light blue.
 
 ```php
 /*
 |--------------------------------------------------------------------------
-| Loading status
+| Icons
 |--------------------------------------------------------------------------
 |
 | Show the loading icon for ajax queries
 */
-'loading' => '<i class="fas fa-spinner fa-spin fa-10x text-blue-200"></i>',
+'icons' => [
+    'font' => 'fontawesome',
+    'loading' => [
+        'icon' => 'spin',
+        'css' => 'fa-10x text-blue-200',
+    ],
+],
+```
+
+If we are using `Fontawesome`, the previous example will return:
+
+```html 
+<i class="fas fa-spinner fa-spin fa-10x text-blue-200"></i>
 ```
 
 ### Cards 
