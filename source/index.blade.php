@@ -2,7 +2,7 @@
 
 @section('body')
 <section class="container max-w-6xl mx-auto px-2 sm:px-6 my-4">
-    <div class="w-full block my-4 mx-auto p-2 rounded-lg bg-red-100 border border-red-700 text-red-700 shadow-lg">
+    <div class="w-full block mt-4 mx-auto p-2 rounded-lg bg-red-100 border border-red-700 text-red-700 shadow-lg">
         I am working in the new versión of the package. This new version use Laravel Livewire and AlpineJS, and will be available soo... so this documentation is now deprecated. I am working in the new package, as soon as possible it will be release with the new documentation.
     </div>
     <div class="hidden sm:flex justify-center w-full mb-12">
