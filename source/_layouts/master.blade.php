@@ -73,8 +73,8 @@
                             <div id="github-container" class="dropdown-content border border-gray-400 mt-1">
                                 <a href="https://github.com/daguilarm/belich" class="flex-1 p-2">Belich</a>
                                 <a href="https://github.com/daguilarm/belich-documents" class="flex-1 p-2">{{ $page->locale === 'en' ? 'Documents' : 'Documentos' }}</a>
-                                <a href="https://github.com/daguilarm/belich-dashboard" class="flex-1 p-2">{{ $page->locale === 'en' ? 'Examples' : 'Ejemplos' }}</a>
-                            </div>
+{{--                                 <a href="https://github.com/daguilarm/belich-dashboard" class="flex-1 p-2">{{ $page->locale === 'en' ? 'Examples' : 'Ejemplos' }}</a>
+ --}}                            </div>
                         </div>
                     </div>
                 </div>
