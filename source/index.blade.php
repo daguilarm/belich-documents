@@ -5,7 +5,7 @@
     <div class="hidden sm:flex justify-center w-full mb-12">
         <img class="w-3/4 rounded-lg shadow" src="assets/images/thumbnail.jpg">
     </div>
-    <div class="mt-2 p-2 border-r border-red-300 shadow-lg">
+    <div class="flex block mt-2 mx-auto p-2 border-r border-red-300 shadow-lg">
         I am working in the new versión of the package. This new versión use Laravel Livewire and AlpineJS, and will be available soo... so this documentation is now deprecated. I am working in the new package, as soon as possible it will be release with the new documentation.
     </div>
     <div class="sm:flex sm:-mt-6 mx-auto">
